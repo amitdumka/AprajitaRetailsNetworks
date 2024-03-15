@@ -1,0 +1,46 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% load aprajita_retails %}
+{% block content %}
+
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-4">
+                <div class="card-header pb-0">
+                    <h4>
+                        {{model_name}}
+                    </h4>
+                </div>
+                <div class="card-body px-1 pt-1 pb-2 small">
+                    <div class="table-responsive-sm p-3 m-2  d-flex justify-content-center table-accent-bg:transparent">
+                        <table class="table table-sm  ">
+                            {% for field in field_names %}
+                            <tr>
+                                <th class="text-uppercase text-dark text-xs font-weight-bolder opacity-7 m-0">{{ field}}
+                                </th>
+                                <td class="text-sm text-dark opacity-10 m-0">{{ model|getattribute:field }}</td>
+
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer  pb-0 d-flex justify-content-center ">
+                    <a class="btn btn-primary btn-sm m-2" href="{% url return_url %}">Back </a>
+                    <!-- <a class="btn btn-primary btn-sm m-2" href="{% url return_url %}">Delete </a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+{% include "includes/footer.html" %}
+{% endblock %}

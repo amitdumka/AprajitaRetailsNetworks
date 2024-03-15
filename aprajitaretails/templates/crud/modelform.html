@@ -1,0 +1,25 @@
+<div class="modal fade" id="employeeModel{{employee.pk}}" aria-hidden="true" aria-labelledby="employeeModalToggleLabel"
+  tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Are you sure, you want to delete {{employee.name}}'s
+            detail ?</h1>
+          <ul class="list-inline text-end">
+            <li class="list-inline-item">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </li>
+            <li class="list-inline-item">
+              <a href="{%url 'delete' pk=employee.pk%}" class="btn btn-danger">Delete</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<a href="#employeeModel{{employee.pk}}" data-bs-target="#employeeModel{{employee.pk}}" data-bs-toggle="modal"><i
+    class="fa-solid fa-user-minus text-danger fa-2x"></i></a>

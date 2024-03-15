@@ -1,0 +1,18 @@
+{% load static %}
+
+<li class="nav-item">
+	{% include 'apps/helpers/sidebar_span_helper.html' with title='Inventory' tagmenu='inv' url='/inventory' icon='fa 	fa-store'%}
+	<div class="multi-level ms-5 collapse {% if '/inventory' in request.path %} show {% endif %}" role="list"
+		id="submenu-inv" aria-expanded="{% if '/inventory' in request.path %}true{% else %}false{% endif %}">
+		<ul class="flex-column nav">
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Product' url='/inventory/productitem' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Stock' url='/inventory/stock' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Purchase' url='/inventory/productpurchase'			%}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Category' url='/inventory/productsubcategory' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Type' url='/inventory/producttype' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Vendor' url='/inventory/vendor' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Suppliers' url='/inventory/supplier' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Brand' url='/inventory/brand' %}
+		</ul>
+	</div>
+</li>

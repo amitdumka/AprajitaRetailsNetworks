@@ -1,0 +1,25 @@
+{% load static %}
+
+<li class="nav-item">
+	{% include 'apps/helpers/sidebar_span_helper.html' with title='Payroll' tagmenu='payroll' url='hr' icon='fa fa-users'%}
+	<!-- here need handle table-bootstrap- and app_label  and url so expand and collapse work -->
+	<div
+		class="multi-level ms-5 collapse {% if '/hr' in request.path|urlencode %} show {% endif %}"
+		role="list"
+		id="submenu-payroll"
+		aria-expanded="{% if '/hr' in request.path|urlencode %}true{% else %}false{% endif %}"
+	>	
+		<ul class="flex-column nav">
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Employee' url='/hr/employees' %} 
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Detail' url='/hr/employeedetails' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Attendance' url='/hr/attendance' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Monthly Att' url='/hr/monthlyattendance' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Salary' url='/hr/salary' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Payment' url='/hr/salarypayment' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Payslip' url='/hr/payslip' %}
+			{% comment %} {% include 'apps/helpers/sidebar_submenu_item.html' with title='Receipt' url='/hr/staffadvancereceipt' %} {% endcomment %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Timesheet' url='/hr/timesheet' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Ledger' url='/hr/salaryledger' %}
+		</ul>
+	</div>
+</li>

@@ -1,0 +1,22 @@
+{% load static %}
+
+<li class="nav-item">
+	{% include 'apps/helpers/sidebar_span_helper.html' with title='Stores' tagmenu='stores' url='hr' icon='fa fa-landmark'%}
+	<!-- here need handle table-bootstrap- and app_label  and url so expand and collapse work -->
+	<div
+		class="multi-level ms-5 collapse {% if '/core' in request.path|urlencode %} show {% endif %}"
+		role="list"
+		id="submenu-stores"
+		aria-expanded="{% if '/core' in request.path|urlencode %}true{% else %}false{% endif %}"
+	>
+		<ul class="flex-column nav">
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Client' url='/core/clients' %} 
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Store Group' url='/core/storegroups' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Stores' url='/core/stores' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Customer' url='/core/customers' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Contact' url='/core/contacts' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='EDC' url='/core/pos' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Tax & Duties' url='/core/taxes' %}
+		</ul>
+	</div>
+</li>

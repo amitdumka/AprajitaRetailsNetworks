@@ -1,0 +1,45 @@
+# Aprajita Retails - Networks
+# Author: Amit kumar
+# Date: 13/March/2024
+
+#Things To Do and Status
+
+Sn. Work                                                 Status
+
+1. Salary Payment Custom Save Function                  Pending
+2. Triggers : Employee Add / Remove  Add/Remove Saleman Pending
+3. Add DailySale on every Sale Invoice Generated        Pending
+4. send mail on every voucher is created to Accontant 
+    and Owner email id and Lister id                    Pending
+5. send mail on every Sale Invoice is Generated         Pending
+6. Setup Email Client and Delivery                      Pending
+7. Create Customer due , if there is difference in 
+    payment amount                                      Pending
+8. Update invoice status on Due Recovery                Pending
+9. Create DRY API                                       Pending
+
+10. Create Tally Sync API                               Pending
+    It should be bi-directinal
+    There should be Provision to have ref for Tally
+    master id or voucher id
+11. Session Variable and Constant                       Pending
+12. Fetching Store, Group and Client                    Pending
+     make it Store a Refernce in some Class or 
+     SiteSetting Class, So it will reduce Database 
+     query every time we hit add button 
+     #Perfomance issue, code memory leakage issue
+13.  Setting:                                           Pending
+        Create a provision to set or get Settting 
+        Like reading Json file on server for 
+        default setting 
+        and Save personalised setting in database or 
+        file 
+14. Custom User .                                       Pending
+    User should have custom field like EmployeeId, 
+    Role, StoreId, atleast. 
+15. Create Separte Github repository this project,      Pending
+    with name AprajitaRetailsNetwork. 
+16: Create requiment,txt and install script             Pwnding
+17: Use pyarmor for obfs code secure                    Pending 
+18: Implemnt Lic, Activationn and Expiry                Pending
+

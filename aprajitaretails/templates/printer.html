@@ -1,0 +1,53 @@
+{% extends 'layouts/base.html' %} 
+{% load i18n static %}
+
+{% block extra_style %}
+    <style type="text/css">
+        body {
+            font-family: "Helvetica", "sans-serif";
+            color: #333333;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div id="content">
+        <div class="main">
+            <h1>{{title}}</h1>
+            <img src="file:///STATIC_ROOT/img/logo-ct-dark.png" />
+        </div>
+    </div>
+{% endblock %}
+{% comment %} {%load static %}
+{% block content %}
+<h3>{{title}}</h3>
+<br/>
+<hr/>
+<p>CLick print button to print {{title}}</p>
+
+{%block pdf%}
+    <div class="container-fluid" id="content">
+        <!-- Here need to use lib to display pdf file , first try function view to easy data passing. -->
+    </div>
+{%end block%}
+
+
+<p><button onclick="print_n_go()" class="btn btn-sm btn-success "> Print</button></p>
+
+
+{%end block%}
+
+{%block script%}
+<script >
+function  print(){
+
+    window.print();
+    window.Navigator.call() 
+    // Django and javascript nagigation need to be done .    
+
+}
+</script>
+
+{%end block%} {% endcomment %}
+
+

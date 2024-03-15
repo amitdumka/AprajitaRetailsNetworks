@@ -1,0 +1,88 @@
+{% extends 'layouts/base.html' %} {% load i18n static %} {% load aprajita_retails %}
+{% block content %}
+
+<div class="container-fluid py-4">
+	<div class="row">
+		<div class="col-12">
+			<div class="card mb-4">
+				<div class="card-header pb-0 d-flex justify-content-between align-items-center">
+					<h4>{{model}}</h4>
+					<ul class="list-inline m-0">
+						<li class="list-inline-item">
+							<a href="{% url create_url %}" class="btn btn-success bg-gradient-success btn-sm"><i
+									class="fa fas fa-plus"></i></a>
+						</li>
+					</ul>
+				</div>
+				<div class="card-body px-0 pt-0 pb-2">
+					<div class="table-responsive table-responsive-sm    p-0">
+						<table class="table table-borderless tables-sm p-2 text-center mb-0">
+
+							<thead>
+								<tr class="text-uppercase text-dark text-sm  text-center ">
+									<!-- <th><input type="checkbox" id="checkAll" />Check All</th> -->
+									{% for field_name in field_names %}
+									<th>{{ field_name }}</th>
+									{% endfor %}
+									<th>Actions</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for row in model_list%}
+								<tr class="text-center">
+
+									<!-- <td class="text-sm text-secondary opacity-10  btn-danger">
+										<input type="checkbox" class="checkBoxClass btn-danger" value="{{ row.pk }}" />
+									</td> -->
+									{% for field_name in field_names %}
+									<td class="text-sm text-secondary opacity-10 ">{{ row|getattribute:field_name }}
+									</td>
+									{% endfor %}
+									<td class="btn-group  btn-group-sm m-0">
+										<a href="{% url app_name|add:':core_delete' model_name row.pk %}"
+											class="btn btn-danger   m-0"><span class="fas fa-trash-alt"></span></a>
+										<a href="{% url app_name|add:':'|add:model_name|add:'_detail' row.pk %}"
+											class="btn btn-info    m-0"><span class="fas fa-info-circle"></span></a>
+										<a href="{% url app_name|add:':'|add:model_name|add:'_create' row.pk %}"
+											class="btn btn-warning     m-0"><span class="fas fa-edit"></span></a>
+									</td>
+
+
+
+
+								</tr>
+								{% endfor%}
+							</tbody>
+
+
+						</table>
+
+					</div>
+				</div>
+				<div class="card-footer bg-transparent">
+					<div class="pagination">
+						<span class="step-links">
+							{% if model_list.has_previous %}
+							<a href="?page=1">&laquo; First</a>
+							<a href="?page={{ model_list.previous_page_number }}">Previous</a>
+							{% endif %}
+
+							<span class="current text-dark">
+								Page {{ model_list.number }} of {{ model_list.paginator.num_pages }}.
+							</span>
+
+							{% if model_list.has_next %}
+							<a href="?page={{ model_list.next_page_number }}">Next</a>
+							<a href="?page={{ model_list.paginator.num_pages }}">Last &raquo;</a>
+							{% endif %}
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div>
+{% include "includes/footer.html" %}
+{% endblock %}

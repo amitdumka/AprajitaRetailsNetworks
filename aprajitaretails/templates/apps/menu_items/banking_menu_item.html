@@ -1,0 +1,24 @@
+{% load static %}
+
+<li class="nav-item">
+	{% include 'apps/helpers/sidebar_span_helper.html' with title='Banking' tagmenu='banking' url='/banking' icon='fa fa-city'%}
+	<!-- here need handle table-bootstrap- and app_label  and url so expand and collapse work -->
+	<div
+		class="multi-level ms-5 collapse {% if '/banking' in request.path|urlencode %} show {% endif %}"
+		role="list"
+		id="submenu-banking"
+		aria-expanded="{% if '/banking' in request.path|urlencode %}true{% else %}false{% endif %}"
+	>
+		<ul class="flex-column nav">
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Bank' url='/banking/bank' %} 
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Account' url='/banking/bankaccount' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Vendor Att' url='/banking/vendorbankaccount' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Transaction' url='/banking/banktransaction' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Cheque log' url='/banking/chequelog' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Cheque Issued' url='/banking/chequeissued' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Cheques' url='/banking/chequebook' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Account List' url='/banking/bankaccountlist' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Statement' url='/banking/bankstatement' %}
+		</ul>
+	</div>
+</li>

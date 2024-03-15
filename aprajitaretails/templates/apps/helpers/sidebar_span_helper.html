@@ -1,0 +1,17 @@
+{% load static %} {% load i18n %}
+
+<span
+	class="nav-link  {% if  url not in request.path|urlencode %} collapsed{% endif %} d-flex justify-content-between align-items-center"
+	data-bs-toggle="collapse" data-bs-target="#submenu-{{ tagmenu }}">
+	<span class="d-flex justify-content-between align-items-center">
+		<div
+			class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+			<span class="sidebar-icon {{icon}}"></span>
+		</div>
+		<a href="hr">
+			<span class="nav-link-text ms-1">{%if title%} {{title|title}} {%else%}
+				{{request.resolver_match.view_name|title}} {%endif%}
+			</span>
+		</a>
+	</span>
+</span>

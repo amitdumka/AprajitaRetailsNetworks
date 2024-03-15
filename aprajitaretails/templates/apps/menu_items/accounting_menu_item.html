@@ -1,0 +1,26 @@
+{% load static %}
+
+<li class="nav-item  ">
+	{% include 'apps/helpers/sidebar_span_helper.html' with title='Accounting' tagmenu='accounting' url='/accounting/' icon='fa fa-money'%}
+	<!-- here need handle table-bootstrap- and app_label  and url so expand and collapse work -->
+	<div
+		class="multi-level ms-5 collapse {% if '/accounting' in request.path|urlencode %} show {% endif %}"
+		role="list"
+		id="submenu-accounting"
+		aria-expanded="{% if  '/accounting' in request.path|urlencode %}true{% else %}false{% endif %}"
+	>
+		<ul class="flex-column nav">
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Vouchers' url='/accounting/voucher' %} 
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Cash Voucher' url='/accounting/cashvoucher' %} 
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Due' url='/accounting/customerdue'%} 
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Recovery'	url='/accounting/due_recovery' %} 
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Daily Sale' url='/accounting/daily_sale' %} 
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Cash Detail' url='/accounting/cashdetail' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Ledgers' url='/accounting/party' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Legder Group' url='/accounting/ledgergroup' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Salesman' url='/accounting/salesman' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Transcation' url='/accounting/transactionmode' %}
+		</ul>
+	</div>
+</li>
+

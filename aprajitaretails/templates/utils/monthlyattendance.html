@@ -1,0 +1,35 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div>
+    <h3>Monthly Attendance</h3>
+    <h5>Generate Monthly Attendance</h5>
+
+    <form method="post" action="{% url 'fetch_ma' %}">
+        {% csrf_token %}
+        <p>
+            <div class="text-primary">Store:</div>
+            <select name="store_id">
+                {% for store in stores %}
+                    <option value="{{ store.pk }}">{{ store.name }}</option>
+                {% endfor %}
+            </select>
+        </p>
+        <p>
+            <div class="text-primary">Month:</div>
+            <input type="number" name="month" min="1" max="12">
+        </p>
+        <p>
+            <div class="text-primary">Year:</div>
+            <input type="number" name="year" min="1900" max="2099">
+        </p>
+
+        <div>
+            <input type="submit" value="Generate" class="btn btn-sm btn-success">
+        </div>
+    </form>
+</div>
+
+{% endblock %}

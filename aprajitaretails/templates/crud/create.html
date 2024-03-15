@@ -1,0 +1,57 @@
+{% extends 'layouts/base.html' %} {% load i18n static %}
+{% block title %}
+{{ model }}
+{% if not form.instance.pk %}[New]{%endif %}
+{% endblock %}
+{% block content %}
+
+
+<div class="container-fluid  py-4">
+    <div class="row">
+        <div class="col-12  ">
+            <div class="card mb-4">
+                <div class="card-header pb-0   text-left  ">
+                    <h4 class="font-weight-bolder text-info text-gradient"> {{ model }} {% if new_record %} [New] {%else%} [Id: {{form.instance.pk }}] {%endif %} </h4>
+                    <hr class="bg-gradient-success" />
+                </div>
+                <div class="card-body px-0 pt-0 pb-2  row ">
+                    <div class="col-xl-5 col-lg-5 col-md-6 d-flex flex-column p-4  ">
+                        <form action="{% url create_url %}" method="post">
+                            <div class="table-responsive=sm p-2">
+                                {% csrf_token %}
+                                <table class="table table-sm  text-end mb-0  ">
+                                    
+                                    {{ form.as_table  }}
+                                    
+                                </table>
+                            </div>
+                            <div class="row align-items-center align-middle">
+ 
+                                <div class="col-sm-3 align-items-center align-middle"></div>
+                                <div class="col-sm-3 align-items-center align-middle">
+                                    <input type="submit" value=" {% if new_record %}Add{%else%}Update{%endif %}"
+                                        class="btn  {% if  new_record %} btn-primary{%else%} btn-warning{%endif%} bg-gradient-danger btn-sm m-0" />
+                                </div>
+                                <div class="col-sm-3 align-items-center align-middle">
+                                    <a href="{% url return_url  %}"
+                                        class="btn btn-success bg-gradient-warning btn-sm m-0">Back</a>
+                                </div>
+                            </div>
+                    </form>
+                    </div>
+                    <div class="col-md-6 bg-transprant  ">
+                        
+                     </div> 
+                </div>
+            </div>
+        </div>
+         
+    </div>
+
+
+</div>
+
+
+
+{% include "includes/footer.html" %}
+{% endblock %}

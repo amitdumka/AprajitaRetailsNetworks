@@ -1,0 +1,19 @@
+{% load static %}
+{% load i18n %}
+<li class="nav-item">
+	{% include 'apps/helpers/sidebar_span_helper.html' with title='POS' tagmenu='pos' url='hr' icon='fa 	fa-shopping-cart'%}
+	<div class="multi-level ms-5 collapse {% if '/sales/' in request.path %} show {% endif %}" role="list"
+		id="submenu-pos" aria-expanded="{% if '/sales/' in request.path %}true{% else %}false{% endif %}">
+		<ul class="flex-column nav">
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Sales' url='/sales/productsale' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Sales Return' url='/sales/salereturn' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Salesman' url='/accounting/salesman' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Invoices' url='/sales/invoices' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Payments' url='/sales/payments' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Payment Details' url='/sales/salepaymentdetail' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Customers' url='/sales/customersale' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Reports' url='/sales/reports' %}
+			{% include 'apps/helpers/sidebar_submenu_item.html' with title='Upload' url='/sales/upload' %}
+		</ul>
+	</div>
+</li>
