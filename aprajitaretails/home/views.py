@@ -110,19 +110,14 @@ def global_model_create(request, model_class, create_url=None, return_url=None):
                 messages.success(request, f'{form.instance.pk}, Record saved successfully.')
                 
                 #Handling Printing Service
-                #Do Some thing to print the model  to Printer    
-                #TODO: Print the model Check if the pdf is generate if yes then print it and redirect. 
-                #Other wise return
-                #print(model_data)
-                print("calling printer service")
                 pdfFile=PrinterService().print_hanlder(request,model_class, model_data)
-                print("printer service called")
-                
-                if pdfFile is not None:
+                if pdfFile is 'Error Occured':
+                    print("Error Occured")
+                                    
+                elif pdfFile is not None:
                     print("pdfFile is not None")
                     print(pdfFile)
                     return  render(request,'printer.html',{'return_url':create_url,'model_id':form.instance.pk, 'model':form.instance,'pdffile':pdfFile,'title':'Voucher'}) 
-                    # redirect(create_url, model_id=form.instance.pk)                
                 else:
                     print("pdfFile is None")
                     return redirect(create_url, model_id=form.instance.pk)

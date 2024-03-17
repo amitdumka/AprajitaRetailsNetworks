@@ -37,12 +37,11 @@ class Party(BaseGroupModel):
     GSTIN = models.CharField(max_length=15, null=True, blank=True)
     PANNo = models.CharField(max_length=10, null=True, blank=True)
     Address = models.CharField(max_length=255, null=True,blank=True)
+    MobileNo=models.CharField(max_length=14, null=True, blank=True)
+    EmailId=models.CharField(max_length=50, null=True, blank=True)
     Remarks = models.CharField(max_length=255, null=True,blank=True)
     LedgerGroup = models.ForeignKey(LedgerGroup, on_delete=models.CASCADE)
-     
-    #StoreGroupId=models.ForeignKey(StoreGroup, on_delete=models.CASCADE)
-    #ClientId=models.ForeignKey(Client, on_delete=models.CASCADE)
-
+   
     def __str__(self):
         return self.PartyName
 
