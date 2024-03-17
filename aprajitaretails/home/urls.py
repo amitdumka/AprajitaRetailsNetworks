@@ -10,6 +10,7 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     #path('/pdf/test/<int:pk>/', views.Pdf_View.as_view(),name='pdf_view'), #for test
+    path('/pdf_view/<str:path>', views.pdf_view, name='pdf_view'),
 
 ]
 

@@ -10,14 +10,18 @@ class  PrinterService:
     
     def print_hanlder(self,request, model_name, model_obj):
         
-        className=model_name.meta.verbose_name
+        className=model_name._meta.verbose_name
+        print(f'model_name={model_name}')
+        print(f'model_obj={model_obj}')
+        print(f'className={className}')
 
         match className:
-            case "voucher":
+            case "Voucher":
+                print('voucher is seleted')
                 return self.print_voucher(request,model_name,model_obj)
-            case "cashvoucher":
+            case "CashVoucher":
                 return self.print_voucher(request,model_name,model_obj)
-            case "salarypayment":
+            case "SalaryPayment":
                 return self.print_salarypayment(request,model_name,model_obj)
             case _:
                 return None
@@ -40,42 +44,49 @@ class  PrinterService:
 
         # Create the PDF object, using the buffer as its "file"
         #p = canvas.Canvas(buffer)
+        print(f'model={model_name}')
+        os.makedirs(f'./printedfile/{model_name._meta.verbose_name}', exist_ok=True)
 
         #Create a pdf file 
-        fileName=f'/printedfile/{model_name.meta_verbose_name}/{model_name.meta.verbose_name}_{model.pk}.pdf'
+        fileName=f'{model_name._meta.verbose_name}_{model.pk}.pdf'
         page=canvas.Canvas(fileName)
+        print(f'filename={fileName}')
         
         page.setFont("Helvetica",11)
         page.drawString(100, 675, f"Voucher No: {model.pk}")
         page.drawString(100,650, f'Vouher :{model.VoucherType}')
         page.drawString(100,625, f'Date: {model.OnDate}')
-        page.drawString(100,600,f'-----------------------------------------')
+        page.drawString(100,600,f'--------------------------------------------------')
         page.drawString(100,575,f'Party: {model.PartyName}')
         page.drawString(100,550, f'Address:_____________________________')
         page.drawString(100,525,f'Particulars: {model.Particulars}')
         page.drawString(100, 500,f'Amount: {model.Amount}')
         page.drawString(100, 475,f'In words:')
-        page.drawString(100,450,f'Mode: {model.PayMode}')
+        page.drawString(100,450,f'Mode: {model.PaymentMode}')
 
-        page.drawString(100,425,f'Issued By: {model.EmployeeId.StaffName}')
+        page.drawString(100,425,f'Issued By: {str(model.Employee.FirstName)} {str(model.Employee.LastName)}')
         page.drawString(100,375,f'Sign: ________________________________')
 
         page.drawString(100,300,f'Party Sign:________________________________')
 
 
 
-        page.drawString(100,275,f'This is pre-printed voucher, Issuer sign is not requried\nAll dispute are subject to Jurdiction of {model.Client.City}')
+        page.drawString(100,275,f'This is pre-printed voucher, Issuer sign is not requried.')
+        page.drawString(100,250,f'All dispute are subject to Jurdiction of {model.Client.ClientCity}')
         
+        print('saving file')
         # Close the PDF object cleanly, and ensure we're at the end of the buffer
         page.showPage()
         page.save()
+        print('file is saved')
 
         pdf= page.getpdfdata()
         # Get the value of the BytesIO buffer and write it to the response
         #pdf = buffer.getvalue()
         #buffer.close()
+        print('sending printed file')
         response = FileResponse(pdf, as_attachment=True, filename=fileName)
-        return response
+        return  fileName
     
     def print_salarypayment(self, request, model_name, model):
         # Create a file-like buffer to receive PDF data

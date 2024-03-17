@@ -15,5 +15,13 @@ It will record the progress of work
     6. Requriments.txt is updated
 
 #Date: 15/03/2024
+    1. Repo Created
+    2. Modular Create Function 
+    3. Print Function bug fixed . Testing Pending
 
+#Date: 16/03/2024
+    1. Printing bug fixed, testing pending
+    2. Printing need to implement in some other way
+    3. Flied filerts is create, need to tweek further
+    
 

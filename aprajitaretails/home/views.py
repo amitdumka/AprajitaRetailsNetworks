@@ -10,12 +10,12 @@
 # A CRUD View for all Modules
 # It will be included in all Modules
 # It will used as default for all modules and global view.
-
+from django.views.decorators.clickjacking import xframe_options_exempt
 # Import  and Required modules
 from django import forms
 from django.forms import ValidationError, modelform_factory
 from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpResponse
+from django.http import Http404, HttpResponse
 from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DeleteView
@@ -25,9 +25,10 @@ from django.apps import apps
 from django.contrib import messages
 from django.urls import reverse
 from django.core.paginator import Paginator
+from .viewhanlder import ViewHandler
 from dbs.models.clients import Store, StoreGroup,Client
 from home.site_settings import SiteSetting
-from ml.printing.printerservice import PrinterService
+from ml.printing.services import PrinterService
 from django.core.exceptions import FieldDoesNotExist
 
 from utils.autoidgenerator import Auto_Id_DuplicateChecker, Auto_Id
@@ -60,6 +61,7 @@ class DateTimeInput(forms.DateTimeInput):
 # Create View
 # Create record/Data view [Default for all and convert to class view so can be used any where]
 @login_required
+@xframe_options_exempt
 def global_model_create(request, model_class, create_url=None, return_url=None):
     # Add option to enable pk for string type and not visible is not enabled if pk is not string
     widgets = {}
@@ -103,7 +105,7 @@ def global_model_create(request, model_class, create_url=None, return_url=None):
                         messages.error(
                             request, "Error occured, Data was not saved!")
                         return redirect(return_url)
-
+                model_data=form.instance
                 form.instance.save()
                 messages.success(request, f'{form.instance.pk}, Record saved successfully.')
                 
@@ -111,11 +113,18 @@ def global_model_create(request, model_class, create_url=None, return_url=None):
                 #Do Some thing to print the model  to Printer    
                 #TODO: Print the model Check if the pdf is generate if yes then print it and redirect. 
                 #Other wise return
-                pdfFile=PrinterService().handle_service(model_class, form.instance,request)
+                #print(model_data)
+                print("calling printer service")
+                pdfFile=PrinterService().print_hanlder(request,model_class, model_data)
+                print("printer service called")
+                
                 if pdfFile is not None:
-                    render(request,'printer.html',{'model':form.instance,'pdffile':pdfFile}) 
-                    return redirect(create_url, model_id=form.instance.pk)                
+                    print("pdfFile is not None")
+                    print(pdfFile)
+                    return  render(request,'printer.html',{'return_url':create_url,'model_id':form.instance.pk, 'model':form.instance,'pdffile':pdfFile,'title':'Voucher'}) 
+                    # redirect(create_url, model_id=form.instance.pk)                
                 else:
+                    print("pdfFile is None")
                     return redirect(create_url, model_id=form.instance.pk)
                 
                 
@@ -251,7 +260,8 @@ class Global_ListView(LoginRequiredMixin, ListView):
     def get(self, request, *args, **kwargs):
         model_name = kwargs.get('model_class')
         objects = model_name.objects.all()
-        field_names = [field.name for field in model_name._meta.fields]
+        #field_names = [field.name for field in model_name._meta.fields]
+        field_names=ViewHandler().get_fields(model_name)
         appname = kwargs.get('app_name')
         model = model_name._meta.verbose_name_plural
 
@@ -349,15 +359,26 @@ def settings(request):
 #         )
 
 
-class Pdf_View(LoginRequiredMixin, PDFView):
-    template_name = 'printer.html'
+# class Pdf_View(LoginRequiredMixin, PDFView):
+#     template_name = 'printer.html'
 
-    def get_context_data(self, *args, **kwargs):
-        """Pass some extra context to the template."""
-        context = super().get_context_data(*args, **kwargs)
+#     def get_context_data(self, *args, **kwargs):
+#         """Pass some extra context to the template."""
+#         context = super().get_context_data(*args, **kwargs)
 
-        context['shipments'] = Shipment.objects.filter(
-            batch_id=kwargs['pk'],
-        )
+#         context['shipments'] = Shipment.objects.filter(
+#             batch_id=kwargs['pk'],
+#         )
 
-        return context
+#         return context
+    
+    
+@xframe_options_exempt
+def pdf_view(request,path):
+    try:
+        with open(path, 'rb') as pdf:
+            response = HttpResponse(pdf.read(), content_type='application/pdf')
+            response['Content-Disposition'] = 'inline;filename=some_file.pdf'
+            return response
+    except FileNotFoundError:
+        raise Http404()

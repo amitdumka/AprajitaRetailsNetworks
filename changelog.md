@@ -9,5 +9,7 @@ Version 2.0.0, 2024-03-13
   - Added new features.
   - Indivisual Book keeping
   - AppClient is move to Client
+  - Store is now Location as refernce field
+  -
    
 

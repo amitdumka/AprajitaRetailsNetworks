@@ -1,23 +1,31 @@
-{% extends 'layouts/base.html' %} 
-{% load i18n static %}
-
-{% block extra_style %}
-    <style type="text/css">
-        body {
-            font-family: "Helvetica", "sans-serif";
-            color: #333333;
-        }
-    </style>
-{% endblock %}
 
 {% block content %}
     <div id="content">
-        <div class="main">
-            <h1>{{title}}</h1>
-            <img src="file:///STATIC_ROOT/img/logo-ct-dark.png" />
+        <div>
+            <script type="text/javascript">
+                window.onload = function() {
+                    window.open('{% url 'pdf_view' pdffile %}', 'newwindow', 'width=600,height=500');
+                    window.location.href = "{% url return_url model_id %}";
+                }
+            </script>
         </div>
+        
     </div>
 {% endblock %}
+
+
+
+{% comment %} {% block content %}
+    <div id="content">
+        <div>
+            <button onclick="window.open('{% url 'pdf_view' pdffile %}', 'newwindow', 'width=600,height=500'); return false;">Open PDF</button>
+        </div>
+        {% comment %} <div>
+            <button onclick="window.print()">Print PDF</button>
+            <embed src="{% url 'pdf_view' pdffile %}" width="600px" height="500px" />
+        </div> {% endcomment %}
+    {% comment %} </div> {% endcomment %}
+{% comment %} {% endblock %} {% endcomment %}
 {% comment %} {%load static %}
 {% block content %}
 <h3>{{title}}</h3>
@@ -50,4 +58,4 @@ function  print(){
 
 {%end block%} {% endcomment %}
 
-
+ {% comment %} {% endcomment %} 

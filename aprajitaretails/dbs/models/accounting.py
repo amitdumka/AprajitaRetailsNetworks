@@ -85,7 +85,7 @@ class Voucher(BaseModel):
     IsReadOnly=models.BooleanField(default=False)
 
     def __str__(self):
-        return self.VoucherNumber+"-"+self.PartyName+"-"+self.OnDate+"-"+str(self.Amount)
+        return self.VoucherNumber+"-"+self.PartyName+"-"+str(self.OnDate)+"-"+str(self.Amount)
 
 #TranscationMode model
 class TransactionMode(models.Model):

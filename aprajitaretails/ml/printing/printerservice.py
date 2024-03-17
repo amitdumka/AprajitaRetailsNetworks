@@ -16,7 +16,7 @@ from dbs.models.clients import Client
 
 # PrinterService Class
 
-class PrinterService:
+class PrinterService_Leg:
     # Setting
     # Making Store /Store Group/Client Refernce here.
     # image = Image.new('RGB', (283, 600), (255, 255, 255))  # Adjust the width to fit the 3-inch printer
@@ -133,7 +133,7 @@ class PrinterService:
     def voucher_printer(self, model_name, model, request):
         image = Image.new(
             'RGB', (self.page_width, self.page_length), (255, 255, 255))
-        draw = self.default_page(image, model.Client.Pk)
+        draw = self.default_page(image, model.Client.pk)
 
         # Voucher details
         draw.text((self.left_margin, 70), f'Voucher Number: {
@@ -156,16 +156,16 @@ class PrinterService:
 
         draw.text((self.left_margin, 210), f'Remarks: {model.Remarks}', (0, 0, 0))
         draw.text((self.left_margin, 230), f'Issued By: {
-                  model.EmployeeId}', (0, 0, 0))
-        draw.text((self.left_margin, 250), f'Ledger: {model.PartyId}', (0, 0, 0))
+                  model.Employee.StaffName}', (0, 0, 0))
+        draw.text((self.left_margin, 250), f'Ledger: {model.Party.PartyName}', (0, 0, 0))
         draw.text((self.left_margin, 270), f'Account Number: {
-                  model.AccountNumber}', (0, 0, 0))
+                  model.AccountNumber.AccountHolderName}', (0, 0, 0))
         draw.text((self.left_margin, 290), f'Payment Mode: {
                   model.get_PaymentMode_display()}', (0, 0, 0))
         draw.text((self.left_margin, 310), f'Payment Details: {
                   model.PaymentDetails}', (0, 0, 0))
         draw.text((self.left_margin, 330), f'Company: {
-                  model.ClientId}', (0, 0, 0))
+                  model.Client.ClientName}', (0, 0, 0))
 
         # Render the PDF file to the printer
         response = HttpResponse(content_type='application/pdf')

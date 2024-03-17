@@ -18,7 +18,7 @@ from django.urls import reverse
 from django.core.paginator import Paginator
 from dbs.models.clients import Store, StoreGroup,Client
 from home.site_settings import SiteSetting
-from ml.printing.printerservice import PrinterService
+from ml.printing.services import PrinterService
 from django.core.exceptions import FieldDoesNotExist
 
 from utils.autoidgenerator import Auto_Id_DuplicateChecker, Auto_Id
@@ -31,8 +31,8 @@ from django_renderpdf.views import PDFView
 
 
 class ViewHandler:
-    def __init__(self ):
-        pass
+    # def __init__(self ):
+    #     pass
     def handler_update_view(self,form,ModelForm, request,model_class, instance, Model,create_url=None, return_url=None):
         pass
         
@@ -90,7 +90,17 @@ class ViewHandler:
                             form = ModelForm(instance=instance)
         return render(request, 'crud/create.html', {'form': form, 'model': model_class._meta.verbose_name, 'new_record': True, 'create_url': create_url, 'return_url': return_url})    
          
-         
-         
+    # def get_fields(self, model_class):
+    #     #field_names = [field.name for field in model_name._meta.fields]
+    #     xyz=model_class._meta.get_fields(exclude=['id','IsReadOnly','Location','created_at','updated_at'])
+    #     return[field.name for field in xyz]
+    
+    def get_fields(self, model_class):
+        exclude_set = {'id', 'IsReadOnly', 'StoreGroup','Location' ,'Client', 'created_at', 'updated_at'}
+        all_fields = model_class._meta.get_fields()
+        return[field.name for field in all_fields if field.name not in exclude_set]
+        #xyz.append=('Location')
+        #return xyz
+    
          
         

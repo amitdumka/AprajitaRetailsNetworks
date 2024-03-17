@@ -41,20 +41,20 @@ class Auto_Id:
         print(f"Model Name:{model_name}, optionName:{optionName}")
         match optionName:
             case "employee":
-                return self.generate_hrms_id(model.StoreId.pk, "employee", model.Category, model.JoiningDate, model_name.objects.filter(Category=model.Category).count()+1)
+                return self.generate_hrms_id(model.Location.pk, "employee", model.Category, model.JoiningDate, model_name.objects.filter(Category=model.Category).count()+1)
             case "attendance":
-                return self.generate_hrms_id(model.StoreId.pk, "attendance", model.EmployeeId.pk, model.OnDate, -1)
-            # auto_id=Auto_Id_Generator(self.__class__.__name__).generate_hrms_id(self.StoreId.pk,"attendance",self.EmployeeId.pk,self.OnDate,-1)
+                return self.generate_hrms_id(model.Location.pk, "attendance", model.EmployeeId.pk, model.OnDate, -1)
+            # auto_id=Auto_Id_Generator(self.__class__.__name__).generate_hrms_id(self.Location.pk,"attendance",self.EmployeeId.pk,self.OnDate,-1)
             case "voucher":
-                # generate_id(self.StoreId.pk, "voucher", str(self.VoucherType), self.OnDate, count)
-                return self.generate_id(model.StoreId.pk, "voucher", str(model.VoucherType), model.OnDate, model_name.objects.filter(VoucherType=model.VoucherType).count()+1)
+                # generate_id(self.Location.pk, "voucher", str(self.VoucherType), self.OnDate, count)
+                return self.generate_id(model.Location.pk, "voucher", str(model.VoucherType), model.OnDate, model_name.objects.filter(VoucherType=model.VoucherType).count()+1)
             case "cashvoucher":
-                return self.generate_id(model.StoreId.pk, "cashvoucher", str(model.VoucherType), model.OnDate, model_name.objects.filter(VoucherType=model.VoucherType).count()+1)
+                return self.generate_id(model.Location.pk, "cashvoucher", str(model.VoucherType), model.OnDate, model_name.objects.filter(VoucherType=model.VoucherType).count()+1)
             case "salary payment":
-                return self.generate_id(model.StoreId.pk, "salary payment", model.OnDate, model_name.objects.filter(OnDate=model.OnDate).count()+1)
+                return self.generate_id(model.Location.pk, "salary payment", model.OnDate, model_name.objects.filter(OnDate=model.OnDate).count()+1)
             case "salesman":
-                # Salesman.SalesmanId=f"{self.StoreId.pk}-{datetime.now().year}-SM-{count}"
-                return f'{model.StoreId.pk}-{datetime.now().year}-SM-{model_name.objects.count()+1}'
+                # Salesman.SalesmanId=f"{self.Location.pk}-{datetime.now().year}-SM-{count}"
+                return f'{model.Location.pk}-{datetime.now().year}-SM-{model_name.objects.count()+1}'
             case _: return "NOTSUPPORTED"
 
     def generate_id(self, owner_code, entity_name, entity_type, date, count):
@@ -71,7 +71,7 @@ class Auto_Id:
           An auto ID.
         """
         # Get the entity code from the entity name.
-        e_name = entity_name._meta.verbose_name.lower()
+        e_name = entity_name#._meta.verbose_name.lower()
         entity_code = self.get_entityCode(e_name, entity_type)
         # Create the basic structure of the auto ID.
         auto_id = f"{
