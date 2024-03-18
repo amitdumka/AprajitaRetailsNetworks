@@ -2,11 +2,12 @@ from django.utils import timezone
 from django.db import models
 from core.globalEnums import Unit, TaxType, InvoiceType, PayMode, CARD, CARDType
 from dbs.models.core import Customer
+from dbs.models.base import BaseGlobalModel, BaseGroupModel, BaseModel
 from dbs.models.accounting import Salesman, EDCTerminal
 from dbs.models.inventory import ProductItem
 
 # Create your models here.
-class ProductSale(models.Model):
+class ProductSale(BaseModel):
     InvoiceNo = models.CharField(max_length=255, primary_key=True, editable=False, db_index=True)
     OnDate = models.DateTimeField(default= timezone.now)
     InvoiceType =   models.IntegerField(choices=[(tag.value, tag.name) for tag in  InvoiceType])
@@ -60,7 +61,7 @@ class SaleItem(models.Model):
         verbose_name_plural = "SaleItems"
 
 #Sale Payment Detail
-class SalePaymentDetail(models.Model):
+class SalePaymentDetail(BaseGlobalModel):
     Id =  models.IntegerField(primary_key=True, auto_created=True, editable=False, db_index=True, unique=True, null=False )
     InvoiceNumber = models.ForeignKey(ProductSale, on_delete=models.CASCADE, null=True, blank=True)
     PaidAmount = models.DecimalField(max_digits=10, decimal_places=2)
@@ -75,7 +76,7 @@ class SalePaymentDetail(models.Model):
         verbose_name_plural = "SalePaymentDetails"
 
 #Card Payment detail model
-class CardPaymentDetail(models.Model):
+class CardPaymentDetail(BaseGlobalModel):
     Id =  models.IntegerField(primary_key=True, auto_created=True, editable=False, db_index=True, unique=True, null=False )
     InvoiceNumber = models.ForeignKey(ProductSale, on_delete=models.CASCADE, null=True, blank=True)
     PaidAmount = models.DecimalField(max_digits=10, decimal_places=2)
@@ -92,7 +93,7 @@ class CardPaymentDetail(models.Model):
         verbose_name = "CardPaymentDetail"
         verbose_name_plural = "CardPaymentDetails"
   
-class CustomerSale(models.Model):
+class CustomerSale(BaseGlobalModel):
     Id = models.IntegerField(primary_key=True, auto_created=True, editable=False, db_index=True, unique=True, null=False )
     InvoiceNumber = models.ForeignKey(ProductSale, on_delete=models.CASCADE, null=True, blank=True,   db_index=True)
     MobileNo = models.ForeignKey(Customer, on_delete=models.CASCADE, null=True, blank=True)

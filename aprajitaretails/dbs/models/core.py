@@ -40,7 +40,7 @@ class Customer(models.Model):
 
 #Contact model 
 class Contact(models.Model):
-    ContactId = models.AutoField( primary_key=True, db_index=True, unique=True, null=False, editable=True)
+    Id = models.AutoField( primary_key=True, db_index=True, unique=True, null=False, editable=True)
     FirstName = models.CharField(max_length=255)
     LastName = models.CharField(max_length=255)
     EmailId = models.EmailField()

@@ -11,7 +11,7 @@ from django.utils import timezone
 
 # Create your models here.
 class LedgerGroup(BaseGroupModel):
-    LedgerGroupId = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, db_index=True, unique=True)
+    Id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, db_index=True, unique=True)
     GroupName = models.CharField(max_length=100)
     Category = models.CharField(max_length=20)
     Remarks = models.CharField(max_length=255, null=True,blank=True)
@@ -27,7 +27,7 @@ class LedgerGroup(BaseGroupModel):
 
 #Party model
 class Party(BaseGroupModel):
-    PartyId = models.UUIDField( primary_key=True, default=uuid.uuid4, editable=False, db_index=True, unique=True)
+    Id = models.UUIDField( primary_key=True, default=uuid.uuid4, editable=False, db_index=True, unique=True)
     PartyName = models.CharField(max_length=100)
     OpeningDate = models.DateTimeField(default= timezone.now)
     ClosingDate = models.DateTimeField(null=True, blank=True)
@@ -85,9 +85,9 @@ class TransactionMode(models.Model):
         verbose_name = "TranscationMode"
         verbose_name_plural = "TranscationModes"
 
-    TransactionId = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, db_index=True, unique=True)
+    Id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, db_index=True, unique=True)
     TransactionName = models.CharField(max_length=100)
-    ClientId=models.ForeignKey(Client, on_delete=models.CASCADE)
+    Client=models.ForeignKey(Client, on_delete=models.CASCADE)
 
     def  __str__(self):
         return self.TransactionName
@@ -121,11 +121,11 @@ class CashVoucher(BaseModel):
 
 
 class Salesman(BaseModel):
-    SalesmanId = models.CharField(max_length=100, primary_key=True, editable=False, unique=True, db_index=True, null=False)
+    Id = models.CharField(max_length=100, primary_key=True, editable=False, unique=True, db_index=True, null=False)
     Name = models.CharField(max_length=255)
     Employee =models.ForeignKey(Employee, on_delete=models.CASCADE,null=True, blank=True)
     
-    IsActive = models.BooleanField()
+    Active = models.BooleanField()
 
 
     class Meta:
@@ -136,7 +136,7 @@ class Salesman(BaseModel):
 
 # EDCTerminal model , moved from Core to here due to circular import
 class EDCTerminal(BaseModel):
-    EDCTerminalId = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False,  db_index=True, unique=True)
+    Id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False,  db_index=True, unique=True)
     Name = models.CharField(max_length=255)
     OnDate = models.DateTimeField(default= timezone.now)
     TID = models.CharField(max_length=255)
@@ -162,10 +162,10 @@ class DailySale(BaseModel):
     NonCashAmount = models.DecimalField(max_digits=10, decimal_places=2)
     PayMode =   models.IntegerField(choices=[(tag.value, tag.name) for tag in  PayMode])
     
-    IsDue = models.BooleanField()
-    ManualBill = models.BooleanField()
-    SalesReturn = models.BooleanField()
-    TailoringBill = models.BooleanField()
+    IsDue = models.BooleanField(default=False)
+    ManualBill = models.BooleanField(default=False)
+    SalesReturn = models.BooleanField(default=False)
+    ServiceBill = models.BooleanField(default=False)
     Remarks = models.CharField(max_length=255, null=True,blank=True)
    
     Salesman = models.ForeignKey(Salesman, on_delete=models.CASCADE, null=True, blank=True)     
@@ -204,14 +204,7 @@ class DueRecovery(BaseModel):
     Remarks = models.CharField(max_length=255, null=True,blank=True)
     PartialPayment = models.BooleanField()
     Due = models.ForeignKey(CustomerDue, on_delete=models.CASCADE, null=True, blank=True)
-    #StoreId=models.ForeignKey(Store, on_delete=models.CASCADE)
-    #StoreGroupId=models.ForeignKey(StoreGroup, on_delete=models.CASCADE)
-    #ClientId=models.ForeignKey(Client, on_delete=models.CASCADE)
 
-    # @staticmethod
-    # def GenerateId(inv, onDate):
-    #     return f"DR-{onDate.year}-{onDate.month}-{onDate.day}-{inv}-"
-    
     class Meta:
         verbose_name = "DueRecovery"
         verbose_name_plural = "DueRecoveries"
@@ -221,7 +214,7 @@ class DueRecovery(BaseModel):
  
 #Cash Details
 class CashDetail(BaseModel):
-    CashDetailId = models.UUIDField( primary_key=True, default=uuid.uuid4, editable=False, db_index=True, unique=True)
+    Id = models.UUIDField( primary_key=True, default=uuid.uuid4, editable=False, db_index=True, unique=True)
     OnDate = models.DateTimeField(default= timezone.now)
     Count = models.IntegerField()
     TotalAmount = models.IntegerField()
@@ -238,10 +231,7 @@ class CashDetail(BaseModel):
     C2 = models.IntegerField()
     C1 = models.IntegerField()
     
-    # StoreId=models.ForeignKey(Store, on_delete=models.CASCADE)
-    #StoreGroupId=models.ForeignKey(StoreGroup, on_delete=models.CASCADE)
-    #ClientId=models.ForeignKey(Client, on_delete=models.CASCADE)
-
+    
     class Meta:
         verbose_name = "CashDetail"
         verbose_name_plural = "CashDetails"
@@ -251,7 +241,7 @@ class CashDetail(BaseModel):
 
 #Party Ledger Model
 class LedgerMaster(models.Model):
-    PartyId = models.UUIDField( primary_key=True, default=uuid.uuid4, editable=True, db_index=True, unique=True)
+    Id = models.UUIDField( primary_key=True, default=uuid.uuid4, editable=True, db_index=True, unique=True)
     PartyName= models.CharField(max_length=100)
     OpeningDate = models.DateTimeField(default= timezone.now)
 

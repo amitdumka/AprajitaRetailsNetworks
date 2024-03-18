@@ -1,7 +1,7 @@
 import uuid
 from django.db import models
 from django.utils import timezone
-
+from dbs.models.base import BaseGlobalModel, BaseModel , BaseGroupModel
 from dbs.models.clients import StoreGroup,Store
 from dbs.models.core import Customer
 from core.globalEnums import InvoiceType, Unit, TaxType, Size, ProductCategory,PaymentMode,PayMode, Gender,PurchaseInvoiceType,CARD,CARDType,TaxType, VendorType
@@ -66,7 +66,7 @@ class ProductType(models.Model):
         return self.ProductTypeName
 
 #Product Item model 
-class ProductItem(models.Model):
+class ProductItem(BaseGroupModel):
     Barcode = models.CharField(max_length=255, primary_key=True, unique=True, null=False)
     Name = models.CharField(max_length=255)
     Description = models.CharField(max_length=255, null=True,blank=True)
@@ -80,7 +80,7 @@ class ProductItem(models.Model):
     ProductType = models.ForeignKey(ProductType, on_delete=models.CASCADE, null=True, blank=True)
     HSNCode = models.CharField(max_length=255, null=True, blank=True)
     Unit =  models.IntegerField(choices=[(tag.value, tag.name) for tag in Unit])
-    StoreGroup = models.ForeignKey(StoreGroup, on_delete=models.CASCADE, null=True, blank=True)
+    
     class Meta:
         verbose_name_plural = "ProductItems"
         verbose_name="ProductItem"
@@ -90,7 +90,7 @@ class ProductItem(models.Model):
     
 
 class Tax(models.Model):
-    TaxNameId = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False,  db_index=True, unique=True)
+    Id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False,  db_index=True, unique=True)
     Name = models.CharField(max_length=255 )
     TaxType = models.IntegerField(choices=[(tag.value, tag.name) for tag in TaxType])
     CompositeRate = models.DecimalField(max_digits=10, decimal_places=2,  )
@@ -114,8 +114,8 @@ class Supplier(models.Model):
         return self.SupplierName
 
 #Vendor Model
-class Vendor(models.Model):
-    VendorId = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False,  db_index=True, unique=True)
+class Vendor(BaseGlobalModel):
+    Id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False,  db_index=True, unique=True)
     VendorName = models.CharField(max_length=255)
     VendorType =   models.IntegerField(choices=[(tag.value, tag.name) for tag in VendorType])
     OnDate = models.DateTimeField(default= timezone.now)
@@ -129,7 +129,7 @@ class Vendor(models.Model):
         return self.VendorName
 
 #ProductPurhcase Model
-class ProductPurchase(models.Model):
+class ProductPurchase(BaseModel):
 
     InwardNumber = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False,  db_index=True, unique=True)
     InwardDate = models.DateTimeField(default= timezone.now)
@@ -160,7 +160,7 @@ class ProductPurchase(models.Model):
 
 
 #Purchase Item
-class PurchaseItem(models.Model):
+class PurchaseItem(BaseModel):
     Id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False,  db_index=True, unique=True)
     InvoiceNumber = models.CharField(max_length=255)
     Barcode = models.ForeignKey(ProductItem, on_delete=models.DO_NOTHING, null=True, blank=True)
@@ -180,7 +180,7 @@ class PurchaseItem(models.Model):
         return self.InvoiceNumber+" - "+self.Barcode+" - "+self.Qty
  
 #Stock Model   
-class Stock(models.Model):
+class Stock(BaseModel):
     Id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False,  db_index=True, unique=True)
     Barcode = models.ForeignKey(ProductItem, on_delete=models.DO_NOTHING, null=True, blank=True)
     PurchaseQty = models.DecimalField(max_digits=10, decimal_places=2)

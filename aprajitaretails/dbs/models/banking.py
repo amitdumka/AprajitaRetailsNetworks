@@ -1,5 +1,6 @@
 import uuid
 from django.db import models
+from dbs.models.base import BaseGlobalModel, BaseGroupModel, BaseModel
 from core.globalEnums import AccountType
 from dbs.models.clients import Store, StoreGroup, Client
 from dbs.models.inventory import Vendor
@@ -11,7 +12,7 @@ from django.utils import timezone
 
 #Bank Model 
 class Bank (models.Model):
-    BankId = models.AutoField(primary_key=True, db_index=True, editable=False)
+    Id = models.AutoField(primary_key=True, db_index=True, editable=False)
     BankName=models.CharField(max_length=255)
 
     class Meta:
@@ -20,26 +21,19 @@ class Bank (models.Model):
     def __str__(self) -> str:
         return self.BankName
 
-
-class BankSecureDetail:
-    pass
-
-class BankAccountBase(models.Model):
+class BankAccountBase(BaseGroupModel):
 
     AccountNumber = models.CharField(max_length=255, primary_key=True, null=False, db_index=True, unique=True)
     
     AccountHolderName = models.CharField(max_length=255)
     
-    BankId = models.ForeignKey(Bank, on_delete=models.CASCADE, null=True)
+    Bank = models.ForeignKey(Bank, on_delete=models.CASCADE, null=True)
     
     IFSCCode = models.CharField(max_length=10)
     BranchName = models.CharField(max_length=255)
     AccountType =   models.IntegerField(choices=[(tag.value, tag.name) for tag in AccountType]    )
     IsActive = models.BooleanField(default=True)
     
-    StoreId=models.ForeignKey(Store, on_delete=models.CASCADE, null=True, blank=True)
-    StoreGroupId=models.ForeignKey(StoreGroup, on_delete=models.CASCADE, null=True, blank=True)
-    ClientId=models.ForeignKey(Client, on_delete=models.CASCADE, null=True, blank=True)
    
     class Meta:
         abstract = True
@@ -60,10 +54,29 @@ class BankAccount(BankAccountBase):
     def __str__(self) -> str:
         return self.AccountNumber+", "+self.AccountHolderName
 
+
+class BankSecureDetail(models.Model):
+    Id = models.AutoField(primary_key=True, db_index=True, editable=False)
+    AccountNumber=models.ForeignKey(BankAccount, on_delete=models.CASCADE)
+    UserName=models.CharField(max_length=255,null=True,blank=True)
+    Password=models.CharField(max_length=255,null=True,blank=True)
+    TaxPassword=models.CharField(max_length=255,null=True,blank=True)
+    CustomerId=models.CharField(max_length=255,null=True,blank=True)
+    ExtraPassword=models.CharField(max_length=255, null=True, blank=True)
+    ATMPin=models.CharField(max_length=255, null=True, blank=True)
+    MPin=models.CharField(max_length=255, null=True, blank=True)
+    TPin = models.CharField(max_length=255, null=True, blank=True)
+    ATMCard=models.CharField(max_length=255, null=True, blank=True)
+    ExpiryDate=models.DateField(null=True,blank=True)
+    Status=models.CharField(max_length=255,null=True,blank=True)
+
+    class Meta:
+        verbose_name="BankSecureDetail"
+        verbose_name_plural="BankSecureDetails"
+    def __str__(self) -> str:
+        return self.AccountNumber+" "+self.UserName
 class VendorBankAccount(BankAccountBase):
-    VendorId = models.ForeignKey(Vendor, on_delete=models.CASCADE)
-    
-     
+    Vendor = models.ForeignKey(Vendor, on_delete=models.CASCADE)
     OpeningBalance = models.DecimalField(max_digits=10, decimal_places=2)
     OpeningDate = models.DateTimeField(auto_now_add=True)
     ClosingDate = models.DateTimeField(null=True, blank=True)
@@ -86,13 +99,13 @@ class BankAccountList(BankAccountBase):
 
 
 #Bank Transcation model : just like internal statement
-class BankTransaction(models.Model):
+class BankTransaction(BaseGlobalModel):
     TRANSACTION_TYPE_CHOICES = [
         ('DEBIT', 'Debit'),
         ('CREDIT', 'Credit'),
     ]
 
-    TransactionId = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, db_index=True, unique=True)
+    Id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, db_index=True, unique=True)
     AccountNumber = models.ForeignKey(BankAccount, on_delete=models.CASCADE, null=False)
     OnDate = models.DateTimeField(default= timezone.now)
     TransactionType = models.CharField(max_length=6, choices=TRANSACTION_TYPE_CHOICES)
@@ -107,9 +120,9 @@ class BankTransaction(models.Model):
     def __str__(self) -> str:
         return self.AccountNumber+", "+self.TransactionAmount
 
-class ChequeBook(models.Model):
-    ChequeBookId = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, db_index=True, unique=True)
-    BankAccountId = models.ForeignKey(BankAccount, on_delete=models.CASCADE)
+class ChequeBook(BaseGroupModel):
+    Id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, db_index=True, unique=True)
+    AccountNumber = models.ForeignKey(BankAccount, on_delete=models.CASCADE)
     NoOfCheques = models.IntegerField()
     IssuedDate = models.DateTimeField(auto_now_add=True)
     StartingNumber = models.IntegerField()
@@ -118,9 +131,6 @@ class ChequeBook(models.Model):
     NoOfPDC=models.IntegerField()
     NoOfClearedCheques=models.IntegerField()
 
-    ClientId=models.ForeignKey(Client, on_delete=models.CASCADE, null=True, blank=True)
-    StoreGroupId=models.ForeignKey(StoreGroup, on_delete=models.CASCADE,null=True, blank=True)
-    StoreId=models.ForeignKey(Store, on_delete=models.CASCADE, null=True, blank=True)
     
     class Meta:
         verbose_name = "ChequeBook" 
@@ -131,20 +141,17 @@ class ChequeBook(models.Model):
     
 
        
-class ChequeIssued(models.Model):
+class ChequeIssued(BaseGroupModel):
     
-    ChequeIssuedId =  models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, db_index=True, unique=True)
+    Id =  models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, db_index=True, unique=True)
     
-    ChequeBookId = models.ForeignKey(ChequeBook, on_delete=models.CASCADE)
-    AccountId = models.ForeignKey(BankAccount, on_delete=models.CASCADE)
+    ChequeBook = models.ForeignKey(ChequeBook, on_delete=models.CASCADE)
+    AccountNumber = models.ForeignKey(BankAccount, on_delete=models.CASCADE)
     OnDate=models.DateTimeField(auto_now_add=True)
     InFavourOf=models.CharField(max_length=255)
     Amount=models.DecimalField(max_digits=10, decimal_places=2)
     ChequeNumber=models.IntegerField()
     
-    ClientId=models.ForeignKey(Client, on_delete=models.CASCADE, null=True, blank=True)
-    StoreGroupId=models.ForeignKey(StoreGroup, on_delete=models.CASCADE, null=True, blank=True)
-    StoreId=models.ForeignKey(Store, on_delete=models.CASCADE, null=True, blank=True)
     IsReadOnly=models.BooleanField(default=False)
     
     class Meta:
@@ -154,21 +161,19 @@ class ChequeIssued(models.Model):
     def  __str__(self) -> str:
         return self.AccountId.AccountNumber+", "+self.ChequeNumber+", "+self.Amount
 
-class ChequeLog(models.Model):
+class ChequeLog(BaseGroupModel):
         Id= models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, db_index=True, unique=True)
         OnDate=models.DateTimeField(auto_now_add=True)
         PartyName= models.CharField(max_length=100)
         FromAccountNumber = models.CharField(max_length=255)
         ToAccountNumber=models.CharField(max_length=255)
         ChequeNumber=models.IntegerField()
-        BankId=models.ForeignKey(Bank, on_delete=models.CASCADE, null=True)
+        Bank=models.ForeignKey(Bank, on_delete=models.CASCADE, null=True)
        
         Amount=models.DecimalField(max_digits=10, decimal_places=2)
         Status=models.CharField(max_length=100)
         BankDate=models.DateTimeField(null=True)
-        ClientId=models.ForeignKey(Client, on_delete=models.CASCADE, null=True, blank=True)
-        StoreGroupId=models.ForeignKey(StoreGroup, on_delete=models.CASCADE, null=True, blank=True)
-        StoreId=models.ForeignKey(Store, on_delete=models.CASCADE, null=True, blank=True)
+       
         IsReadOnly=models.BooleanField(default=False)
         class Meta:
             verbose_name = "ChequeLog" 
@@ -178,7 +183,7 @@ class ChequeLog(models.Model):
 
 
 
-class BankStatement(models.Model):
+class BankStatement(BaseGlobalModel):
         Id= models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, db_index=True, unique=True)
         
         OnDate=models.DateTimeField(default= timezone.now)
@@ -193,10 +198,6 @@ class BankStatement(models.Model):
         
         Verified=models.BooleanField(default=False)
         Internal=models.BooleanField(default=False)
-        
-        StoreId=models.ForeignKey(Store, on_delete=models.CASCADE, null=True, blank=True)
-        StoreGroupId=models.ForeignKey(StoreGroup, on_delete=models.CASCADE, null=True, blank=True)
-        ClientId=models.ForeignKey(Client, on_delete=models.CASCADE, null=True, blank=True)
         
         class Meta:
             verbose_name = "BankStatement" 

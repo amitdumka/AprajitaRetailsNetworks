@@ -13,7 +13,7 @@ from django.utils import timezone
 #Client model
 class Client(models.Model):
             
-    ClientId = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False,  db_index=True, unique=True)
+    Id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False,  db_index=True, unique=True)
     ClientName = models.CharField(max_length=100)
     ClientAddress = models.CharField(max_length=100)
     ClientCity=models.CharField(max_length=100)
@@ -41,7 +41,7 @@ class StoreGroup(models.Model):
         verbose_name = "StoreGroup"
         verbose_name_plural = "StoreGroups"
 
-    StoreGroupId = models.CharField(max_length=15, primary_key=True, db_index=True, unique=True, null=False, editable=True)
+    Id = models.CharField(max_length=15, primary_key=True, db_index=True, unique=True, null=False, editable=True)
     GroupName = models.CharField(max_length=100)
     Status = models.CharField(max_length=100)
     
@@ -62,7 +62,7 @@ class StoreGroup(models.Model):
 
 #Store model
 class Store(models.Model):
-        StoreId = models.CharField(primary_key=True, db_index=True, unique=True, null=False, editable=True, max_length=15)
+        Id = models.CharField(primary_key=True, db_index=True, unique=True, null=False, editable=True, max_length=15)
         StoreCode= models.CharField(max_length=15,unique=True)
         StoreName = models.CharField(max_length=100)
         IsActive = models.BooleanField()
