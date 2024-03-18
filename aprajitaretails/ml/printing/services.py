@@ -172,3 +172,90 @@ class  PrinterService:
         #buffer.close()
         response = FileResponse(pdf, as_attachment=True, filename=fileName)
         return response
+
+    def print_cash_voucher(self, request, model_name, model):
+        # Create a file-like buffer to receive PDF data
+        #buffer = io.BytesIO() alternate methord
+
+        # Create the PDF object, using the buffer as its "file"
+        #p = canvas.Canvas(buffer)
+        try:
+            os.makedirs(f'./printedfile/{model_name._meta.verbose_name}', exist_ok=True)
+            #Create a pdf file 
+            fileName=f'{model_name._meta.verbose_name}_{model.pk}.pdf'
+        
+            #Setting Party Information
+            ledgerName=model.Party.PartyName
+            
+            address=None
+            if ledgerName is not None:
+                print('ledgerName',ledgerName)    
+                if model.Party.PartyName=='No Party':
+                    address=None 
+                else:
+                    address=model.Party.Address
+                    print('address',address)
+         
+        
+           
+            page=self.pdf_header(canvas.Canvas(fileName), model)
+            page.setFont("Helvetica",14)            
+            page.drawString(100, 675, f'{VoucherType(model.VoucherType).name} ')
+            page.setFont("Helvetica",11)
+            
+            page.drawString(50, 650, f"Voucher No: {model.pk}")
+            
+            page.drawString(50, 625, f'Date: {model.OnDate.strftime("%B %d, %Y")}')
+            page.drawString(10,600,f'--------------------------------------------------------------------')
+            page.drawString(50,580,f'Party: {model.PartyName}')
+            if address is not None:
+                
+                page.drawString(50,560, f'Phone:{model.Party.MobileNo}')
+                page.drawString(50,540, f'Address: {address}')
+                
+            else:
+                page.drawString(50,560, f'Address:')
+                page.drawString(50,540, '_____________________________')
+            page.drawString(50,520,f'Category: {model.TranscationMode.TransactionName}')
+            page.drawString(10,510,f'---------------------------------------------------------------')
+                
+            page.drawString(50,500,f'Particulars: {model.Particulars}')
+            page.drawString(50,480,f'Amount: {model.Amount}')
+            p = inflect.engine()
+            amount_in_words = p.number_to_words(model.Amount)
+            
+            page.drawString(50, 460,f'({amount_in_words}):')
+            page.drawString(50,440,f'Mode: {PaymentMode(model.PaymentMode).name }')
+
+            if model.PaymentMode!=0:
+                 page.drawString(50,420,f'Details: {model.PaymentDetails }')                
+
+            page.drawString(50,400,f'Issued By: {str(model.Employee.FirstName)} {str(model.Employee.LastName)}')
+            page.drawString(50,350,f'Sign: ________________________________')
+
+            page.drawString(50,275,f'Party Sign:________________________________')
+
+
+
+            page.drawString(50,250,f'This is pre-printed voucher, Issuer sign is not requried.')
+            page.drawString(50,225,f'All dispute are subject to Jurdiction of {model.Client.ClientCity}')
+            
+            print('saving file')
+            # Close the PDF object cleanly, and ensure we're at the end of the buffer
+            page.showPage()
+            page.save()
+            print('file is saved')
+
+            pdf= page.getpdfdata()
+            # Get the value of the BytesIO buffer and write it to the response
+            #pdf = buffer.getvalue()
+            #buffer.close()
+            print('sending printed file')
+            response = FileResponse(pdf, as_attachment=True, filename=fileName)
+        
+            return  fileName
+        except Exception as e:
+            print(e)
+            messages.error(request, f'Error occured while creating pdf {e}')
+            return "Error occured"
+  

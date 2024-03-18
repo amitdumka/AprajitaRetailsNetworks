@@ -10,8 +10,8 @@
 # A CRUD View for all Modules
 # It will be included in all Modules
 # It will used as default for all modules and global view.
-from django.views.decorators.clickjacking import xframe_options_exempt
 # Import  and Required modules
+from django.views.decorators.clickjacking import xframe_options_exempt
 from django import forms
 from django.forms import ValidationError, modelform_factory
 from django.shortcuts import render, redirect, get_object_or_404
@@ -33,11 +33,11 @@ from django.core.exceptions import FieldDoesNotExist
 
 from utils.autoidgenerator import Auto_Id_DuplicateChecker, Auto_Id
 
-from django_toggle_switch_widget.widgets import DjangoToggleSwitchWidget
+#from django_toggle_switch_widget.widgets import DjangoToggleSwitchWidget
 
 from home.modelmapping import ModelMapping
 from .models import *
-from django_renderpdf.views import PDFView
+#from django_renderpdf.views import PDFView
 # Constants and Settings
 
 
@@ -111,7 +111,7 @@ def global_model_create(request, model_class, create_url=None, return_url=None):
                 
                 #Handling Printing Service
                 pdfFile=PrinterService().print_hanlder(request,model_class, model_data)
-                if pdfFile is 'Error Occured':
+                if pdfFile == 'Error Occured':
                     print("Error Occured")
                                     
                 elif pdfFile is not None:

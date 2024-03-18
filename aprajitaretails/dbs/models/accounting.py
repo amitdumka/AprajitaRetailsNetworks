@@ -63,24 +63,17 @@ class Voucher(BaseModel):
     PartyName= models.CharField(max_length=255)
     Particulars=models.CharField(max_length=255)
     Amount = models.DecimalField(decimal_places=2, max_digits=10)
-    Remarks=models.CharField(max_length=255)
-    
+    Remarks=models.CharField(max_length=255)   
     #Voucher Issued By EmployeeName
     Employee=models.ForeignKey(Employee, on_delete=models.CASCADE,)
     #Ledger Name
-    Party=models.ForeignKey(Party, on_delete=models.CASCADE, null=True, blank=True)
-    
+    Party=models.ForeignKey(Party, on_delete=models.CASCADE, null=True, blank=True)   
     #Paying or receiving Bank Account
     AccountNumber=models.ForeignKey(BankAccount, on_delete=models.CASCADE, null=True, blank=True)
     
     #Payment Mode
     PaymentMode=models.IntegerField(choices=[(tag.value, tag.name) for tag in PaymentMode]    )
     PaymentDetails=models.CharField(max_length=255, null=True, blank=True)  
-    
-    #Adding Extra Fields For Handling  StoreGroup Wise Vouchers
-    #StoreId=models.ForeignKey(Store, on_delete=models.CASCADE) #TODO: IssueLocation
-    #StoreGroupId=models.ForeignKey(StoreGroup, on_delete=models.CASCADE)
-    #ClientId=models.ForeignKey(Client, on_delete=models.CASCADE)
     IsReadOnly=models.BooleanField(default=False)
 
     def __str__(self):
@@ -109,7 +102,7 @@ class CashVoucher(BaseModel):
    
     VoucherType =   models.IntegerField(choices=[(tag.value, tag.name) for tag in  VoucherType])
     OnDate = models.DateTimeField(default= timezone.now)
-   
+    TranscationMode=models.ForeignKey(TransactionMode, on_delete=models.CASCADE)      
     SlipNumber = models.CharField(max_length=100)
     PartyName = models.CharField(max_length=100)
     
@@ -120,12 +113,6 @@ class CashVoucher(BaseModel):
     Employee =models.ForeignKey(Employee, on_delete=models.CASCADE,)
     #Ledger Name
     Party=models.ForeignKey(Party, on_delete=models.CASCADE, null=True, blank=True)
-   
-    TranscationMode=models.ForeignKey(TransactionMode, on_delete=models.CASCADE)  
-    
-    #StoreId=models.ForeignKey(Store, on_delete=models.CASCADE)
-    #StoreGroupId=models.ForeignKey(StoreGroup, on_delete=models.CASCADE)
-    #ClientId=models.ForeignKey(Client, on_delete=models.CASCADE)
     IsReadOnly = models.BooleanField(default=False)
    
 
@@ -139,21 +126,14 @@ class Salesman(BaseModel):
     Employee =models.ForeignKey(Employee, on_delete=models.CASCADE,null=True, blank=True)
     
     IsActive = models.BooleanField()
-    #StoreId=models.ForeignKey(Store, on_delete=models.CASCADE, null=True, blank=True)
-    #StoreGroupId=models.ForeignKey(StoreGroup, on_delete=models.CASCADE, null=True, blank=True)
-    #ClientId=models.ForeignKey(Client, on_delete=models.CASCADE, null=True, blank=True)
 
 
     class Meta:
         verbose_name = "Salesman"
         verbose_name_plural = "Salesmen"
-    # def save(self, *args, **kwargs):
-    #     count=Salesman.objects.filter(ClientId=self.ClientId).count()+1
-    #     Salesman.SalesmanId=f"{self.StoreId.pk}-{datetime.now().year}-SM-{count}"
-    #     super(Salesman, self).save(*args, **kwargs)
-    
     def __str__(self):
         return self.Name
+
 # EDCTerminal model , moved from Core to here due to circular import
 class EDCTerminal(BaseModel):
     EDCTerminalId = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False,  db_index=True, unique=True)
@@ -164,12 +144,7 @@ class EDCTerminal(BaseModel):
     Bank = models.ForeignKey(Bank, on_delete=models.DO_NOTHING, null=True, blank=True)
     ProviderName = models.CharField(max_length=255)
     CloseDate = models.DateTimeField(null=True, blank=True)
-    Active = models.BooleanField()
-    
-   # StoreId = models.ForeignKey(Store, on_delete=models.CASCADE, null=True, blank=True)
-   # StoreGroupId = models.ForeignKey(StoreGroup, on_delete=models.DO_NOTHING, null=True, blank=True)
-   # ClientId = models.ForeignKey(Client, on_delete=models.DO_NOTHING, null=True, blank=True)
-    
+    Active = models.BooleanField()        
     IsReadOnly=models.BooleanField(default=False)
     
     class Meta:
@@ -192,14 +167,11 @@ class DailySale(BaseModel):
     SalesReturn = models.BooleanField()
     TailoringBill = models.BooleanField()
     Remarks = models.CharField(max_length=255, null=True,blank=True)
-    IsReadOnly = models.BooleanField(default=False)
-    Salesman = models.ForeignKey(Salesman, on_delete=models.CASCADE, null=True, blank=True) 
-    
-    #StoreId=models.ForeignKey(Store, on_delete=models.CASCADE)
-    #StoreGroupId=models.ForeignKey(StoreGroup, on_delete=models.CASCADE)
-    #ClientId=models.ForeignKey(Client, on_delete=models.CASCADE, null=True, blank=True)
+   
+    Salesman = models.ForeignKey(Salesman, on_delete=models.CASCADE, null=True, blank=True)     
     EDCTerminal = models.ForeignKey(EDCTerminal, on_delete=models.CASCADE, null=True, blank=True)
     
+    IsReadOnly = models.BooleanField(default=False)
     class Meta:
         verbose_name = "DailySale"
         verbose_name_plural = "DailySales"

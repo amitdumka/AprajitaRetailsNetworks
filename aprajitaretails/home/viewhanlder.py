@@ -3,31 +3,18 @@
 #               Mainly for Create and Update view for aprajitaretails app
 
 
-from django import forms
 from django.forms import ValidationError, modelform_factory
 from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DeleteView
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.apps import apps
 from django.contrib import messages
-from django.urls import reverse
-from django.core.paginator import Paginator
 from dbs.models.clients import Store, StoreGroup,Client
 from home.site_settings import SiteSetting
-from ml.printing.services import PrinterService
 from django.core.exceptions import FieldDoesNotExist
-
 from utils.autoidgenerator import Auto_Id_DuplicateChecker, Auto_Id
-
-from django_toggle_switch_widget.widgets import DjangoToggleSwitchWidget
-
-from home.modelmapping import ModelMapping
 from .models import *
-from django_renderpdf.views import PDFView
 
 
 class ViewHandler:
@@ -90,17 +77,12 @@ class ViewHandler:
                             form = ModelForm(instance=instance)
         return render(request, 'crud/create.html', {'form': form, 'model': model_class._meta.verbose_name, 'new_record': True, 'create_url': create_url, 'return_url': return_url})    
          
-    # def get_fields(self, model_class):
-    #     #field_names = [field.name for field in model_name._meta.fields]
-    #     xyz=model_class._meta.get_fields(exclude=['id','IsReadOnly','Location','created_at','updated_at'])
-    #     return[field.name for field in xyz]
     
     def get_fields(self, model_class):
-        exclude_set = {'id', 'IsReadOnly', 'StoreGroup','Location' ,'Client', 'created_at', 'updated_at'}
-        all_fields = model_class._meta.get_fields()
-        return[field.name for field in all_fields if field.name not in exclude_set]
-        #xyz.append=('Location')
-        #return xyz
+        exclude_set = {'id','Id','Id', 'IsReadOnly', 'StoreGroup','Location' ,'Client', 'created_at', 'updated_at'}
+        #all_fields = model_class._meta.get_fields()
+        return[field.name for field in model_class._meta.fields if field.name not in exclude_set]
+         
     
          
         

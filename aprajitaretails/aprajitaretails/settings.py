@@ -167,7 +167,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-
+TEMPLATE_STRING_IF_INVALID = ""
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
