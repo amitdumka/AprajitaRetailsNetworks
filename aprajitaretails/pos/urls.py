@@ -113,5 +113,8 @@ urlpatterns = [
          Global_DeleteView.as_view(), name='core_delete'),
     path('delete/<str:model_name>/<int:model_id>/',
          Global_DeleteView.as_view(), name='core_delete'),
+    
+    path('saleinv', SaleInvoice_Create_View.as_view(),{'title':'Sale Invoice','invType':'Sale','return_url':'pos:productsale_list'}, name='saleinv'),
+    path('saleinv/<str:model_id>', SaleInvoice_Update_View.as_view(),{'title':'Sale Invoice','invType':'sale','return_url':'pos:productsale_list'}, name='saleinv'),
 
 ]

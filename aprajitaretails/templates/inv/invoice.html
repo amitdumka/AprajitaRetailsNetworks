@@ -3,7 +3,7 @@
 {% block title %}
 {{ title }}
 <span class="badge badge-primary badge-round">
-    {% if not form.instance.pk %}[New]{%endif %}
+    {% if new_record %}[New]{%endif %}
 </span>
 {% endblock %}
 
@@ -23,171 +23,18 @@
                 <div class="card-body px-0 pt-0 pb-2  row ">
                     <div class="col-xl-5 col-lg-5 col-md-6 d-flex flex-column p-4  ">
                         <form action="{% url create_url %}" method="post">
-                            <div class="table-responsive table-responsive=sm p-2">
-                                {% csrf_token %}
-                                <table class="table table-sm  text-end mb-0  " id="main_table">
-
-                                    <tr>
-                                        <td>
-                                            <div class="fieldWrapper">
-                                                {{ field.errors }}
-                                                {{ field.label_tag }} {{ field }}
-                                            </div>
-                                        </td>
-                                        <td>{{ form.non_field_errors }}</td>
-                                        <td>
-                                            <div class="fieldWrapper">
-                                                {{ form.subject.as_field_group }}
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="fieldWrapper">
-                                                {{ form.subject.errors }}
-                                                <label for="{{ form.subject.id_for_label }}">Email subject:</label>
-                                                {{ form.subject }}
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="fieldWrapper">
-                                                {{ form.subject.errors }}
-                                                {{ form.subject.label_tag }}
-                                                {{ form.subject }}
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        {%if not new_record %}
-                                        <td id="invoiceNo_l">Invoice No:</td>
-                                        <td id="invoiceNo_c">{{invform.InvoiceNumber}}</td>
-                                        {%else%}
-                                        <td></td>
-                                        <td></td>
-                                        {%endif%}
-
-                                        <td>Invoice Date</td>
-                                        <td>{{invForm.OnDate}}</td>
-                                        <td>Invoice Type</td>
-                                        <td>{{invForm.InvoiceType}}</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Customer Mobile </td>
-                                        <td>{{invForm.CustomerMobile}}</td>
-                                        <td>Customer Name</td>
-                                        <td>{{invForm.Customer.Name}}</td>
-                                        <td><button>Search</button></td>
-                                        <td><button>Add</button></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Address</td>
-                                        <td>{{invForm.Customer.Address}}</td>
-                                        <td>Company Name</td>
-                                        <td>{{invForm.Customer.Company}}</td>
-                                        <td>GSTIN</td>
-                                        <td>{{invForm.Customer.GSTIN}}</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>MRP</td>
-                                        <td>{{invForm.MRP}}</td>
-                                        <td>Discount Amount</td>
-                                        <td>{{invForm.DiscountAmount}}</td>
-                                        <td>Bill Amount</td>
-                                        <td>{{invForm.BillAmount}}</td>
-                                        <td></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Basic Amount</td>
-                                        <td>{{invForm.BasicAmount}}</td>
-                                        <td>Tax Amount</td>
-                                        <td>{{invForm.TaxAmount}}</td>
-                                        <td>Round Off</td>
-                                        <td>{{invForm.RoundOff}}</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bill Qty</td>
-                                        <td>{{invForm.BilledQty}}</td>
-                                        <td>Free Qty</td>
-                                        <td>{{invForm.FreeQty}}</td>
-                                        <td>Items</td>
-                                        <td>{{invForm.Count}}</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr rowspan="2">
-                                        <td colspan="7">
-                                            <hr />
-                                        </td>
-                                    </tr>
-                                    <tr class="bg-gradient-warning">
-                                        <td>Barcode</td>
-                                        <td><button>search</button></td>
-                                        <td>Rate</td>
-                                        <td>Qty</td>
-                                        <td>Discount</td>
-                                        <td>Amount</td>
-                                        <td>Action</td>
-                                    </tr>
-                                    <tr class="bg-gradient-warning">
-                                        <td colspan="2">{{itemAddForm.Barcode}}</td>
-                                        <td>{{itemAddForm.Rate}}</td>
-                                        <td>{{itemAddForm.Qty}}</td>
-                                        <td>{{itemAddForm.DiscountAmount}}</td>
-                                        <td>{{itemAddForm.Amount}}</td>
-                                        <td><button onclick="addItem()">Add</button></td>
-                                    </tr>
-                                    <tr rowspan="6">
-                                        <td colspan="7" class="table-responsive-sm">
-                                            <table id="itemTable" class="table table-sm  table-stripe table-warning">
-                                                <thead class="table-primary">
-                                                    <tr>
-                                                        <th>SN</th>
-                                                        <th>Barcode</th>
-                                                        <th>Rate</th>
-                                                        <th>Qty</th>
-                                                        <th>Discount</th>
-                                                        <th>Amount</th>
-                                                        <th>Action</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    {%if itemList %}
-                                                    {%for item in itemList%}
-                                                    <td>{{item.SN}} </td>
-                                                    <td>{{item.Barcode}} </td>
-                                                    <td>{{item.Rate}} </td>
-                                                    <td>{{item.Qty}} </td>
-                                                    <td>{{item.Discount}} </td>
-                                                    <td>{{item.Amount}} </td>
-                                                    <td>
-                                                        <button onclick=f"deleteItem(+{{item.SN}})"
-                                                            class="btn btn-sm btn-danger">Del</button>
-                                                    </td>
-                                                    {%for%}
-                                                    {%endif}
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
+                            
                             <div class="row align-items-center align-middle">
                                 <div class="col-sm-3 align-items-center align-middle"></div>
                                 <div class="col-sm-3 align-items-center align-middle">
-                                    <input type="submit" value=" {% if new_record %}Add{%else%}Update{%endif %}"
-                                        class="btn  {% if  new_record %} btn-primary{%else%} btn-warning{%endif%} bg-gradient-danger btn-sm m-0" />
+                                    
                                 </div>
-                                <div class="col-sm-3 align-items-center align-middle">
-                                    <a href="{% url return_url  %}"
-                                        class="btn btn-success bg-gradient-warning btn-sm m-0">Back</a>
-                                </div>
+                                
                             </div>
                         </form>
                     </div>
                     <div class="col-md-6 bg-transprant  ">
-
+                            Use This Section to Add Control for saving, adding Payment, printing inv.
                     </div>
                 </div>
             </div>

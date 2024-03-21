@@ -1,0 +1,161 @@
+{% extends './invbase.html' %} {% load i18n static %} 
+
+{%block invItems%} 
+<div class="table-responsive-sm">
+  <table class="table table-sm " id="itemTable">
+    <thead class="table-primary">
+      <tr>
+          <th>SN</th>
+          <th>Barcode</th>
+          <th>Rate</th>
+          <th>Qty</th>
+          <th>Discount</th>
+          <th>Amount</th>
+          <th>Action</th>
+      </tr>
+   </thead>
+   {%if itemList %}
+   <tbody>
+    {%for item in itemList%}
+    <tr>
+      <td>{{item.SN}} </td>
+      <td>{{item.Barcode}} </td>
+      <td>{{item.Rate}} </td>
+      <td>{{item.Qty}} </td>
+      <td>{{item.Discount}} </td>
+      <td>{{item.Amount}} </td>
+      <td>
+        <button style="font-size:16px;color:red" onclick=f"deleteItem(+{{item.SN}})"
+            class="btn btn-sm btn-danger"><i style="font-size:16px;color:red" class="fa-solid fa-xmark"></i></button>
+    </td>
+    </tr>
+    {%endfor%}
+   </tbody>
+   {%endif%}
+  </table>
+
+</div>
+{%endblock%} 
+{%block Payment%} {%if payments not None%}
+<div class="row">
+  <div class="col.md.4">Payment Recived: {{totalPaymentAmount}}</div>
+  <div class="col.md.4">Due: {{dueAmount}}</div>
+</div>
+<div class="row">
+    {% for  payment in salePaymentsList%}
+    <div class="col.md.2 badge"> 
+        {{payment.Amount}}/{{payment.PayMode}}
+    </div>
+    {% endfor %}
+</div>
+
+{%endif%} {%endblock%}
+
+{%block itemForm%}
+<tr class="bg-gradient-warning">
+  <td>Barcode</td>
+  <td><button style="font-size:16px;color:red" class="btn btn-sm btn-success"><i class="fa fa-search" aria-hidden="true" style="font-size:16px;color:red"></i> </button></td>
+  <td>Rate</td>
+  <td>Qty</td>
+  <td>Discount</td>
+  <td>Amount</td>
+  <td>Action</td>
+</tr>
+<tr class="bg-gradient-warning">
+  <td colspan="2">{{itemAddForm.Barcode}}</td>
+  <td>{{itemAddForm.Rate}}</td>
+  <td class="text-info">{{itemAddForm.Qty}}</td>
+  <td class="text-danger">{{itemAddForm.DiscountAmount}}</td>
+  <td class="text-success">{{itemAddForm.Amount}}</td>
+  <td><button class="btn btn-sm btn-primary" style="font-size:16px;color:red" onclick="addItem()"><i style="font-size:16px;color:red" class="fa-solid fa-plus"></i></button></td>
+</tr>
+
+{%endblock%}
+{%block inv%}
+<div class ="table-responsive-sm">
+  <table class="table table-sm  text-end mb-0  " id="main_table">
+    {% comment %} Invoice main {% endcomment %}
+    <tr>
+      <td>Inward Date</td>
+      <td>{{invForm.InwardDate}}</td>
+      <td>Invoice Type</td>
+      <td>{{invForm.InvoiceType}}</td>
+      {%if not new_record %}
+      <td class="text-success" id="invoiceNo_l">Invoice No:</td>
+      <td class="text-success" id="invoiceNo_c">{{invform.InvoiceNumber}}</td>
+      {%else%}
+      <td></td>
+      <td></td>
+      {%endif%}
+      <td></td>
+    </tr>
+    {% comment %} Vendor  Details {% endcomment %}
+    <tr>
+      <td>Vendor Name</td>
+      <td>{{invForm.Vendor}}</td>
+      <td>Invoice No</td>
+      <td>{{invForm.InvoiceNumber}}</td>
+      <td>Invoice Date</td>
+      <td>{{invForm.InvoiceDate}}</td>
+      <td><button>Add</button></td>
+      
+    </tr>
+     {% comment %} Customer extended information for GSTIN Bill {% endcomment %}
+     {% comment %} Enable This row or view if GSTIN is to be added. put checkbox for that {% endcomment %}
+     {% comment %} <tr id="gstInfoRow">
+      <td>Address</td>
+      <td>{{invForm.Customer.Address}}</td>
+      <td>Company Name</td>
+      <td>{{invForm.Customer.Company}}</td>
+      <td>GSTIN</td>
+      <td>{{invForm.Customer.GSTIN}}</td>
+      <td></td>
+    </tr> {% endcomment %}
+      {% comment %} Bill Info in details {% endcomment %}
+    <tr>
+      <td>Basic Amount</td>
+      <td>{{invForm.BasicAmount}}</td>
+      <td>Tax Amount</td>
+      <td>{{invForm.TaxAmount}}</td>
+      <td>Round Off</td>
+      <td>{{invForm.RoundOff}}</td>
+      <td></td>
+    </tr>
+      {% comment %} Invoice Item count and Qty Section  {% endcomment %}
+    <tr>
+      <td>Bill Qty</td>
+      <td>{{invForm.BilledQty}}</td>
+      <td>Free Qty</td>
+      <td>{{invForm.FreeQty}}</td>
+      <td>Items</td>
+      <td>{{invForm.Count}}</td>
+      <td></td>
+    </tr>
+
+      {% comment %} Invoice bill amount and MRP Details {% endcomment %}
+    <tr>
+      <td>MRP</td>
+      <td>{{invForm.MRP}}</td>
+      <td>Discount Amount</td>
+      <td>{{invForm.DiscountAmount}}</td>
+      <td>Bill Amount</td>
+      <td>{{invForm.BillAmount}}</td>
+      <td></td>
+    </tr>
+
+
+  </table>
+
+</div>
+
+{%endblock%}
+{%block buttonControls%}
+<td></td>
+<td><input type="submit" value=" {% if new_record %}Add{%else%}Update{%endif %}"
+  class="btn  {% if  new_record %} btn-primary{%else%} btn-warning{%endif%} bg-gradient-danger btn-sm m-0" /></td>
+  <td><button class="btn btn-sm">Reset</button></td>
+  <td><button class="btn btn-sm">Add/New</button></td>
+  <td><button class="btn btn-sm">Add/Go</button></td>
+  <td></td>
+  <td></td>
+{%endblock%}

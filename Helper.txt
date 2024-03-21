@@ -1,0 +1,24 @@
+https://hilla.dev/docs/react/components/auto-form
+react-form-hook
+formik [Use in old project]
+https://refine.dev/?ref=banner-sidebar&playground=true
+
+https://refine.new/api/.refine/d/Cw5k0SyuNsOvwLu
+
+npm install
+> npm run dev
+
+
+https://dev.to/franklin030601/dynamic-forms-with-react-hook-form-2ml8
+
+https://github.com/SyncfusionExamples/dynamic-forms-in-react-using-react-hook-forms
+
+https://www.syncfusion.com/react-components
+https://www.beekai.com/how-it-works
+https://react-hook-form.com/dev-tools
+
+https://www.npmjs.com/package/react-hook-form-mui
+https://github.com/vtex/react-hook-form-jsonschema
+https://ui.shadcn.com/docs/components/form
+
+https://react-hook-form.com/resources/3rd-party-bindings
