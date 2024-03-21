@@ -1,12 +1,12 @@
 /**
 =========================================================
-* Aprajita Retails Dashboard - v3.1.0
+* Aprajita Retails -Networks  - v3.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-pro-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
+* Copyright 2024 Amit Kumar (AKS Lab (India))
 
-Coded by www.creative-tim.com
+Code by Amit Kumar
 
  =========================================================
 
@@ -16,12 +16,12 @@ Coded by www.creative-tim.com
 // @mui material components
 import Fade from "@mui/material/Fade";
 
-// Aprajita Retails Dashboard base styles
+// Aprajita Retails -Networks  base styles
 import colors from "assets/theme/base/colors";
 import typography from "assets/theme/base/typography";
 import borders from "assets/theme/base/borders";
 
-// Aprajita Retails Dashboard helper functions
+// Aprajita Retails -Networks  helper functions
 import pxToRem from "assets/theme/functions/pxToRem";
 
 const { black, light } = colors;

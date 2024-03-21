@@ -1,12 +1,12 @@
 /**
 =========================================================
-* Aprajita Retails Dashboard - v1.0.1
+* Aprajita Retails Networks- v20.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
-Coded by www.creative-tim.com
+* Copyright 2024 Amit Kumar (AKS Lab (India))
+
+Code by Amit Kumar
 
  =========================================================
 
@@ -19,11 +19,11 @@ import PropTypes from "prop-types";
 // @mui material components
 import Grid from "@mui/material/Grid";
 
-// Aprajita Retails Dashboard components
+// Aprajita Retails -Networks  components
 import SoftBox from "components/SoftBox";
 import SoftTypography from "components/SoftTypography";
 
-// Aprajita Retails Dashboard examples
+// Aprajita Retails -Networks  examples
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import PageLayout from "examples/LayoutContainers/PageLayout";
 

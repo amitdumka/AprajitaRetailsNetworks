@@ -1,12 +1,12 @@
 /**
 =========================================================
-* Aprajita Retails Dashboard - v1.0.1
+* Aprajita Retails Networks- v20.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
-Coded by www.creative-tim.com
+* Copyright 2024 Amit Kumar (AKS Lab (India))
+
+Code by Amit Kumar
 
  =========================================================
 
@@ -23,13 +23,13 @@ import { createContext, useContext, useReducer, useMemo } from "react";
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
-// The Aprajita Retails Dashboard PRO Material main context
+// The Aprajita Retails -Networks  PRO Material main context
 const SoftUI = createContext(null);
 
 // Setting custom name for the context which is visible on react dev tools
 SoftUI.displayName = "SoftUIContext";
 
-// Aprajita Retails Dashboard reducer
+// Aprajita Retails -Networks  reducer
 function reducer(state, action) {
   switch (action.type) {
     case "MINI_SIDENAV": {
@@ -62,7 +62,7 @@ function reducer(state, action) {
   }
 }
 
-// Aprajita Retails Dashboard context provider
+// Aprajita Retails -Networks  context provider
 function SoftUIControllerProvider({ children }) {
   const initialState = {
     miniSidenav: false,
@@ -82,7 +82,7 @@ function SoftUIControllerProvider({ children }) {
   return <SoftUI.Provider value={value}>{children}</SoftUI.Provider>;
 }
 
-// Aprajita Retails Dashboard custom hook for using context
+// Aprajita Retails -Networks  custom hook for using context
 function useSoftUIController() {
   const context = useContext(SoftUI);
 

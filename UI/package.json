@@ -1,9 +1,9 @@
 {
-  "name": "aprajita-retails-soft-ui-react",
-  "version": "1.0.1",
+  "name": "aprajita-retails-ui-react",
+  "version": "2.0.1",
   "author": "Amit Kumar",
-  "license": "SEE LICENSE IN <https://www.creative-tim.com/license>",
-  "description": "ReactJS version of Aprajita Retails Dashboard by Amit Kumar",
+  "license": "All copy rights reserved",
+  "description": "ReactJS version of Aprajita Retails eSRP by Amit Kumar",
   "bugs": {
     "url": "https://github.com/amitdumka/soft-ui-dashboard-react/issues"
   },

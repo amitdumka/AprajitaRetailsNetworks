@@ -1,12 +1,12 @@
 /**
 =========================================================
-* Aprajita Retails Dashboard - v3.1.0
+* Aprajita Retails -Networks  - v3.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-pro-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
+* Copyright 2024 Amit Kumar (AKS Lab (India))
 
-Coded by www.creative-tim.com
+Code by Amit Kumar
 
  =========================================================
 
@@ -16,13 +16,13 @@ Coded by www.creative-tim.com
 /**
  * The base box-shadow styles for the Aprajita Retails Dashboard.
  * You can add new box-shadow using this file.
- * You can customized the box-shadow for the entire Aprajita Retails Dashboard using thie file.
+ * You can customized the box-shadow for the entire Aprajita Retails -Networks  using thie file.
  */
 
-// Aprajita Retails Dashboard Base Styles
+// Aprajita Retails -Networks  Base Styles
 import colors from "assets/theme/base/colors";
 
-// Aprajita Retails Dashboard Helper Functions
+// Aprajita Retails -Networks  Helper Functions
 import boxShadow from "assets/theme/functions/boxShadow";
 
 const { black, white, info, inputColors, tabs } = colors;

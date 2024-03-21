@@ -1,12 +1,11 @@
 /**
 =========================================================
-* Aprajita Retails Dashboard - v1.0.1
+* Aprajita Retails  - v2.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
+* Copyright 2024 Amit Kumar (AKS Lab (India))
 
-Coded by www.creative-tim.com
+Code by Amit Kumar
 
  =========================================================
 
@@ -18,7 +17,9 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "App";
 
-// Aprajita Retails Dashboard Context Provider
+// Aprajita Retails Network Context Provider
+//TODO: Rename 'SoftUI'<Componet Name> to ARN<ContextProvider>
+
 import { SoftUIControllerProvider } from "context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

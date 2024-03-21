@@ -1,12 +1,12 @@
 /**
 =========================================================
-* Aprajita Retails Dashboard - v3.1.0
+* Aprajita Retails -Networks  - v3.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-pro-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
+* Copyright 2024 Amit Kumar (AKS Lab (India))
 
-Coded by www.creative-tim.com
+Code by Amit Kumar
 
  =========================================================
 

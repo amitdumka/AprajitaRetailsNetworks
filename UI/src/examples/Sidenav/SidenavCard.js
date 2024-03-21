@@ -1,12 +1,12 @@
 /**
 =========================================================
-* Aprajita Retails Dashboard - v1.0.1
+* Aprajita Retails Networks- v20.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
-Coded by www.creative-tim.com
+* Copyright 2024 Amit Kumar (AKS Lab (India))
+
+Code by Amit Kumar
 
  =========================================================
 
@@ -19,7 +19,7 @@ import CardContent from "@mui/material/CardContent";
 import Icon from "@mui/material/Icon";
 import Link from "@mui/material/Link";
 
-// Aprajita Retails Dashboard components
+// Aprajita Retails -Networks  components
 import SoftButton from "components/SoftButton";
 import SoftBox from "components/SoftBox";
 import SoftTypography from "components/SoftTypography";
@@ -27,7 +27,7 @@ import SoftTypography from "components/SoftTypography";
 // Custom styles for the SidenavCard
 import { card, cardContent, cardIconBox, cardIcon } from "examples/Sidenav/styles/sidenavCard";
 
-// Aprajita Retails Dashboard context
+// Aprajita Retails -Networks  context
 import { useSoftUIController } from "context";
 
 function SidenavCard() {

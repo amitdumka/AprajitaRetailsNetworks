@@ -1,12 +1,12 @@
 /**
 =========================================================
-* Aprajita Retails Dashboard - v1.0.1
+* Aprajita Retails Networks- v20.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
-Coded by www.creative-tim.com
+* Copyright 2024 Amit Kumar (AKS Lab (India))
+
+Code by Amit Kumar
 
  =========================================================
 
@@ -23,30 +23,30 @@ import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Icon from "@mui/material/Icon";
 
-// Aprajita Retails Dashboard components
+// Aprajita Retails -Networks  components
 import SoftBox from "components/SoftBox";
 
-// Aprajita Retails Dashboard examples
+// Aprajita Retails -Networks  examples
 import Sidenav from "examples/Sidenav";
 import Configurator from "examples/Configurator";
 
-// Aprajita Retails Dashboard themes
+// Aprajita Retails -Networks  themes
 import theme from "assets/theme";
-import themeRTL from "assets/theme/theme-rtl";
+import themeRTL from "assets/theme/theme-rtl"; // Remove RTL Support
 
 // RTL plugins
-import rtlPlugin from "stylis-plugin-rtl";
+import rtlPlugin from "stylis-plugin-rtl"; // Remove RTL Support
 import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
 
-// Aprajita Retails Dashboard routes
+// Aprajita Retails -Networks  routes
 import routes from "routes";
 
-// Aprajita Retails Dashboard contexts
+// Aprajita Retails -Networks  contexts
 import { useSoftUIController, setMiniSidenav, setOpenConfigurator } from "context";
 
 // Images
-import brand from "assets/images/logo-ct.png";
+import brand from "assets/images/logo-ct.png";  //TODO: Change Logo
 
 export default function App() {
   const [controller, dispatch] = useSoftUIController();
@@ -55,6 +55,7 @@ export default function App() {
   const [rtlCache, setRtlCache] = useState(null);
   const { pathname } = useLocation();
 
+  //TODO: Remove RTL Support Cache .
   // Cache for the rtl
   useMemo(() => {
     const cacheRtl = createCache({
@@ -132,6 +133,7 @@ export default function App() {
     </SoftBox>
   );
 
+  //TODO: Remove RTL Suppot.
   return direction === "rtl" ? (
     <CacheProvider value={rtlCache}>
       <ThemeProvider theme={themeRTL}>
