@@ -9,7 +9,7 @@ export const ProtectedRoute = () => {
     return (<>
       {(!user || !user.token || user.token === "") ? (
         <SweetAlert
-          title="You must be signed in!"
+          title="Signed in to proceed further!"
           onCancel={() => navigate("/authentication/sign-in")}
           onConfirm={() => navigate("/authentication/sign-in")}
           confirmBtnCssClass={"px-5"}

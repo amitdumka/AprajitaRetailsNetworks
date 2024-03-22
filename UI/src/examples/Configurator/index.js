@@ -95,9 +95,9 @@ function Configurator() {
         px={3}
       >
         <SoftBox>
-          <SoftTypography variant="h5">Soft UI Configurator</SoftTypography>
+          <SoftTypography variant="h5">Setting</SoftTypography>
           <SoftTypography variant="body2" color="text">
-            See our dashboard options.
+            Setting for Aprajita Retailss.
           </SoftTypography>
         </SoftBox>
 
@@ -200,7 +200,7 @@ function Configurator() {
 
         <SoftBox mt={3} mb={2}>
           <SoftBox mb={2}>
-            <SoftButton
+            {/* <SoftButton
               component={Link}
               href="https://appseed.us/product/node-js-react-soft-dashboard"
               target="_blank"
@@ -210,9 +210,9 @@ function Configurator() {
               fullWidth
             >
               free download
-            </SoftButton>
+            </SoftButton> */}
           </SoftBox>
-          <SoftButton
+          {/* <SoftButton
             component={Link}
             href="https://appseed.us/support/"
             target="_blank"
@@ -222,9 +222,9 @@ function Configurator() {
             fullWidth
           >
             Support
-          </SoftButton>
+          </SoftButton> */}
         </SoftBox>
-        <SoftBox display="flex" justifyContent="center">
+        {/* <SoftBox display="flex" justifyContent="center">
           <a
             className="github-button"
             href="https://github.com/app-generator/react-soft-ui-dashboard"
@@ -235,13 +235,13 @@ function Configurator() {
           >
             Star
           </a>
-        </SoftBox>
+        </SoftBox> */}
         <SoftBox mt={3} textAlign="center">
-          <SoftBox mb={0.5}>
+          {/* <SoftBox mb={0.5}>
             <SoftTypography variant="h6">Thank you for sharing!</SoftTypography>
-          </SoftBox>
+          </SoftBox> */}
 
-          <SoftBox display="flex" justifyContent="center">
+          {/* <SoftBox display="flex" justifyContent="center">
             <SoftBox mr={1.5}>
               <SoftButton
                 component={Link}
@@ -264,7 +264,7 @@ function Configurator() {
               <FacebookIcon />
               &nbsp; Share
             </SoftButton>
-          </SoftBox>
+          </SoftBox> */}
         </SoftBox>
       </SoftBox>
     </ConfiguratorRoot>

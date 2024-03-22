@@ -169,7 +169,7 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
             color={color}
             fullWidth
           >
-            upgrade to pro
+            upgrade to us
           </SoftButton>
         </SoftBox>
       </SoftBox>

@@ -29,7 +29,7 @@ function Invoices() {
     <Card id="delete-account" sx={{ height: "100%" }}>
       <SoftBox pt={2} px={2} display="flex" justifyContent="space-between" alignItems="center">
         <SoftTypography variant="h6" fontWeight="medium">
-          Invoices
+          Invoice(s)
         </SoftTypography>
         <SoftButton variant="outlined" color="info" size="small">
           view all
