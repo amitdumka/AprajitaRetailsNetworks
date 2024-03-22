@@ -35,16 +35,16 @@ function BuildByDevelopers() {
             <SoftBox display="flex" flexDirection="column" height="100%">
               <SoftBox pt={1} mb={0.5}>
                 <SoftTypography variant="body2" color="text" fontWeight="medium">
-                  Build by developers
+                  Build by Amit Kumar
                 </SoftTypography>
               </SoftBox>
               <SoftTypography variant="h5" fontWeight="bold" gutterBottom>
-                Aprajita Retails Dashboard
+                Aprajita Retails Networks
               </SoftTypography>
               <SoftBox mb={6}>
                 <SoftTypography variant="body2" color="text">
-                  From colors, cards, typography to complex elements, you will find the full
-                  documentation.
+                  Sale, Inventory, Payroll, Customer Management, acctounting , 
+                  syncronization of data with Tally ERP and more.
                 </SoftTypography>
               </SoftBox>
               <SoftTypography

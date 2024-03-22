@@ -40,7 +40,7 @@ function SignIn() {
 
   return (
     <CoverLayout
-      title="Welcome back"
+      title="Welcome to Aprajita Retails Networrks"
       description="Enter your email and password to sign in"
       image={curved9}
     >
@@ -48,7 +48,7 @@ function SignIn() {
         <SoftBox mb={2}>
           <SoftBox mb={1} ml={0.5}>
             <SoftTypography component="label" variant="caption" fontWeight="bold">
-              Email
+              User Name
             </SoftTypography>
           </SoftBox>
           <SoftInput type="email" placeholder="Email" />

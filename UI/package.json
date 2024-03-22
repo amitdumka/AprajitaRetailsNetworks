@@ -2,7 +2,7 @@
   "name": "aprajita-retails-ui-react",
   "version": "2.0.1",
   "author": "Amit Kumar",
-  "license": "All copy rights reserved",
+  "license": "MIT",
   "description": "ReactJS version of Aprajita Retails eSRP by Amit Kumar",
   "bugs": {
     "url": "https://github.com/amitdumka/soft-ui-dashboard-react/issues"
@@ -12,12 +12,19 @@
     "url": "git+https://github.com/dumka/soft-ui-dashboard-react.git"
   },
   "dependencies": {
+    "@bbbtech/storybook-formik": "^3.0.0",
     "@emotion/cache": "11.11.0",
     "@emotion/react": "11.11.0",
     "@emotion/styled": "11.11.0",
+    "@fontsource/material-icons": "^5.0.16",
+    "@fontsource/roboto": "^5.0.12",
     "@mui/icons-material": "5.11.16",
     "@mui/material": "5.13.0",
     "@mui/styled-engine": "5.12.3",
+    "@storybook/addon-google-analytics": "^6.2.9",
+    "@storybook/addon-themes": "^8.0.4",
+    "@storybook/addon-toolbars": "^8.0.4",
+    "@swc/core": "^1.4.8",
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "14.0.0",
     "@testing-library/user-event": "14.4.3",
@@ -31,10 +38,18 @@
     "react-flatpickr": "3.10.13",
     "react-router-dom": "6.11.1",
     "react-scripts": "5.0.1",
+    "storybook-addon-custom-event-broadcaster": "^2.0.1",
+    "storybook-addon-live-examples": "^2.0.2",
+    "storybook-addon-preview": "^2.3.0",
+    "storybook-addon-swc": "^1.2.0",
+    "storybook-dark-mode": "^4.0.1",
+    "storybook-vscode-component": "^1.0.9",
     "stylis": "4.2.0",
     "stylis-plugin-rtl": "2.1.1",
     "uuid": "9.0.0",
-    "web-vitals": "3.3.1"
+    "vite": "^5.2.3",
+    "web-vitals": "3.3.1",
+    "yarn": "^1.22.22"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -65,14 +80,16 @@
     ]
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.6.15",
-    "@storybook/addon-interactions": "^7.6.15",
-    "@storybook/addon-links": "^7.6.15",
-    "@storybook/addon-onboarding": "^1.0.11",
-    "@storybook/blocks": "^7.6.15",
-    "@storybook/react": "^7.6.15",
-    "@storybook/react-vite": "^7.6.15",
-    "@storybook/test": "^7.6.15",
+    "@stackblitz/storybook-addon-stackblitz": "^0.0.5",
+    "@storybook/addon-actions": "^8.0.4",
+    "@storybook/addon-essentials": "^8.0.4",
+    "@storybook/addon-interactions": "^8.0.4",
+    "@storybook/addon-links": "^8.0.4",
+    "@storybook/addon-onboarding": "^8.0.4",
+    "@storybook/blocks": "^8.0.4",
+    "@storybook/react": "^8.0.4",
+    "@storybook/react-vite": "^8.0.4",
+    "@storybook/test": "^8.0.4",
     "eslint": "8.40.0",
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-import": "2.27.5",
@@ -81,7 +98,8 @@
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-storybook": "^0.6.15",
     "prettier": "2.8.8",
-    "storybook": "^7.6.15"
+    "storybook": "^8.0.4",
+    "storybook-addon-playground": "^1.6.0"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
@@ -90,4 +108,4 @@
   "overrides": {
     "svgo": "3.0.2"
   }
-}
+} 

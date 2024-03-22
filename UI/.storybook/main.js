@@ -6,6 +6,17 @@ const config = {
     "@storybook/addon-essentials",
     "@storybook/addon-onboarding",
     "@storybook/addon-interactions",
+    '@storybook/addon-google-analytics',
+    'storybook-dark-mode',
+    "storybook-addon-preview/register",
+    "@storybook/addon-themes",
+    'storybook-addon-custom-event-broadcaster',
+    "storybook-addon-playground",
+    'storybook-addon-live-examples',
+    'storybook-addon-swc',
+    '@stackblitz/storybook-addon-stackblitz',
+    '@storybook/addon-actions',
+    '@storybook/addon-controls'
   ],
   framework: {
     name: "@storybook/react-vite",

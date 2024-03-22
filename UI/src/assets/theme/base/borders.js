@@ -14,7 +14,7 @@ Code by Amit Kumar
 */
 
 /**
- * The base border styles for the Aprajita Retails Dashboard.
+ * The base border styles for the Aprajita Retails -Networks  .
  * You can add new border width, border color or border radius using this file.
  * You can customized the borders value for the entire Aprajita Retails -Networks  using thie file.
  */

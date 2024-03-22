@@ -14,7 +14,7 @@ Code by Amit Kumar
 */
 
 /**
- * The base box-shadow styles for the Aprajita Retails Dashboard.
+ * The base box-shadow styles for the Aprajita Retails -Networks  .
  * You can add new box-shadow using this file.
  * You can customized the box-shadow for the entire Aprajita Retails -Networks  using thie file.
  */

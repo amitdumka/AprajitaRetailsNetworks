@@ -118,7 +118,7 @@ function RTL() {
                 title="المستخدمين النشطين"
                 description={
                   <>
-                    (<strong>+23%</strong>) من الأسبوع الماضي
+                    (<strong>+23%</strong>) This module need to be removed
                   </>
                 }
                 chart={chart}

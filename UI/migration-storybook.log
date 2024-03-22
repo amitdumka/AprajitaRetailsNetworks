@@ -1,0 +1,950 @@
+🔎 checking possible migrations..
+
+⚠️  failed to check fix addons-api
+
+Error: Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook\main.js file.
+
+Error: The service was stopped
+    at \node_modules\esbuild\lib\main.js:828:29
+    at responseCallbacks.<computed> (\node_modules\esbuild\lib\main.js:704:9)
+    at Socket.afterClose (\node_modules\esbuild\lib\main.js:694:28)
+    at Socket.emit (node:events:531:35)
+    at endReadableNT (node:internal/streams/readable:1696:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at getStorybookData (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:185:4463)
+    at async runFixes (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:2652)
+    at async automigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:1629)
+    at async doAutomigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:651)
+    at async Command.<anonymous> (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:664:2803)
+
+⚠️  failed to check fix new-frameworks
+
+Error: Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook\main.js file.
+
+Error: The service is no longer running
+    at \node_modules\esbuild\lib\main.js:828:29
+    at sendRequest (\node_modules\esbuild\lib\main.js:700:14)
+    at start (\node_modules\esbuild\lib\main.js:826:9)
+    at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)
+    at \node_modules\esbuild\lib\main.js:2232:77
+    at new Promise (<anonymous>)
+    at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)
+    at \node_modules\esbuild\lib\main.js:2390:67
+    at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)
+    at getStorybookData (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:185:4463)
+    at async runFixes (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:2652)
+    at async automigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:1629)
+    at async doAutomigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:651)
+    at async Command.<anonymous> (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:664:2803)
+
+⚠️  failed to check fix cra5
+
+Error: Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook\main.js file.
+
+Error: The service is no longer running
+    at \node_modules\esbuild\lib\main.js:828:29
+    at sendRequest (\node_modules\esbuild\lib\main.js:700:14)
+    at start (\node_modules\esbuild\lib\main.js:826:9)
+    at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)
+    at \node_modules\esbuild\lib\main.js:2232:77
+    at new Promise (<anonymous>)
+    at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)
+    at \node_modules\esbuild\lib\main.js:2390:67
+    at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)
+    at getStorybookData (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:185:4463)
+    at async runFixes (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:2652)
+    at async automigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:1629)
+    at async doAutomigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:651)
+    at async Command.<anonymous> (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:664:2803)
+
+⚠️  failed to check fix webpack5
+
+Error: Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook\main.js file.
+
+Error: The service is no longer running
+    at \node_modules\esbuild\lib\main.js:828:29
+    at sendRequest (\node_modules\esbuild\lib\main.js:700:14)
+    at start (\node_modules\esbuild\lib\main.js:826:9)
+    at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)
+    at \node_modules\esbuild\lib\main.js:2232:77
+    at new Promise (<anonymous>)
+    at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)
+    at \node_modules\esbuild\lib\main.js:2390:67
+    at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)
+    at getStorybookData (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:185:4463)
+    at async runFixes (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:2652)
+    at async automigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:1629)
+    at async doAutomigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:651)
+    at async Command.<anonymous> (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:664:2803)
+
+⚠️  failed to check fix vue3
+
+Error: Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook\main.js file.
+
+Error: The service is no longer running
+    at \node_modules\esbuild\lib\main.js:828:29
+    at sendRequest (\node_modules\esbuild\lib\main.js:700:14)
+    at start (\node_modules\esbuild\lib\main.js:826:9)
+    at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)
+    at \node_modules\esbuild\lib\main.js:2232:77
+    at new Promise (<anonymous>)
+    at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)
+    at \node_modules\esbuild\lib\main.js:2390:67
+    at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)
+    at getStorybookData (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:185:4463)
+    at async runFixes (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:2652)
+    at async automigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:1629)
+    at async doAutomigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:651)
+    at async Command.<anonymous> (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:664:2803)
+
+⚠️  failed to check fix addon-postcss
+
+Error: Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook\main.js file.
+
+Error: The service is no longer running
+    at \node_modules\esbuild\lib\main.js:828:29
+    at sendRequest (\node_modules\esbuild\lib\main.js:700:14)
+    at start (\node_modules\esbuild\lib\main.js:826:9)
+    at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)
+    at \node_modules\esbuild\lib\main.js:2232:77
+    at new Promise (<anonymous>)
+    at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)
+    at \node_modules\esbuild\lib\main.js:2390:67
+    at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)
+    at getStorybookData (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:185:4463)
+    at async runFixes (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:2652)
+    at async automigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:1629)
+    at async doAutomigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:651)
+    at async Command.<anonymous> (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:664:2803)
+
+⚠️  failed to check fix viteConfigFile
+
+Error: Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook\main.js file.
+
+Error: The service is no longer running
+    at \node_modules\esbuild\lib\main.js:828:29
+    at sendRequest (\node_modules\esbuild\lib\main.js:700:14)
+    at start (\node_modules\esbuild\lib\main.js:826:9)
+    at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)
+    at \node_modules\esbuild\lib\main.js:2232:77
+    at new Promise (<anonymous>)
+    at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)
+    at \node_modules\esbuild\lib\main.js:2390:67
+    at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)
+    at getStorybookData (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:185:4463)
+    at async runFixes (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:2652)
+    at async automigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:1629)
+    at async doAutomigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:651)
+    at async Command.<anonymous> (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:664:2803)
+
+⚠️  failed to check fix eslintPlugin
+
+Error: Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook\main.js file.
+
+Error: The service is no longer running
+    at \node_modules\esbuild\lib\main.js:828:29
+    at sendRequest (\node_modules\esbuild\lib\main.js:700:14)
+    at start (\node_modules\esbuild\lib\main.js:826:9)
+    at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)
+    at \node_modules\esbuild\lib\main.js:2232:77
+    at new Promise (<anonymous>)
+    at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)
+    at \node_modules\esbuild\lib\main.js:2390:67
+    at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)
+    at getStorybookData (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:185:4463)
+    at async runFixes (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:2652)
+    at async automigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:1629)
+    at async doAutomigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:651)
+    at async Command.<anonymous> (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:664:2803)
+
+⚠️  failed to check fix builder-vite
+
+Error: Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook\main.js file.
+
+Error: The service is no longer running
+    at \node_modules\esbuild\lib\main.js:828:29
+    at sendRequest (\node_modules\esbuild\lib\main.js:700:14)
+    at start (\node_modules\esbuild\lib\main.js:826:9)
+    at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)
+    at \node_modules\esbuild\lib\main.js:2232:77
+    at new Promise (<anonymous>)
+    at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)
+    at \node_modules\esbuild\lib\main.js:2390:67
+    at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)
+    at getStorybookData (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:185:4463)
+    at async runFixes (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:2652)
+    at async automigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:1629)
+    at async doAutomigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:651)
+    at async Command.<anonymous> (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:664:2803)
+
+⚠️  failed to check fix storybook-binary
+
+Error: Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook\main.js file.
+
+Error: The service is no longer running
+    at \node_modules\esbuild\lib\main.js:828:29
+    at sendRequest (\node_modules\esbuild\lib\main.js:700:14)
+    at start (\node_modules\esbuild\lib\main.js:826:9)
+    at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)
+    at \node_modules\esbuild\lib\main.js:2232:77
+    at new Promise (<anonymous>)
+    at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)
+    at \node_modules\esbuild\lib\main.js:2390:67
+    at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)
+    at getStorybookData (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:185:4463)
+    at async runFixes (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:2652)
+    at async automigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:1629)
+    at async doAutomigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:651)
+    at async Command.<anonymous> (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:664:2803)
+
+⚠️  failed to check fix sb-scripts
+
+Error: Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook\main.js file.
+
+Error: The service is no longer running
+    at \node_modules\esbuild\lib\main.js:828:29
+    at sendRequest (\node_modules\esbuild\lib\main.js:700:14)
+    at start (\node_modules\esbuild\lib\main.js:826:9)
+    at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)
+    at \node_modules\esbuild\lib\main.js:2232:77
+    at new Promise (<anonymous>)
+    at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)
+    at \node_modules\esbuild\lib\main.js:2390:67
+    at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)
+    at getStorybookData (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:185:4463)
+    at async runFixes (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:2652)
+    at async automigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:1629)
+    at async doAutomigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:651)
+    at async Command.<anonymous> (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:664:2803)
+
+⚠️  failed to check fix remove-jest-testing-library
+
+Error: Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook\main.js file.
+
+Error: The service is no longer running
+    at \node_modules\esbuild\lib\main.js:828:29
+    at sendRequest (\node_modules\esbuild\lib\main.js:700:14)
+    at start (\node_modules\esbuild\lib\main.js:826:9)
+    at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)
+    at \node_modules\esbuild\lib\main.js:2232:77
+    at new Promise (<anonymous>)
+    at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)
+    at \node_modules\esbuild\lib\main.js:2390:67
+    at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)
+    at getStorybookData (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:185:4463)
+    at async runFixes (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:2652)
+    at async automigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:1629)
+    at async doAutomigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:651)
+    at async Command.<anonymous> (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:664:2803)
+
+⚠️  failed to check fix remove-argtypes-regex
+
+Error: Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook\main.js file.
+
+Error: The service is no longer running
+    at \node_modules\esbuild\lib\main.js:828:29
+    at sendRequest (\node_modules\esbuild\lib\main.js:700:14)
+    at start (\node_modules\esbuild\lib\main.js:826:9)
+    at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)
+    at \node_modules\esbuild\lib\main.js:2232:77
+    at new Promise (<anonymous>)
+    at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)
+    at \node_modules\esbuild\lib\main.js:2390:67
+    at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)
+    at getStorybookData (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:185:4463)
+    at async runFixes (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:2652)
+    at async automigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:1629)
+    at async doAutomigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:651)
+    at async Command.<anonymous> (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:664:2803)
+
+⚠️  failed to check fix removedglobalclientapis
+
+Error: Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook\main.js file.
+
+Error: The service is no longer running
+    at \node_modules\esbuild\lib\main.js:828:29
+    at sendRequest (\node_modules\esbuild\lib\main.js:700:14)
+    at start (\node_modules\esbuild\lib\main.js:826:9)
+    at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)
+    at \node_modules\esbuild\lib\main.js:2232:77
+    at new Promise (<anonymous>)
+    at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)
+    at \node_modules\esbuild\lib\main.js:2390:67
+    at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)
+    at getStorybookData (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:185:4463)
+    at async runFixes (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:2652)
+    at async automigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:1629)
+    at async doAutomigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:651)
+    at async Command.<anonymous> (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:664:2803)
+
+⚠️  failed to check fix github-flavored-markdown-mdx
+
+Error: Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook\main.js file.
+
+Error: The service is no longer running
+    at \node_modules\esbuild\lib\main.js:828:29
+    at sendRequest (\node_modules\esbuild\lib\main.js:700:14)
+    at start (\node_modules\esbuild\lib\main.js:826:9)
+    at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)
+    at \node_modules\esbuild\lib\main.js:2232:77
+    at new Promise (<anonymous>)
+    at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)
+    at \node_modules\esbuild\lib\main.js:2390:67
+    at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)
+    at getStorybookData (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:185:4463)
+    at async runFixes (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:2652)
+    at async automigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:1629)
+    at async doAutomigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:651)
+    at async Command.<anonymous> (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:664:2803)
+
+⚠️  failed to check fix mdx-to-csf
+
+Error: Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook\main.js file.
+
+Error: The service is no longer running
+    at \node_modules\esbuild\lib\main.js:828:29
+    at sendRequest (\node_modules\esbuild\lib\main.js:700:14)
+    at start (\node_modules\esbuild\lib\main.js:826:9)
+    at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)
+    at \node_modules\esbuild\lib\main.js:2232:77
+    at new Promise (<anonymous>)
+    at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)
+    at \node_modules\esbuild\lib\main.js:2390:67
+    at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)
+    at getStorybookData (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:185:4463)
+    at async runFixes (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:2652)
+    at async automigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:1629)
+    at async doAutomigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:651)
+    at async Command.<anonymous> (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:664:2803)
+
+⚠️  failed to check fix autodocsTrue
+
+Error: Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook\main.js file.
+
+Error: The service is no longer running
+    at \node_modules\esbuild\lib\main.js:828:29
+    at sendRequest (\node_modules\esbuild\lib\main.js:700:14)
+    at start (\node_modules\esbuild\lib\main.js:826:9)
+    at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)
+    at \node_modules\esbuild\lib\main.js:2232:77
+    at new Promise (<anonymous>)
+    at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)
+    at \node_modules\esbuild\lib\main.js:2390:67
+    at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)
+    at getStorybookData (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:185:4463)
+    at async runFixes (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:2652)
+    at async automigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:1629)
+    at async doAutomigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:651)
+    at async Command.<anonymous> (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:664:2803)
+
+⚠️  failed to check fix angular-builders-multiproject
+
+Error: Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook\main.js file.
+
+Error: The service is no longer running
+    at \node_modules\esbuild\lib\main.js:828:29
+    at sendRequest (\node_modules\esbuild\lib\main.js:700:14)
+    at start (\node_modules\esbuild\lib\main.js:826:9)
+    at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)
+    at \node_modules\esbuild\lib\main.js:2232:77
+    at new Promise (<anonymous>)
+    at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)
+    at \node_modules\esbuild\lib\main.js:2390:67
+    at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)
+    at getStorybookData (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:185:4463)
+    at async runFixes (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:2652)
+    at async automigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:1629)
+    at async doAutomigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:651)
+    at async Command.<anonymous> (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:664:2803)
+
+⚠️  failed to check fix angular-builders
+
+Error: Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook\main.js file.
+
+Error: The service is no longer running
+    at \node_modules\esbuild\lib\main.js:828:29
+    at sendRequest (\node_modules\esbuild\lib\main.js:700:14)
+    at start (\node_modules\esbuild\lib\main.js:826:9)
+    at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)
+    at \node_modules\esbuild\lib\main.js:2232:77
+    at new Promise (<anonymous>)
+    at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)
+    at \node_modules\esbuild\lib\main.js:2390:67
+    at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)
+    at getStorybookData (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:185:4463)
+    at async runFixes (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:2652)
+    at async automigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:1629)
+    at async doAutomigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:651)
+    at async Command.<anonymous> (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:664:2803)
+
+⚠️  failed to check fix wrap-require
+
+Error: Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook\main.js file.
+
+Error: The service is no longer running
+    at \node_modules\esbuild\lib\main.js:828:29
+    at sendRequest (\node_modules\esbuild\lib\main.js:700:14)
+    at start (\node_modules\esbuild\lib\main.js:826:9)
+    at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)
+    at \node_modules\esbuild\lib\main.js:2232:77
+    at new Promise (<anonymous>)
+    at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)
+    at \node_modules\esbuild\lib\main.js:2390:67
+    at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)
+    at getStorybookData (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:185:4463)
+    at async runFixes (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:2652)
+    at async automigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:1629)
+    at async doAutomigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:651)
+    at async Command.<anonymous> (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:664:2803)
+
+⚠️  failed to check fix react-docgen
+
+Error: Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook\main.js file.
+
+Error: The service is no longer running
+    at \node_modules\esbuild\lib\main.js:828:29
+    at sendRequest (\node_modules\esbuild\lib\main.js:700:14)
+    at start (\node_modules\esbuild\lib\main.js:826:9)
+    at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)
+    at \node_modules\esbuild\lib\main.js:2232:77
+    at new Promise (<anonymous>)
+    at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)
+    at \node_modules\esbuild\lib\main.js:2390:67
+    at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)
+    at getStorybookData (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:185:4463)
+    at async runFixes (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:2652)
+    at async automigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:1629)
+    at async doAutomigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:651)
+    at async Command.<anonymous> (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:664:2803)
+
+⚠️  failed to check fix storyshots
+
+Error: Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook\main.js file.
+
+Error: The service is no longer running
+    at \node_modules\esbuild\lib\main.js:828:29
+    at sendRequest (\node_modules\esbuild\lib\main.js:700:14)
+    at start (\node_modules\esbuild\lib\main.js:826:9)
+    at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)
+    at \node_modules\esbuild\lib\main.js:2232:77
+    at new Promise (<anonymous>)
+    at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)
+    at \node_modules\esbuild\lib\main.js:2390:67
+    at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)
+    at getStorybookData (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:185:4463)
+    at async runFixes (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:2652)
+    at async automigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:1629)
+    at async doAutomigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:651)
+    at async Command.<anonymous> (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:664:2803)
+
+⚠️  failed to check fix remove-react-dependency
+
+Error: Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook\main.js file.
+
+Error: The service is no longer running
+    at \node_modules\esbuild\lib\main.js:828:29
+    at sendRequest (\node_modules\esbuild\lib\main.js:700:14)
+    at start (\node_modules\esbuild\lib\main.js:826:9)
+    at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)
+    at \node_modules\esbuild\lib\main.js:2232:77
+    at new Promise (<anonymous>)
+    at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)
+    at \node_modules\esbuild\lib\main.js:2390:67
+    at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)
+    at getStorybookData (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:185:4463)
+    at async runFixes (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:2652)
+    at async automigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:1629)
+    at async doAutomigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:651)
+    at async Command.<anonymous> (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:664:2803)
+
+⚠️  failed to check fix remove-legacy-mdx1
+
+Error: Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook\main.js file.
+
+Error: The service is no longer running
+    at \node_modules\esbuild\lib\main.js:828:29
+    at sendRequest (\node_modules\esbuild\lib\main.js:700:14)
+    at start (\node_modules\esbuild\lib\main.js:826:9)
+    at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)
+    at \node_modules\esbuild\lib\main.js:2232:77
+    at new Promise (<anonymous>)
+    at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)
+    at \node_modules\esbuild\lib\main.js:2390:67
+    at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)
+    at getStorybookData (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:185:4463)
+    at async runFixes (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:2652)
+    at async automigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:1629)
+    at async doAutomigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:651)
+    at async Command.<anonymous> (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:664:2803)
+
+⚠️  failed to check fix webpack5-compiler-setup
+
+Error: Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook\main.js file.
+
+Error: The service is no longer running
+    at \node_modules\esbuild\lib\main.js:828:29
+    at sendRequest (\node_modules\esbuild\lib\main.js:700:14)
+    at start (\node_modules\esbuild\lib\main.js:826:9)
+    at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)
+    at \node_modules\esbuild\lib\main.js:2232:77
+    at new Promise (<anonymous>)
+    at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)
+    at \node_modules\esbuild\lib\main.js:2390:67
+    at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)
+    at getStorybookData (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:185:4463)
+    at async runFixes (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:2652)
+    at async automigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:1629)
+    at async doAutomigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:651)
+    at async Command.<anonymous> (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:664:2803)
+
+⚠️  failed to check fix mdx1to3
+
+Error: Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook\main.js file.
+
+Error: The service is no longer running
+    at \node_modules\esbuild\lib\main.js:828:29
+    at sendRequest (\node_modules\esbuild\lib\main.js:700:14)
+    at start (\node_modules\esbuild\lib\main.js:826:9)
+    at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)
+    at \node_modules\esbuild\lib\main.js:2232:77
+    at new Promise (<anonymous>)
+    at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)
+    at \node_modules\esbuild\lib\main.js:2390:67
+    at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)
+    at getStorybookData (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:185:4463)
+    at async runFixes (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:2652)
+    at async automigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:1629)
+    at async doAutomigrate (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:596:651)
+    at async Command.<anonymous> (C:\DevArea\AprajitaRetailsNetworks\UI\node_modules\@storybook\cli\dist\generate.js:664:2803)
+
+╭ Migration check ran with failures ─────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                                                    │
+│   Failed migrations:                                                                                                               │
+│                                                                                                                                    │
+│   addons-api:                                                                                                                      │
+│   Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your   │
+│   .storybook\main.js file.                                                                                                         │
+│                                                                                                                                    │
+│   Error: The service was stopped                                                                                                   │
+│   at \node_modules\esbuild\lib\main.js:828:29                                                                                      │
+│   at responseCallbacks.<computed> (\node_modules\esbuild\lib\main.js:704:9)                                                        │
+│   at Socket.afterClose (\node_modules\esbuild\lib\main.js:694:28)                                                                  │
+│   at Socket.emit (node:events:531:35)                                                                                              │
+│   at endReadableNT (node:internal/streams/readable:1696:12)                                                                        │
+│   at process.processTicksAndRejections (node:internal/process/task_queues:82:21)                                                   │
+│   new-frameworks:                                                                                                                  │
+│   Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your   │
+│   .storybook\main.js file.                                                                                                         │
+│                                                                                                                                    │
+│   Error: The service is no longer running                                                                                          │
+│   at \node_modules\esbuild\lib\main.js:828:29                                                                                      │
+│   at sendRequest (\node_modules\esbuild\lib\main.js:700:14)                                                                        │
+│   at start (\node_modules\esbuild\lib\main.js:826:9)                                                                               │
+│   at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)                                                    │
+│   at \node_modules\esbuild\lib\main.js:2232:77                                                                                     │
+│   at new Promise (<anonymous>)                                                                                                     │
+│   at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)                                                                  │
+│   at \node_modules\esbuild\lib\main.js:2390:67                                                                                     │
+│   at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)                                                            │
+│   at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)                                                         │
+│   cra5:                                                                                                                            │
+│   Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your   │
+│   .storybook\main.js file.                                                                                                         │
+│                                                                                                                                    │
+│   Error: The service is no longer running                                                                                          │
+│   at \node_modules\esbuild\lib\main.js:828:29                                                                                      │
+│   at sendRequest (\node_modules\esbuild\lib\main.js:700:14)                                                                        │
+│   at start (\node_modules\esbuild\lib\main.js:826:9)                                                                               │
+│   at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)                                                    │
+│   at \node_modules\esbuild\lib\main.js:2232:77                                                                                     │
+│   at new Promise (<anonymous>)                                                                                                     │
+│   at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)                                                                  │
+│   at \node_modules\esbuild\lib\main.js:2390:67                                                                                     │
+│   at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)                                                            │
+│   at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)                                                         │
+│   webpack5:                                                                                                                        │
+│   Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your   │
+│   .storybook\main.js file.                                                                                                         │
+│                                                                                                                                    │
+│   Error: The service is no longer running                                                                                          │
+│   at \node_modules\esbuild\lib\main.js:828:29                                                                                      │
+│   at sendRequest (\node_modules\esbuild\lib\main.js:700:14)                                                                        │
+│   at start (\node_modules\esbuild\lib\main.js:826:9)                                                                               │
+│   at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)                                                    │
+│   at \node_modules\esbuild\lib\main.js:2232:77                                                                                     │
+│   at new Promise (<anonymous>)                                                                                                     │
+│   at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)                                                                  │
+│   at \node_modules\esbuild\lib\main.js:2390:67                                                                                     │
+│   at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)                                                            │
+│   at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)                                                         │
+│   vue3:                                                                                                                            │
+│   Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your   │
+│   .storybook\main.js file.                                                                                                         │
+│                                                                                                                                    │
+│   Error: The service is no longer running                                                                                          │
+│   at \node_modules\esbuild\lib\main.js:828:29                                                                                      │
+│   at sendRequest (\node_modules\esbuild\lib\main.js:700:14)                                                                        │
+│   at start (\node_modules\esbuild\lib\main.js:826:9)                                                                               │
+│   at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)                                                    │
+│   at \node_modules\esbuild\lib\main.js:2232:77                                                                                     │
+│   at new Promise (<anonymous>)                                                                                                     │
+│   at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)                                                                  │
+│   at \node_modules\esbuild\lib\main.js:2390:67                                                                                     │
+│   at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)                                                            │
+│   at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)                                                         │
+│   addon-postcss:                                                                                                                   │
+│   Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your   │
+│   .storybook\main.js file.                                                                                                         │
+│                                                                                                                                    │
+│   Error: The service is no longer running                                                                                          │
+│   at \node_modules\esbuild\lib\main.js:828:29                                                                                      │
+│   at sendRequest (\node_modules\esbuild\lib\main.js:700:14)                                                                        │
+│   at start (\node_modules\esbuild\lib\main.js:826:9)                                                                               │
+│   at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)                                                    │
+│   at \node_modules\esbuild\lib\main.js:2232:77                                                                                     │
+│   at new Promise (<anonymous>)                                                                                                     │
+│   at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)                                                                  │
+│   at \node_modules\esbuild\lib\main.js:2390:67                                                                                     │
+│   at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)                                                            │
+│   at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)                                                         │
+│   viteConfigFile:                                                                                                                  │
+│   Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your   │
+│   .storybook\main.js file.                                                                                                         │
+│                                                                                                                                    │
+│   Error: The service is no longer running                                                                                          │
+│   at \node_modules\esbuild\lib\main.js:828:29                                                                                      │
+│   at sendRequest (\node_modules\esbuild\lib\main.js:700:14)                                                                        │
+│   at start (\node_modules\esbuild\lib\main.js:826:9)                                                                               │
+│   at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)                                                    │
+│   at \node_modules\esbuild\lib\main.js:2232:77                                                                                     │
+│   at new Promise (<anonymous>)                                                                                                     │
+│   at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)                                                                  │
+│   at \node_modules\esbuild\lib\main.js:2390:67                                                                                     │
+│   at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)                                                            │
+│   at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)                                                         │
+│   eslintPlugin:                                                                                                                    │
+│   Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your   │
+│   .storybook\main.js file.                                                                                                         │
+│                                                                                                                                    │
+│   Error: The service is no longer running                                                                                          │
+│   at \node_modules\esbuild\lib\main.js:828:29                                                                                      │
+│   at sendRequest (\node_modules\esbuild\lib\main.js:700:14)                                                                        │
+│   at start (\node_modules\esbuild\lib\main.js:826:9)                                                                               │
+│   at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)                                                    │
+│   at \node_modules\esbuild\lib\main.js:2232:77                                                                                     │
+│   at new Promise (<anonymous>)                                                                                                     │
+│   at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)                                                                  │
+│   at \node_modules\esbuild\lib\main.js:2390:67                                                                                     │
+│   at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)                                                            │
+│   at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)                                                         │
+│   builder-vite:                                                                                                                    │
+│   Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your   │
+│   .storybook\main.js file.                                                                                                         │
+│                                                                                                                                    │
+│   Error: The service is no longer running                                                                                          │
+│   at \node_modules\esbuild\lib\main.js:828:29                                                                                      │
+│   at sendRequest (\node_modules\esbuild\lib\main.js:700:14)                                                                        │
+│   at start (\node_modules\esbuild\lib\main.js:826:9)                                                                               │
+│   at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)                                                    │
+│   at \node_modules\esbuild\lib\main.js:2232:77                                                                                     │
+│   at new Promise (<anonymous>)                                                                                                     │
+│   at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)                                                                  │
+│   at \node_modules\esbuild\lib\main.js:2390:67                                                                                     │
+│   at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)                                                            │
+│   at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)                                                         │
+│   storybook-binary:                                                                                                                │
+│   Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your   │
+│   .storybook\main.js file.                                                                                                         │
+│                                                                                                                                    │
+│   Error: The service is no longer running                                                                                          │
+│   at \node_modules\esbuild\lib\main.js:828:29                                                                                      │
+│   at sendRequest (\node_modules\esbuild\lib\main.js:700:14)                                                                        │
+│   at start (\node_modules\esbuild\lib\main.js:826:9)                                                                               │
+│   at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)                                                    │
+│   at \node_modules\esbuild\lib\main.js:2232:77                                                                                     │
+│   at new Promise (<anonymous>)                                                                                                     │
+│   at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)                                                                  │
+│   at \node_modules\esbuild\lib\main.js:2390:67                                                                                     │
+│   at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)                                                            │
+│   at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)                                                         │
+│   sb-scripts:                                                                                                                      │
+│   Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your   │
+│   .storybook\main.js file.                                                                                                         │
+│                                                                                                                                    │
+│   Error: The service is no longer running                                                                                          │
+│   at \node_modules\esbuild\lib\main.js:828:29                                                                                      │
+│   at sendRequest (\node_modules\esbuild\lib\main.js:700:14)                                                                        │
+│   at start (\node_modules\esbuild\lib\main.js:826:9)                                                                               │
+│   at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)                                                    │
+│   at \node_modules\esbuild\lib\main.js:2232:77                                                                                     │
+│   at new Promise (<anonymous>)                                                                                                     │
+│   at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)                                                                  │
+│   at \node_modules\esbuild\lib\main.js:2390:67                                                                                     │
+│   at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)                                                            │
+│   at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)                                                         │
+│   remove-jest-testing-library:                                                                                                     │
+│   Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your   │
+│   .storybook\main.js file.                                                                                                         │
+│                                                                                                                                    │
+│   Error: The service is no longer running                                                                                          │
+│   at \node_modules\esbuild\lib\main.js:828:29                                                                                      │
+│   at sendRequest (\node_modules\esbuild\lib\main.js:700:14)                                                                        │
+│   at start (\node_modules\esbuild\lib\main.js:826:9)                                                                               │
+│   at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)                                                    │
+│   at \node_modules\esbuild\lib\main.js:2232:77                                                                                     │
+│   at new Promise (<anonymous>)                                                                                                     │
+│   at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)                                                                  │
+│   at \node_modules\esbuild\lib\main.js:2390:67                                                                                     │
+│   at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)                                                            │
+│   at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)                                                         │
+│   remove-argtypes-regex:                                                                                                           │
+│   Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your   │
+│   .storybook\main.js file.                                                                                                         │
+│                                                                                                                                    │
+│   Error: The service is no longer running                                                                                          │
+│   at \node_modules\esbuild\lib\main.js:828:29                                                                                      │
+│   at sendRequest (\node_modules\esbuild\lib\main.js:700:14)                                                                        │
+│   at start (\node_modules\esbuild\lib\main.js:826:9)                                                                               │
+│   at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)                                                    │
+│   at \node_modules\esbuild\lib\main.js:2232:77                                                                                     │
+│   at new Promise (<anonymous>)                                                                                                     │
+│   at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)                                                                  │
+│   at \node_modules\esbuild\lib\main.js:2390:67                                                                                     │
+│   at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)                                                            │
+│   at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)                                                         │
+│   removedglobalclientapis:                                                                                                         │
+│   Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your   │
+│   .storybook\main.js file.                                                                                                         │
+│                                                                                                                                    │
+│   Error: The service is no longer running                                                                                          │
+│   at \node_modules\esbuild\lib\main.js:828:29                                                                                      │
+│   at sendRequest (\node_modules\esbuild\lib\main.js:700:14)                                                                        │
+│   at start (\node_modules\esbuild\lib\main.js:826:9)                                                                               │
+│   at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)                                                    │
+│   at \node_modules\esbuild\lib\main.js:2232:77                                                                                     │
+│   at new Promise (<anonymous>)                                                                                                     │
+│   at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)                                                                  │
+│   at \node_modules\esbuild\lib\main.js:2390:67                                                                                     │
+│   at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)                                                            │
+│   at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)                                                         │
+│   github-flavored-markdown-mdx:                                                                                                    │
+│   Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your   │
+│   .storybook\main.js file.                                                                                                         │
+│                                                                                                                                    │
+│   Error: The service is no longer running                                                                                          │
+│   at \node_modules\esbuild\lib\main.js:828:29                                                                                      │
+│   at sendRequest (\node_modules\esbuild\lib\main.js:700:14)                                                                        │
+│   at start (\node_modules\esbuild\lib\main.js:826:9)                                                                               │
+│   at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)                                                    │
+│   at \node_modules\esbuild\lib\main.js:2232:77                                                                                     │
+│   at new Promise (<anonymous>)                                                                                                     │
+│   at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)                                                                  │
+│   at \node_modules\esbuild\lib\main.js:2390:67                                                                                     │
+│   at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)                                                            │
+│   at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)                                                         │
+│   mdx-to-csf:                                                                                                                      │
+│   Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your   │
+│   .storybook\main.js file.                                                                                                         │
+│                                                                                                                                    │
+│   Error: The service is no longer running                                                                                          │
+│   at \node_modules\esbuild\lib\main.js:828:29                                                                                      │
+│   at sendRequest (\node_modules\esbuild\lib\main.js:700:14)                                                                        │
+│   at start (\node_modules\esbuild\lib\main.js:826:9)                                                                               │
+│   at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)                                                    │
+│   at \node_modules\esbuild\lib\main.js:2232:77                                                                                     │
+│   at new Promise (<anonymous>)                                                                                                     │
+│   at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)                                                                  │
+│   at \node_modules\esbuild\lib\main.js:2390:67                                                                                     │
+│   at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)                                                            │
+│   at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)                                                         │
+│   autodocsTrue:                                                                                                                    │
+│   Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your   │
+│   .storybook\main.js file.                                                                                                         │
+│                                                                                                                                    │
+│   Error: The service is no longer running                                                                                          │
+│   at \node_modules\esbuild\lib\main.js:828:29                                                                                      │
+│   at sendRequest (\node_modules\esbuild\lib\main.js:700:14)                                                                        │
+│   at start (\node_modules\esbuild\lib\main.js:826:9)                                                                               │
+│   at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)                                                    │
+│   at \node_modules\esbuild\lib\main.js:2232:77                                                                                     │
+│   at new Promise (<anonymous>)                                                                                                     │
+│   at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)                                                                  │
+│   at \node_modules\esbuild\lib\main.js:2390:67                                                                                     │
+│   at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)                                                            │
+│   at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)                                                         │
+│   angular-builders-multiproject:                                                                                                   │
+│   Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your   │
+│   .storybook\main.js file.                                                                                                         │
+│                                                                                                                                    │
+│   Error: The service is no longer running                                                                                          │
+│   at \node_modules\esbuild\lib\main.js:828:29                                                                                      │
+│   at sendRequest (\node_modules\esbuild\lib\main.js:700:14)                                                                        │
+│   at start (\node_modules\esbuild\lib\main.js:826:9)                                                                               │
+│   at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)                                                    │
+│   at \node_modules\esbuild\lib\main.js:2232:77                                                                                     │
+│   at new Promise (<anonymous>)                                                                                                     │
+│   at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)                                                                  │
+│   at \node_modules\esbuild\lib\main.js:2390:67                                                                                     │
+│   at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)                                                            │
+│   at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)                                                         │
+│   angular-builders:                                                                                                                │
+│   Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your   │
+│   .storybook\main.js file.                                                                                                         │
+│                                                                                                                                    │
+│   Error: The service is no longer running                                                                                          │
+│   at \node_modules\esbuild\lib\main.js:828:29                                                                                      │
+│   at sendRequest (\node_modules\esbuild\lib\main.js:700:14)                                                                        │
+│   at start (\node_modules\esbuild\lib\main.js:826:9)                                                                               │
+│   at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)                                                    │
+│   at \node_modules\esbuild\lib\main.js:2232:77                                                                                     │
+│   at new Promise (<anonymous>)                                                                                                     │
+│   at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)                                                                  │
+│   at \node_modules\esbuild\lib\main.js:2390:67                                                                                     │
+│   at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)                                                            │
+│   at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)                                                         │
+│   wrap-require:                                                                                                                    │
+│   Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your   │
+│   .storybook\main.js file.                                                                                                         │
+│                                                                                                                                    │
+│   Error: The service is no longer running                                                                                          │
+│   at \node_modules\esbuild\lib\main.js:828:29                                                                                      │
+│   at sendRequest (\node_modules\esbuild\lib\main.js:700:14)                                                                        │
+│   at start (\node_modules\esbuild\lib\main.js:826:9)                                                                               │
+│   at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)                                                    │
+│   at \node_modules\esbuild\lib\main.js:2232:77                                                                                     │
+│   at new Promise (<anonymous>)                                                                                                     │
+│   at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)                                                                  │
+│   at \node_modules\esbuild\lib\main.js:2390:67                                                                                     │
+│   at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)                                                            │
+│   at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)                                                         │
+│   react-docgen:                                                                                                                    │
+│   Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your   │
+│   .storybook\main.js file.                                                                                                         │
+│                                                                                                                                    │
+│   Error: The service is no longer running                                                                                          │
+│   at \node_modules\esbuild\lib\main.js:828:29                                                                                      │
+│   at sendRequest (\node_modules\esbuild\lib\main.js:700:14)                                                                        │
+│   at start (\node_modules\esbuild\lib\main.js:826:9)                                                                               │
+│   at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)                                                    │
+│   at \node_modules\esbuild\lib\main.js:2232:77                                                                                     │
+│   at new Promise (<anonymous>)                                                                                                     │
+│   at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)                                                                  │
+│   at \node_modules\esbuild\lib\main.js:2390:67                                                                                     │
+│   at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)                                                            │
+│   at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)                                                         │
+│   storyshots:                                                                                                                      │
+│   Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your   │
+│   .storybook\main.js file.                                                                                                         │
+│                                                                                                                                    │
+│   Error: The service is no longer running                                                                                          │
+│   at \node_modules\esbuild\lib\main.js:828:29                                                                                      │
+│   at sendRequest (\node_modules\esbuild\lib\main.js:700:14)                                                                        │
+│   at start (\node_modules\esbuild\lib\main.js:826:9)                                                                               │
+│   at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)                                                    │
+│   at \node_modules\esbuild\lib\main.js:2232:77                                                                                     │
+│   at new Promise (<anonymous>)                                                                                                     │
+│   at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)                                                                  │
+│   at \node_modules\esbuild\lib\main.js:2390:67                                                                                     │
+│   at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)                                                            │
+│   at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)                                                         │
+│   remove-react-dependency:                                                                                                         │
+│   Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your   │
+│   .storybook\main.js file.                                                                                                         │
+│                                                                                                                                    │
+│   Error: The service is no longer running                                                                                          │
+│   at \node_modules\esbuild\lib\main.js:828:29                                                                                      │
+│   at sendRequest (\node_modules\esbuild\lib\main.js:700:14)                                                                        │
+│   at start (\node_modules\esbuild\lib\main.js:826:9)                                                                               │
+│   at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)                                                    │
+│   at \node_modules\esbuild\lib\main.js:2232:77                                                                                     │
+│   at new Promise (<anonymous>)                                                                                                     │
+│   at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)                                                                  │
+│   at \node_modules\esbuild\lib\main.js:2390:67                                                                                     │
+│   at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)                                                            │
+│   at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)                                                         │
+│   remove-legacy-mdx1:                                                                                                              │
+│   Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your   │
+│   .storybook\main.js file.                                                                                                         │
+│                                                                                                                                    │
+│   Error: The service is no longer running                                                                                          │
+│   at \node_modules\esbuild\lib\main.js:828:29                                                                                      │
+│   at sendRequest (\node_modules\esbuild\lib\main.js:700:14)                                                                        │
+│   at start (\node_modules\esbuild\lib\main.js:826:9)                                                                               │
+│   at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)                                                    │
+│   at \node_modules\esbuild\lib\main.js:2232:77                                                                                     │
+│   at new Promise (<anonymous>)                                                                                                     │
+│   at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)                                                                  │
+│   at \node_modules\esbuild\lib\main.js:2390:67                                                                                     │
+│   at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)                                                            │
+│   at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)                                                         │
+│   webpack5-compiler-setup:                                                                                                         │
+│   Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your   │
+│   .storybook\main.js file.                                                                                                         │
+│                                                                                                                                    │
+│   Error: The service is no longer running                                                                                          │
+│   at \node_modules\esbuild\lib\main.js:828:29                                                                                      │
+│   at sendRequest (\node_modules\esbuild\lib\main.js:700:14)                                                                        │
+│   at start (\node_modules\esbuild\lib\main.js:826:9)                                                                               │
+│   at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)                                                    │
+│   at \node_modules\esbuild\lib\main.js:2232:77                                                                                     │
+│   at new Promise (<anonymous>)                                                                                                     │
+│   at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)                                                                  │
+│   at \node_modules\esbuild\lib\main.js:2390:67                                                                                     │
+│   at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)                                                            │
+│   at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)                                                         │
+│   mdx1to3:                                                                                                                         │
+│   Unable to find or evaluate .storybook\main.js: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your   │
+│   .storybook\main.js file.                                                                                                         │
+│                                                                                                                                    │
+│   Error: The service is no longer running                                                                                          │
+│   at \node_modules\esbuild\lib\main.js:828:29                                                                                      │
+│   at sendRequest (\node_modules\esbuild\lib\main.js:700:14)                                                                        │
+│   at start (\node_modules\esbuild\lib\main.js:826:9)                                                                               │
+│   at Object.transform2 [as transform] (\node_modules\esbuild\lib\main.js:891:5)                                                    │
+│   at \node_modules\esbuild\lib\main.js:2232:77                                                                                     │
+│   at new Promise (<anonymous>)                                                                                                     │
+│   at Object.transform (\node_modules\esbuild\lib\main.js:2232:36)                                                                  │
+│   at \node_modules\esbuild\lib\main.js:2390:67                                                                                     │
+│   at MessagePort.<anonymous> (\node_modules\esbuild\lib\main.js:2406:9)                                                            │
+│   at [nodejs.internal.kHybridDispatch] (node:internal/event_target:822:20)                                                         │
+│                                                                                                                                    │
+│   You can find the full logs in C:\DevArea\AprajitaRetailsNetworks\UI\migration-storybook.log                                      │
+│                                                                                                                                    │
+│   ─────────────────────────────────────────────────                                                                                │
+│                                                                                                                                    │
+│   If you'd like to run the migrations again, you can do so by running 'npx storybook automigrate'                                  │
+│                                                                                                                                    │
+│   The automigrations try to migrate common patterns in your project, but might not contain everything needed to migrate to the     │
+│   latest version of Storybook.                                                                                                     │
+│                                                                                                                                    │
+│   Please check the changelog and migration guide for manual migrations and more information:                                       │
+│   https://storybook.js.org/docs/8.0/migration-guide                                                                                │
+│   And reach out on Discord if you need help: https://discord.gg/storybook                                                          │
+│                                                                                                                                    │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+

@@ -133,7 +133,7 @@ function VRInfo() {
                   28&deg;C
                 </SoftBox>
                 <SoftTypography variant="h6" fontWeight="medium" textTransform="uppercase">
-                  cloudy
+                  THIS Module need to be removed
                 </SoftTypography>
               </SoftBox>
               <SoftBox component="img" src={sunCloud} width="30%" />

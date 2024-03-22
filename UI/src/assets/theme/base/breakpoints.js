@@ -14,7 +14,7 @@ Code by Amit Kumar
 */
 
 /**
- * The base breakpoints for the Aprajita Retails Dashboard.
+ * The base breakpoints for the Aprajita Retails -Networks  .
  * You can add new breakpoints using this file.
  * You can customized the breakpoints for the entire Aprajita Retails -Networks  using thie file.
  */

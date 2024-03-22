@@ -36,7 +36,7 @@ function CoverLayout({ color, header, title, description, image, top, children }
       <DefaultNavbar
         action={{
           type: "external",
-          route: "https://www.aprajitaretails.store:7111",
+          route: "https://www.aprajitaretails.in:7111",
           label: "Old WebSite",
           color: "dark",
         }}

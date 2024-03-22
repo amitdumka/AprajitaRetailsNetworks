@@ -14,7 +14,7 @@ Code by Amit Kumar
 */
 
 /**
- * The base typography styles for the Aprajita Retails Dashboard.
+ * The base typography styles for the Aprajita Retails -Networks  .
  * You can add new typography style using this file.
  * You can customized the typography styles for the entire Aprajita Retails -Networks  using thie file.
  */

@@ -14,7 +14,7 @@ Code by Amit Kumar
 */
 
 /**
- * The base colors for the Aprajita Retails Dashboard.
+ * The base colors for the Aprajita Retails -Networks  .
  * You can add new color using this file.
  * You can customized the colors for the entire Aprajita Retails -Networks  using thie file.
  */
