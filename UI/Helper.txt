@@ -1,0 +1,18 @@
+
+Apps Mdoules
+
+1. Listing the record with filerts
+2. Edit or Add New Record 
+3. Display record for details info
+4. Delete one or all record or selected record. 
+
+
+1. For Listing the Records with filerts
+
+    a base page need to be created
+        parameters need to pass will 
+        a) title, b) class name, c) api url , 
+        d) fields name, e) list of record f) filters details 
+
+        
+        
