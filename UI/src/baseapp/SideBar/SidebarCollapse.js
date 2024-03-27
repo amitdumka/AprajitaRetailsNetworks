@@ -53,7 +53,7 @@ function SidebarCollapse({ color, icon, name, bgColor,children, active, noCollap
   return (
     <>
       <ListItem component="li">
-        <SoftBox {...rest} sx={(theme) => collapseItem(theme, { active, bgSideNavbar })}>
+        <SoftBox {...rest} sx={(theme) => collapseItem(theme, { active, transparentSidenav })}>
           <ListItemIcon
             sx={(theme) => collapseIconBox(theme, { active, transparentSidenav, color })}
           >
