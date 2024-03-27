@@ -1,0 +1,37 @@
+/**
+=========================================================
+* Aprajita Retails Dashboard - v3.1.0
+=========================================================
+
+* Product Page: https://www.aprajitaretails.in/amitkumar/product/soft-ui-dashboard-pro-react
+* Copyright 2023 Amit Kumar (https://www.aprajitaretails.in/amitkumar)
+
+Coded by Amit Kumar (www.aprajitaretails.in/amitkumar)
+
+ =========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+*/
+
+// Aprajita Retails Dashboard base styles
+import borders from "assets/theme/base/borders";
+
+const { borderRadius } = borders;
+
+const avatar = {
+  styleOverrides: {
+    root: {
+      transition: "all 200ms ease-in-out",
+    },
+
+    rounded: {
+      borderRadius: borderRadius.lg,
+    },
+
+    img: {
+      height: "auto",
+    },
+  },
+};
+
+export default avatar;

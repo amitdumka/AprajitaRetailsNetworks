@@ -1,0 +1,51 @@
+/**
+=========================================================
+* Aprajita Retails Dashboard - v3.1.0
+=========================================================
+
+* Product Page: https://www.aprajitaretails.in/amitkumar/product/soft-ui-dashboard-pro-react
+* Copyright 2023 Amit Kumar (https://www.aprajitaretails.in/amitkumar)
+
+Coded by Amit Kumar (www.aprajitaretails.in/amitkumar)
+
+ =========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+*/
+
+// Aprajita Retails Dashboard base styles
+import colors from "assets/theme/base/colors";
+import borders from "assets/theme/base/borders";
+
+// Aprajita Retails Dashboard helper functions
+import rgba from "assets/theme/functions/rgba";
+import pxToRem from "assets/theme/functions/pxToRem";
+
+const { white } = colors;
+const { borderRadius } = borders;
+
+const sidenav = {
+  styleOverrides: {
+    root: {
+      width: pxToRem(250),
+      whiteSpace: "nowrap",
+      border: "none",
+    },
+
+    paper: {
+      width: pxToRem(250),
+      backgroundColor: rgba(white.main, 0.8),
+      backdropFilter: `saturate(200%) blur(${pxToRem(30)})`,
+      height: `calc(100vh - ${pxToRem(32)})`,
+      margin: pxToRem(16),
+      borderRadius: borderRadius.xl,
+      border: "none",
+    },
+
+    paperAnchorDockedLeft: {
+      borderRight: "none",
+    },
+  },
+};
+
+export default sidenav;
