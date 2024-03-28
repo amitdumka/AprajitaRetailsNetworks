@@ -33,7 +33,7 @@ import SoftBox from "components/SoftBox";
 // Custom styles for the SidenavCollapse
 import {
   collapseItem,
-  collapseIconBox,
+  collapseSubIconBox,
   collapseIcon,
   collapseText,
 } from "baseapp/Sidenav/styles/sidenavCollapse";
@@ -41,7 +41,7 @@ import {
 // Aprajita Retails Dashboard context
 import { useSoftUIController } from "context";
 
-function SidebarCollapse({ color, icon, name, bgColor,children, active, noCollapse, open, ...rest }) {
+function SubSidebarCollapse({ color, icon, name, bgColor,children, active, noCollapse, open, ...rest }) {
   const [controller] = useSoftUIController();
   const { miniSidenav, transparentSidenav } = controller;
 
@@ -49,10 +49,10 @@ function SidebarCollapse({ color, icon, name, bgColor,children, active, noCollap
   
   return (
     <>
-      <ListItem component="li">
+      <ListItem component="li" sx={{ pt: 1 }}>
         <SoftBox {...rest} sx={(theme) => collapseItem(theme, { active, transparentSidenav })}>
           <ListItemIcon
-            sx={(theme) => collapseIconBox(theme, { active, transparentSidenav, color })}
+            sx={(theme) => collapseSubIconBox(theme, { active, transparentSidenav, color })}
           >
             {typeof icon === "string" ? (
               <Icon sx={(theme) => collapseIcon(theme, { active })}>{icon}</Icon>
@@ -78,7 +78,7 @@ function SidebarCollapse({ color, icon, name, bgColor,children, active, noCollap
 }
 
 // Setting default values for the props of SidebarCollapse
-SidebarCollapse.defaultProps = {
+SubSidebarCollapse.defaultProps = {
   color: "info",
   active: false,
   noCollapse: false,
@@ -88,7 +88,7 @@ SidebarCollapse.defaultProps = {
 };
 
 // Typechecking props for the SidebarCollapse
-SidebarCollapse.propTypes = {
+SubSidebarCollapse.propTypes = {
   color: PropTypes.oneOf(["primary", "secondary", "info", "success", "warning", "error", "dark"]),
   icon: PropTypes.node.isRequired,
   name: PropTypes.string.isRequired,
@@ -99,4 +99,4 @@ SidebarCollapse.propTypes = {
   bgColor: PropTypes.bool,
 };
 
-export default SidebarCollapse;
+export default SubSidebarCollapse;

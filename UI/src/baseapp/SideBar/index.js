@@ -39,6 +39,7 @@ function Sidebar({ color, brand, brandName, routes, ...rest }) {
   const location = useLocation();
   const { pathname } = location;
   const collapseName = pathname.split("/").slice(1)[0];
+  const nestedCollapseName = pathname.split("/").slice(1)[1];
 
   const closeSidenav = () => setMiniSidenav(dispatch, true);
   useEffect(() => {
@@ -63,7 +64,7 @@ function Sidebar({ color, brand, brandName, routes, ...rest }) {
   const renderRoutes = routes.map(
     ({ type, name, icon, title, noCollapse, collapse, key, route, href }) => {
       let returnValue;
-
+      //console.log(type, name, key, route,collapseName);
       if (type === "collapse") {
         returnValue = href ? (
           <Link
@@ -95,6 +96,7 @@ function Sidebar({ color, brand, brandName, routes, ...rest }) {
               href={href}
               title={title}
               collapseName={collapseName}
+              nestedCollapseName={nestedCollapseName}
             />
           </>
         );

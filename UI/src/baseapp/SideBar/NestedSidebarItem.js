@@ -19,6 +19,7 @@ import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import SidebarCollapse from "baseapp/SideBar/SidebarCollapse";
+import SubSidebarCollapse from "baseapp/SideBar/SubSidebarCollapse";
 
 // Aprajita Retails Dashboard components
 import SoftBox from "components/SoftBox";
@@ -46,6 +47,7 @@ function NestedSidebarItem({
   key,
   collapse,
   collapseName,
+  nestedCollapseName,
   ...rest
 }) {
   const [open1, setOpen] = React.useState(true);
@@ -57,11 +59,10 @@ function NestedSidebarItem({
   };
   let nestedMenuItem;
   if (!noCollapse) {
-    const nestedItem = collapse.map(({ type, name, icon, title, noCollapse, key, route, href }) => {
+    const nestedItem = collapse.map(({ type, name,  title, noCollapse, key, route, href }) => {
       let returnValue;
       if (type === "collapse") {
-        let nActive = collapseName === key ? true : false;
-
+        let nActive = nestedCollapseName === key ? true : false;
         returnValue = href ? (
           <Link
             href={href}
@@ -89,7 +90,7 @@ function NestedSidebarItem({
           </Link>
         ) : (
           <NavLink key={key} to={route}>
-            <SidebarCollapse
+            <SubSidebarCollapse
               color={color}
               key={key}
               name={name}
@@ -98,6 +99,8 @@ function NestedSidebarItem({
               noCollapse={noCollapse}
               bgColor={true}
             />
+            
+               
           </NavLink>
         );
       } else if (type === "title") {
@@ -142,14 +145,6 @@ function NestedSidebarItem({
   } else {
     return (
       <NavLink to={route} key={key}>
-        {/* <ExpandMore
-            expand={open1}
-            onClick={handleExpandClick}
-            aria-expanded={open1}
-            aria-label="show more"
-          >
-            <ExpandMoreIcon />
-          </ExpandMore> */}
         <SidebarCollapse
           onClick={handleExpandClick}
           color={color}
@@ -160,7 +155,7 @@ function NestedSidebarItem({
           noCollapse={noCollapse}
           open={open1}
         >
-          <List component="div" disablePadding sx={{ pl: 4 }}>
+          <List component="div"  sx={{ pl: 4 }}>
             {nestedMenuItem}
           </List>
         </SidebarCollapse>

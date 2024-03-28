@@ -106,6 +106,7 @@ const routes = [
     component: <SignOut />,
     noCollapse: true,
   },
+  
   {
     type: "collapse",
     name: "Apps",
@@ -117,20 +118,20 @@ const routes = [
         type: "collapse",
         name: "Profile",
         key: "profile",
-        route: "/profile",
+        route: "/apps/profile",
         component: <Profile />,
         icon: <Document size="12px" />,
         noCollapse: true,
       },
-      // {
-      //   icon: <SpaceShip size="12px" />,
-      //   type: "collapse",
-      //   name: "Dashboard",
-      //   key: "dashboard",
-      //   route: "/dashboard",
-      //   component: <Dashboard />,
-      //   noCollapse: true,
-      // },
+      {
+        icon: <SpaceShip size="12px" />,
+        type: "collapse",
+        name: "Dashboard",
+        key: "dashboard",
+        route: "/apps/dashboard",
+        component: <Dashboard />,
+        noCollapse: true,
+      },
     ],
   },
 ];

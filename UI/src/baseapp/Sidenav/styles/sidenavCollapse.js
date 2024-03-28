@@ -101,6 +101,57 @@ function collapseIconBox(theme, ownerState) {
     },
   };
 }
+function collapseSubIconBox(theme, ownerState) {
+  const { palette, transitions, breakpoints, boxShadows, borders, functions } = theme;
+  const { active, transparentSidenav, color } = ownerState;
+
+  const { white, info, light, gradients } = palette;
+  const { md } = boxShadows;
+  const { borderRadius } = borders;
+  const { pxToRem } = functions;
+
+  return {
+    background: () => {
+      if (active) {
+        return color === "default" ? info.main : palette[color].main;
+      }
+
+      return light.main;
+    },
+    minWidth: pxToRem(18),
+    minHeight: pxToRem(18),
+    borderRadius: borderRadius.md,
+    display: "grid",
+    placeItems: "center",
+    boxShadow: md,
+    transition: transitions.create("margin", {
+      easing: transitions.easing.easeInOut,
+      duration: transitions.duration.standard,
+    }),
+
+    [breakpoints.up("xl")]: {
+      background: () => {
+        let background;
+
+        if (!active) {
+          background = transparentSidenav ? white.main : light.main;
+        } else if (color === "default") {
+          background = info.main;
+        } else if (color === "warning") {
+          background = gradients.warning.main;
+        } else {
+          background = palette[color].main;
+        }
+
+        return background;
+      },
+    },
+
+    "& svg, svg g": {
+      fill: active ? white.main : gradients.dark.state,
+    },
+  };
+}
 
 const collapseIcon = ({ palette: { white, gradients } }, { active }) => ({
   color: active ? white.main : gradients.dark.state,
@@ -134,4 +185,4 @@ function collapseText(theme, ownerState) {
   };
 }
 
-export { collapseItem, collapseIconBox, collapseIcon, collapseText };
+export { collapseItem, collapseIconBox,collapseSubIconBox, collapseIcon, collapseText };

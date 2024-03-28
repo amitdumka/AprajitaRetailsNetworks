@@ -14,5 +14,22 @@ Apps Mdoules
         a) title, b) class name, c) api url , 
         d) fields name, e) list of record f) filters details 
 
-        
-        
+
+
+SideBar Navigation with nested Item . 
+#TODO: Need to make possible for more than two nested Item . 
+    Just like in loop. 
+
+##Routing: Routing for Nested Route 
+
+ for exmample 
+  HRM  
+    /hrm
+    /hrm/employees
+    /hrm/attendances
+    /hrm/salarypayments
+    /hrm/monthlyattendances
+    /hrm/ledgers
+    /hrm/salary 
+    /hrm/payslip
+    /hrm/reports
