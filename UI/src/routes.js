@@ -34,6 +34,8 @@ import SignIn from "layouts/authentication/sign-in";
 import SignUp from "layouts/authentication/sign-up";
 import SignOut from "layouts/authentication/sign-out";
 
+import TestPage from "apps/testmenu";
+
 // Aprajita Retails React icons
 import Shop from "baseapp/Icons/Shop";
 import Office from "baseapp/Icons/Office";
@@ -130,6 +132,15 @@ const routes = [
         key: "dashboard",
         route: "/apps/dashboard",
         component: <Dashboard />,
+        noCollapse: true,
+      },
+      {
+        icon: <Document size="12px" />,
+        type: "collapse",
+        name: "TestPage",
+        key: "testpage",
+        route: "/apps/testpage",
+        component: <TestPage />,
         noCollapse: true,
       },
     ],
