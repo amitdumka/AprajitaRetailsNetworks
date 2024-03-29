@@ -33,6 +33,7 @@ import Profile from "layouts/profile";
 import SignIn from "layouts/authentication/sign-in";
 import SignUp from "layouts/authentication/sign-up";
 import SignOut from "layouts/authentication/sign-out";
+import BasePage from "apps/basepage";
 
 import TestPage from "apps/testmenu";
 
@@ -57,19 +58,52 @@ const routes = [
     noCollapse: true,
     protected: true,
   },
-  { type: "title", title: "Accounting", key: "accounting-pages" },
+  { type: "title", title: "Apps", key: "apps" },
   {
     type: "collapse",
-    name: "Profile",
-    key: "profile",
-    route: "/profile",
-    icon: <CustomerSupport size="12px" />,
-    component: <Profile />,
-    noCollapse: true,
-    protected: true,
+    name: "TestMenu",
+    key: "apps",
+    icon: <Cube size="12px" />,
+    noCollapse: false,
+    collapse: [
+      {
+        type: "collapse",
+        name: "Profile",
+        key: "profile",
+        route: "/apps/profile",
+        component: <Profile />,
+        icon: <Document size="12px" />,
+        noCollapse: true,
+      },
+      {
+        icon: <SpaceShip size="12px" />,
+        type: "collapse",
+        name: "Dashboard",
+        key: "dashboard",
+        route: "/apps/dashboard",
+        component: <Dashboard />,
+        noCollapse: true,
+      },
+      {
+        icon: <Document size="12px" />,
+        type: "collapse",
+        name: "TestPage",
+        key: "testpage",
+        route: "/apps/testpage",
+        component: <TestPage />,
+        noCollapse: true,
+      },
+      {
+        icon: <Document size="12px" />,
+        type: "collapse",
+        name: "BasePage",
+        key: "basePage",
+        route: "/apps/basePage",
+        component: <BasePage />,
+        noCollapse: true,
+      },
+    ],
   },
-  { type: "title", title: "HR", key: "hr-pages" },
-  { type: "title", title: "Inventory", key: "inventory-pages" },
   { type: "title", title: "Account Pages", key: "account-pages" },
   {
     type: "collapse",
@@ -109,42 +143,7 @@ const routes = [
     noCollapse: true,
   },
   
-  {
-    type: "collapse",
-    name: "Apps",
-    key: "apps",
-    icon: <Cube size="12px" />,
-    noCollapse: false,
-    collapse: [
-      {
-        type: "collapse",
-        name: "Profile",
-        key: "profile",
-        route: "/apps/profile",
-        component: <Profile />,
-        icon: <Document size="12px" />,
-        noCollapse: true,
-      },
-      {
-        icon: <SpaceShip size="12px" />,
-        type: "collapse",
-        name: "Dashboard",
-        key: "dashboard",
-        route: "/apps/dashboard",
-        component: <Dashboard />,
-        noCollapse: true,
-      },
-      {
-        icon: <Document size="12px" />,
-        type: "collapse",
-        name: "TestPage",
-        key: "testpage",
-        route: "/apps/testpage",
-        component: <TestPage />,
-        noCollapse: true,
-      },
-    ],
-  },
+  
 ];
 
 export default routes;

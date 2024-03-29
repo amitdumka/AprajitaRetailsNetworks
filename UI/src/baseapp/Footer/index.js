@@ -20,10 +20,15 @@ import SoftTypography from "components/SoftTypography";
 // Aprajita Retails Dashboard base styles
 import typography from "assets/theme/base/typography";
 
-function Footer({ company, links }) {
+function Footer({ company, links, fixedFooter }) {
   const { href, name } = company;
   const { size } = typography;
-
+  let position = "fixed";
+  if (fixedFooter) {
+    position = "fixed";
+  } else {
+    position = "absolute";
+  }
   const renderLinks = () =>
     links.map((link) => (
       <SoftBox key={link.name} component="li" px={2} lineHeight={1}>
@@ -37,12 +42,20 @@ function Footer({ company, links }) {
 
   return (
     <SoftBox
-      width="100%"
+      component="footer"
+      borderRadius="xl"
+      bgColor="white"
+      width="80%"
       display="flex"
       flexDirection={{ xs: "column", lg: "row" }}
       justifyContent="space-between"
       alignItems="center"
+      position={position}
       px={1.5}
+      sx={{
+        
+        bottom: 10, // And this
+      }}
     >
       <SoftBox
         display="flex"
@@ -53,13 +66,12 @@ function Footer({ company, links }) {
         fontSize={size.sm}
         px={1.5}
       >
-        &copy; {new Date().getFullYear()}, build 
+        &copy; {new Date().getFullYear()}, build by
         {/* <SoftBox fontSize={size.md} color="text" mb={-0.5} mx={0.25}>
           <Icon color="inherit" fontSize="inherit">
             favorite
           </Icon>
         </SoftBox> */}
-        by
         <Link href={href} target="_blank">
           <SoftTypography variant="button" fontWeight="medium">
             &nbsp;{name}&nbsp;
@@ -92,19 +104,21 @@ function Footer({ company, links }) {
 
 // Setting default values for the props of Footer
 Footer.defaultProps = {
-  company: { href: "https://www.aprajitaretails.in/", name: "Aprajita Retails" },
+  company: { href: "https://www.aprajitaretails.in/", name: "Amit Kumar" },
   links: [
     { href: "https://www.aprajitaretails.in/amitkumar/", name: "Amit Kumar" },
     { href: "https://www.aprajitaretails.in/aboutus", name: "About Us" },
     { href: "https://www.aprajitaretails.in/contactus", name: "Contact Us" },
     { href: "https://www.aprajitaretails.in/amitkumar/stores", name: "Stores" },
   ],
+  fixedFooter:true,
 };
 
 // Typechecking props for the Footer
 Footer.propTypes = {
   company: PropTypes.objectOf(PropTypes.string),
   links: PropTypes.arrayOf(PropTypes.object),
+  fixedFooter: PropTypes.bool,
 };
 
 export default Footer;

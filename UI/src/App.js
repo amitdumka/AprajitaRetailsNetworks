@@ -168,7 +168,7 @@ export default function App() {
     </CacheProvider>
   ) : (
     <ThemeProvider theme={theme}>
-      <CssBaseline />
+      <CssBaseline  enableColorScheme={true} />
       {layout === "dashboard" && (
         <>
           <Sidebar
