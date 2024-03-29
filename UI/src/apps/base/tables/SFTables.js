@@ -23,7 +23,7 @@ import { DataManager, Query, UrlAdaptor } from "@syncfusion/ej2-data";
 import { ClickEventArgs } from "@syncfusion/ej2-navigations";
 import { ddlData, toolbarOptions } from "./SFHelper";
 //import "./grid-overview.css";
-//import "App.css";
+import "App.css";
 // Aprajita Retails Dashboard components
 import SoftBox from "components/SoftBox";
 import SoftTypography from "components/SoftTypography";
@@ -81,10 +81,10 @@ function SFTables(props) {
         <GridComponent
           mb={5}
           pb={10}
-          id="DefaultExport" enableHeaderFocus={true}
+          id="DefaultExport"
+          enableHeaderFocus={true}
           enableHover={false}
-  enableVirtualization={true}
-
+          enableVirtualization={true}
           allowPaging={true}
           dataSource={dataSource}
           toolbar={toolbarOptions}

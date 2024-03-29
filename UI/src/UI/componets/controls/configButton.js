@@ -24,7 +24,7 @@ function ConfigButton() {
           zIndex={99}
           color="dark"
           sx={{ cursor: "pointer" }}
-          onClick={handleConfiguratorOpen}
+         // onClick={onClickHandler}
         >
           <Icon fontSize="default" color="inherit">
             settings
@@ -32,3 +32,5 @@ function ConfigButton() {
         </SoftBox>
       );
 }
+
+export default ConfigButton;

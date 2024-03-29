@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
-import App from "App";
+import AR_App from "AR_App";
 import { AuthProvider } from "./auth-context/auth.context";
 // Registering Syncfusion license key
 import { registerLicense } from "@syncfusion/ej2-base";
 
-registerLicense("License key");
+ 
 // Aprajita Retails React Context Provider
 import { SoftUIControllerProvider } from "context";
 
@@ -29,7 +29,7 @@ root.render(
   <BrowserRouter>
     <SoftUIControllerProvider>
       <AuthProvider userData={user}>
-        <App />
+        <AR_App />
       </AuthProvider>
     </SoftUIControllerProvider>
   </BrowserRouter>
