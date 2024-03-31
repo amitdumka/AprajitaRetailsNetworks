@@ -4,6 +4,10 @@ const colorMode = useColorMode()
 const color = computed(() => colorMode.value === 'dark' ? '#111827' : 'white')
 
 useHead({
+  title: 'Aprajita Retails',
+  titleTemplate: (titleChunk: any) => {
+    return titleChunk ? `${titleChunk}  - Aprakita Retails` : 'Site Title'
+  },
   meta: [
     { charset: 'utf-8' },
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -43,3 +47,14 @@ useSeoMeta({
     <UModals />
   </div>
 </template>
+<style>
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.4s;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
+}
+</style>

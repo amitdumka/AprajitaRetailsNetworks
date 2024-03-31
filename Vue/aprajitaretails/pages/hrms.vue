@@ -1,34 +1,32 @@
 <script setup lang="ts">
 const links = [[{
-    label: 'General',
+    label: 'Employees',
     icon: 'i-heroicons-user-circle',
-    to: '/settings',
+    to: '/hrms',
     exact: true
   }, {
-    label: 'Server',
+    label: 'Attendnaces',
     icon: 'i-heroicons-user-group',
-    to: '/settings/members'
+    to: '/hrms/attendances'
   }, {
-    label: 'Notifications',
+    label: 'Salary Payments',
     icon: 'i-heroicons-bell',
-    to: '/settings/notifications'
+    to: '/hrms/salarypayments'
   }], [{
-    label: 'Voucher Settings',
-    icon: 'i-heroicons-book-open',
-    to: 'https://ui.nuxt.com/pro',
-    target: '_blank'
-  }, {
     label: 'Payroll Settings',
+    icon: 'i-heroicons-book-open',
+    to: '/hrms/payrollsettings',
+  }, {
+    label: 'Ledgers',
     icon: 'i-heroicons-credit-card',
-    to: 'https://ui.nuxt.com/pro/purchase',
-    target: '_blank'
+    to: '/hrms/ledgers',
   }]]
 </script>
 
 <template>
   <UDashboardPage>
     <UDashboardPanel grow>
-      <UDashboardNavbar title="Settings" />
+      <UDashboardNavbar title="HRMS" />
 
       <UDashboardToolbar class="py-0 px-1.5 overflow-x-auto">
         <UHorizontalNavigation :links="links" />

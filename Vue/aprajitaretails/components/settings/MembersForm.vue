@@ -23,7 +23,7 @@ async function onSubmit (event: FormSubmitEvent<any>) {
   emit('close')
 }
 </script>
-
+ <!-- TODO: This Template can be used for pop up menu form , like Adding Attendances, Adding Purchase or Sale item  -->
 <template>
   <UForm :validate="validate" :validate-on="['submit']" :state="state" class="space-y-4" @submit="onSubmit">
     <UFormGroup label="Email" name="email">

@@ -1,3 +1,4 @@
+<!-- This Main Page will be used as Dashboard. -->
 <script setup lang="ts">
 import { sub } from 'date-fns'
 import type { Period, Range } from '~/types'
@@ -49,7 +50,7 @@ const period = ref<Period>('daily')
 
       <UDashboardPanelContent>
         <!-- ~/components/home/HomeChart.vue -->
-        <HomeChart :period="period" :range="range" />
+        <!-- <HomeChart :period="period" :range="range" /> -->
 
         <div class="grid lg:grid-cols-2 lg:items-start gap-8 mt-8">
           <!-- ~/components/home/HomeSales.vue -->
