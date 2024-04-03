@@ -31,11 +31,12 @@ const links = [{
     text: 'Users',
     shortcuts: ['G', 'U']
   }
-},  {
+}, {
   id: 'settings',
   label: 'Settings',
   to: '/settings',
   icon: 'i-heroicons-cog-8-tooth',
+  defaultOpen: route.path.startsWith('/settings'),
   children: [{
     label: 'General',
     to: '/settings',
@@ -86,6 +87,7 @@ const coreMenu = [{
   label: 'Store',
   icon: 'i-heroicons-user-group',
   to: '/core',
+  defaultOpen: route.path.startsWith('/core'),
   children: [{
     label: 'Clients',
     to: '/core',
@@ -114,6 +116,7 @@ const accoutingMenu = [{
   label: 'Accounting',
   icon: 'i-heroicons-user-group',
   to: '/accounting',
+  defaultOpen: route.path.startsWith('/accounting'),
   children: [{
     label: 'Vouchers',
     to: '/core',
@@ -136,11 +139,12 @@ const accoutingMenu = [{
     shortcuts: ['S', 'A']
   }
 
-},{
+}, {
   id: 'banking',
   label: 'Banking',
   icon: 'i-heroicons-user-group',
   to: '/banking',
+  defaultOpen: route.path.startsWith('/banking'),
   children: [{
     label: 'Bank Accounts',
     to: '/banking',
@@ -164,11 +168,12 @@ const accoutingMenu = [{
   }
 }
 ]
-const hrmsMenu=[{
+const hrmsMenu = [{
   id: 'hrms',
   label: 'HRMS',
   icon: 'i-heroicons-user-group',
   to: '/hrms',
+  defaultOpen: route.path.startsWith('/hrms'),
   children: [{
     label: 'Employees',
     to: '/hrms',
@@ -198,7 +203,7 @@ const colors = computed(() => defaultColors.value.map(color => ({ ...color, acti
 </script>
 
 <template>
-  <UDashboardLayout>
+  <UDashboardLayout width="w-full">
     <UDashboardPanel :width="250" :resizable="{ min: 200, max: 300 }" collapsible>
       <UDashboardNavbar class="!border-transparent" :ui="{ left: 'flex-1' }">
         <template #left>
@@ -206,7 +211,7 @@ const colors = computed(() => defaultColors.value.map(color => ({ ...color, acti
         </template>
       </UDashboardNavbar>
 
-      <UDashboardSidebar>
+      <UDashboardSidebar width="w-full">
         <template #header>
           <UDashboardSearchButton />
         </template>

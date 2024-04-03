@@ -1,8 +1,6 @@
 <script setup lang="ts">
 const colorMode = useColorMode()
-
 const color = computed(() => colorMode.value === 'dark' ? '#111827' : 'white')
-
 useHead({
   title: 'Aprajita Retails',
   titleTemplate: (titleChunk: any) => {
@@ -34,7 +32,13 @@ useSeoMeta({
   twitterCard: 'summary_large_image'
 })
 </script>
+<script lang="ts">
+import { registerLicense } from '@syncfusion/ej2-base'
 
+// Registering Syncfusion license key.
+registerLicense('ORg4AjUWIQA/Gnt2UFhhQlJBfV5AQmBIYVp/TGpJfl96cVxMZVVBJAtUQF1hTX5XdkRjXn9dcH1SRWVd')
+
+</script>
 <template>
   <div>
     <NuxtLoadingIndicator />
@@ -52,6 +56,7 @@ useSeoMeta({
 .page-leave-active {
   transition: all 0.4s;
 }
+
 .page-enter-from,
 .page-leave-to {
   opacity: 0;

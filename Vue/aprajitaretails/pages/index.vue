@@ -21,7 +21,7 @@ const period = ref<Period>('daily')
 
 <template>
   <UDashboardPage>
-    <UDashboardPanel grow>
+    <UDashboardPanel grow collapsible>
       <UDashboardNavbar title="Home">
         <template #right>
           <UTooltip text="Notifications" :shortcuts="['N']">
