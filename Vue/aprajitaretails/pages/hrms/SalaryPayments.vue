@@ -1,8 +1,8 @@
 <script setup lang="ts">
-  import ADetails from '~/components/crud/ADetails.vue'
-  const data =   {
-    OrderID: 10248, CustomerID: 'VINET', EmployeeID: 5, ShipCountry: 'France', Freight: 32.38
-  }
+import ADetails from '~/components/crud/ADetails.vue'
+const data = {
+  OrderID: 10248, CustomerID: 'VINET', EmployeeID: 5, ShipCountry: 'France', Freight: 32.38
+}
 </script>
 
 <template>
@@ -12,4 +12,3 @@
     </UDashboardPanelContent>
   </UDashboardPanel>
 </template>
-

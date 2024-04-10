@@ -6,6 +6,19 @@
 #Header and title of app need to set once and will be used in all pages using variable or state
 
 
+# days.js  check for use
+# Nuxt Calendly check for use and implement
+# Vcandler same as above
+# Nuxt Modules check for use and implement
+ Link https://nuxt.com/modules
+
+# SupaBase  For Auth 
+
+# Fonts 
+ Many Fonts option available , use as desroed as possible
+# SnackBar is added
+  Check for uses and how to use
+
  #DataGrid 
  vue3-datagrid
  syncfusion datagrid 

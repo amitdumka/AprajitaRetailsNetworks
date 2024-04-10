@@ -48,6 +48,7 @@ registerLicense('ORg4AjUWIQA/Gnt2UFhhQlJBfV5AQmBIYVp/TGpJfl96cVxMZVVBJAtUQF1hTX5
     </NuxtLayout>
 
     <UNotifications />
+    <NuxtSnackbar />
     <UModals />
   </div>
 </template>
