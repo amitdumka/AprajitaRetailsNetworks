@@ -175,6 +175,6 @@ export default {
 @import "../aprajitaretails/node_modules/@syncfusion/ej2-navigations/styles/tailwind-dark.css";
 @import "../aprajitaretails/node_modules/@syncfusion/ej2-popups/styles/tailwind-dark.css";
 @import "../aprajitaretails/node_modules/@syncfusion/ej2-splitbuttons/styles/tailwind-dark.css"; */
-@import "../aprajitaretails/node_modules/@syncfusion/ej2-vue-grids/styles/tailwind-dark.css";
+ @import "../aprajitaretails/node_modules/@syncfusion/ej2-vue-grids/styles/tailwind-dark.css"; 
 /* https://www.smashingmagazine.com/2020/01/data-components-vue-js/ */
 </style>

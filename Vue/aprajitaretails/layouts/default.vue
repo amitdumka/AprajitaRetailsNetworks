@@ -90,7 +90,7 @@ const coreMenu = [{
   defaultOpen: route.path.startsWith('/core'),
   children: [{
     label: 'Clients',
-    to: '/core',
+    to: '/core/clients',
     exact: true
   }, {
     label: 'Store Groups',
@@ -101,8 +101,8 @@ const coreMenu = [{
     to: '/core/stores',
     exact: true
   }, {
-    label: 'Ledgers',
-    to: '/hrms/ledgers',
+    label: 'Customers',
+    to: '/core/customers',
     exact: true
   }],
   tooltip: {

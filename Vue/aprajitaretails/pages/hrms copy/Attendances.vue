@@ -5,7 +5,7 @@
 <template>
   <UDashboardPanel :resizable="{ min: 200 }" grow collapsible>
     <UDashboardPanelContent class="pb-24" grow>
-      <CrudAListPage title="Employees" sub-title="List of Employees" :api-u-r-l="api / employees" :entity-name="Employee" />
+      <AListPage title="Employees" sub-title="List of Employees" :api-u-r-l="api / employees" :entity-name="Employee" />
     </UDashboardPanelContent>
     <AFooter />
   </UDashboardPanel>
