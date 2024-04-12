@@ -1,0 +1,11 @@
+## Bug Founded
+
+1) Client , whule updating  client name . a new entity is created instead of updating same  one 
+2) While selecting delete in Client , asking for model name is missig, 
+
+
+
+
+## Work TODO - 
+1) Check for edit function is every form 
+2) check for delete function in every form 
