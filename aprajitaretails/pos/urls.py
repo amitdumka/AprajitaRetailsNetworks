@@ -10,6 +10,8 @@ from dbs.models.pos import ProductSale, SaleItem, SalePaymentDetail, CardPayment
 from home.views import *
 from django.urls import re_path, register_converter
 
+from pos.views import SaleInvoice_Create_View, SaleInvoice_Update_View
+
 
 # Register the UUIDConverter
 class UUIDConverter:
@@ -114,7 +116,8 @@ urlpatterns = [
     path('delete/<str:model_name>/<int:model_id>/',
          Global_DeleteView.as_view(), name='core_delete'),
     
-    path('saleinv', SaleInvoice_Create_View.as_view(),{'title':'Sale Invoice','invType':'Sale','return_url':'pos:productsale_list'}, name='saleinv'),
-    path('saleinv/<str:model_id>', SaleInvoice_Update_View.as_view(),{'title':'Sale Invoice','invType':'sale','return_url':'pos:productsale_list'}, name='saleinv'),
+    # Disable due to error is shown
+    path('saleinv', SaleInvoice_Create_View,{'title':'Sale Invoice','invType':'Sale','return_url':'pos:productsale_list'}, name='saleinv'),
+    path('saleinv/<str:model_id>', SaleInvoice_Update_View,{'title':'Sale Invoice','invType':'sale','return_url':'pos:productsale_list'}, name='saleinv'),
 
 ]

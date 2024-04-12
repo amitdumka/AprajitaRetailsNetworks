@@ -38,6 +38,7 @@
     "dayjs-nuxt": "^2.1.9",
     "eslint": "^8.57.0",
     "nuxt-calendly": "^0.1.18",
+    "nuxt-primevue": "^0.3.1",
     "vue-tsc": "^2.0.7"
   }
 }

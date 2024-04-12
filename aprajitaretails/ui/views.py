@@ -13,8 +13,8 @@ def index(request):
 # def billing(request):
 #   return render(request, 'pages/billing.html', { 'segment': 'billing' })
 
-# def tables(request):
-#   return render(request, 'pages/tables.html', { 'segment': 'tables' })
+#def tables(request):
+# #return render(request, 'pages/tables.html', { 'segment': 'tables' })
 
 # def vr(request):
 #   return render(request, 'pages/virtual-reality.html', { 'segment': 'vr' })

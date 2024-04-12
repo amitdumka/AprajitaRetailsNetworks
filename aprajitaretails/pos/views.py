@@ -1,7 +1,7 @@
 
 
 from django import forms
-from aprajitaretails.dbs.models.pos import CardPaymentDetail, ProductSale, SaleItem, SalePaymentDetail
+from dbs.models.pos import CardPaymentDetail, ProductSale, SaleItem, SalePaymentDetail
 from django.contrib.auth.decorators import login_required
 
 from django.forms import ValidationError, modelform_factory
@@ -9,7 +9,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import Http404, HttpResponse
 
 from django.contrib import messages
-from aprajitaretails.utils.autoidgenerator import Auto_Id, Auto_Id_DuplicateChecker
+from utils.autoidgenerator import Auto_Id, Auto_Id_DuplicateChecker
 from .models import *
 
 class CheckboxInput(forms.CheckboxInput):

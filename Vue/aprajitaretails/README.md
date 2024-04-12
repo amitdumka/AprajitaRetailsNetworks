@@ -93,3 +93,85 @@ export default {
   },
 }
 
+Country name and state and city
+//Get Auth Token 
+var req = unirest("GET", "https://www.universal-tutorial.com/api/getaccesstoken");
+
+  req.headers({
+    "Accept": "application/json",
+    "api-token": "AuXnFjES43NqbdODZoc1anLtpO9op_9HsA7hqU56HJoxlbbNrMsUAzmsp6cqoZ0HhWQ",
+    "user-email": "abc@gmail.com"
+  });
+
+{
+  "auth_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfZW1haWwiOiJtdmdhZGFnaUBnbWFpbC5jb20ifSwiZXhwIjoxNTY2MjM0ODU0fQ.nMWPN38zptwwDKAo11bFyjhCRuzNhZc6NqqCaYJVxP0"
+}
+
+var req = unirest("GET", "https://www.universal-tutorial.com/api/countries/");
+
+req.headers({
+  "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfZW1haWwiOiJtdmdhZGFnaUBnbWFpbC5jb20ifSwiZXhwIjoxNTY2MjM0ODU0fQ.nMWPN38zptwwDKAo11bFyjhCRuzNhZc6NqqCaYJVxP0",
+  "Accept": "application/json"
+});
+
+[
+  {
+    "country_name": "Afghanistan",
+    "country_short_name": "AF",
+    "country_phone_code": 93
+  },
+  {
+    "country_name": "Albania",
+    "country_short_name": "AL",
+    "country_phone_code": 355
+  },
+  {
+    "country_name": "Zimbabwe",
+    "country_short_name": "ZW",
+    "country_phone_code": 263
+  }
+]
+
+Request : GET https://www.universal-tutorial.com/api/states/United States
+[
+  {
+      "state_name": "Alabama"
+  },
+  {
+      "state_name": "Alaska"
+  },
+  {
+      "state_name": "Arizona"
+  },
+  {
+      "state_name": "Arkansas"
+  },
+  {
+      "state_name": "Byram"
+  },
+  {
+    "state_name": "Wyoming"
+  }
+]
+Request : GET https://www.universal-tutorial.com/api/cities/Alaska
+[
+  {
+      "city_name": "Anchorage"
+  },
+  {
+      "city_name": "Barrow"
+  },
+  {
+      "city_name": "Bethel"
+  },
+  {
+    "city_name": "Wasilla"
+  }
+]
+
+
+Cache all this info in local json file , so no need to all always
+https://github.com/prograhammer/countries-regions-cities
+https://unece.org/trade/uncefact/unlocode
+https://www.back4app.com/database/back4app/list-of-all-continents-countries-cities/get-started/javascript/rest-api/fetch
+this is awesome data present over net
