@@ -11,9 +11,9 @@ export default defineNuxtConfig({
     // 'nuxt-primevue',
     //'@vueform/builder-nuxt',
     //'nuxt-calendly',
-    //'@samk-dev/nuxt-vcalendar',
+    '@samk-dev/nuxt-vcalendar',
     //'@nuxtjs/supabase',
-    //'@pinia/nuxt',
+    '@pinia/nuxt',
     '@vueuse/nuxt'
   ],
   ui: {
