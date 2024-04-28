@@ -47,7 +47,7 @@ export default {
             'max:255',
           ],
           placeholder: 'Client Name',
-          fieldName: 'ClientName',
+          fieldName: 'Name',
           description: 'Client Name will appear on invoices.',
         },
 
@@ -60,7 +60,7 @@ export default {
           ],
           //label: 'Client Address',
           placeholder: 'Client Address',
-          fieldName: 'ClientAddress',
+          fieldName: 'Address',
           description: 'Client Address will appear on invoices.',
         },
 
@@ -80,7 +80,7 @@ export default {
                 wrapper: 4,
               },
               placeholder: 'Zip Code',
-              fieldName: 'ClientZipCode',
+              fieldName: 'ZipCode',
               description: 'Client Zip Code will appear on invoices.',
             },
             clientCity: {
@@ -96,7 +96,7 @@ export default {
                 wrapper: 6,
               },
               placeholder: 'Client City',
-              fieldName: 'ClientCity',
+              fieldName: 'City',
               description: 'Client Name will appear on invoices.',
             }, state: {
               type: 'text',
@@ -107,7 +107,7 @@ export default {
               },
               full: false,
               placeholder: 'State',
-              fieldName: 'ClientState',
+              fieldName: 'State',
               description: 'CLient State will appear on invoices.',
 
             },
@@ -123,10 +123,45 @@ export default {
               inputType: 'search',
               autocomplete: 'enabled',
               placeholder: 'Country',
-              fieldName: 'ClientCountry',
+              fieldName: 'Country',
               description: 'CLient Country will appear on invoices.',
               items: countryList,
 
+            },
+          }
+        },
+        start_endDate: {
+          type: 'group',
+          schema: {
+            startDate: {
+              type: 'date',
+              rules: [
+                'required',
+              ],
+              columns: {
+                container: 6,
+                label: 3,
+                wrapper: 8,
+              },
+              full: false,
+              placeholder: 'Start Date',
+              fieldName: 'StartDate',
+              description: 'Client Start Date will appear on invoices.',
+            },
+            endDate: {
+              type: 'date',
+              rules: [
+                'nullable',
+              ],
+              columns: {
+                container: 6,
+                label: 3,
+                wrapper: 8,
+              },
+              full: false,
+              placeholder: 'End Date',
+              fieldName: 'EndDate',
+              description: 'Client Start Date will appear on invoices.',
             },
           }
         },
@@ -167,12 +202,13 @@ export default {
                 'max:14',
               ],
               placeholder: 'Phone Number',
-              fieldName: 'ClientPhone',
+              fieldName: 'Phone',
               description: 'Client Phone Number will appear on invoices.',
             },
 
           }
         },
+
         container_Tax: {
           type: 'group',
           schema: {
@@ -190,7 +226,7 @@ export default {
                 wrapper: 8,
               },
               placeholder: 'PAN Number',
-              fieldName: 'ClientPAN',
+              fieldName: 'PANNumber',
               description: 'Client PAN number is requried.',
             },
             clientGSTIN: {
@@ -207,20 +243,68 @@ export default {
                 wrapper: 8,
               },
               placeholder: 'GSTIN ',
-              fieldName: 'ClientGSTIN',
+              fieldName: 'GSTIN',
               description: 'Client GSTIN  is requried.',
             },
 
           }
         },
-        clientStatus: {
+        contactPerson: {
+          type: 'text',
+          full: false,
+          columns: {
+            container: 6,
+            label: 3,
+            wrapper: 8,
+          },
+          rules: [
+            'min:5',
+            'max:255',
+          ],
+          placeholder: 'Contact Person',
+          fieldName: 'ContactPerson',
+          description: 'Contact Person will appear on invoices.',
+        },
+        // clientStatus: {
+        //   type: 'text',
+        //   full: false,
+        //   columns: {
+        //     container: 6,
+        //     label: 3,
+        //     wrapper: 8,
+        //   },
+        //   rules: [
+        //     'min:5',
+        //     'max:255',
+        //   ],
+        //   placeholder: 'Client Status',
+        //   fieldName: 'ClientStatus',
+        //   description: 'Status of Client.',
+        // },
+        remarks: {
+          type: 'text',
+          full: false,
+          columns: {
+            container: 6,
+            label: 3,
+            wrapper: 8,
+          },
+          rules: [
+
+            'max:255',
+          ],
+          placeholder: 'Remarks',
+          fieldName: 'Remarks',
+          description: 'Remarks about client',
+        },
+        status: {
           type: 'checkbox',
           full: false,
           columns: 6,
           text: 'Active',
           before: 'Client Status',
           placeholder: 'Client Status',
-          fieldName: 'ClieentStatus',
+          fieldName: 'Active',
           description: 'Client active or inactive.',
         },
 

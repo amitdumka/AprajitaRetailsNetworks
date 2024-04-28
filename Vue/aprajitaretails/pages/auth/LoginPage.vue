@@ -1,5 +1,11 @@
 <script setup lang="ts">
 import type { FormError } from '#ui/types'
+import {useAuth} from '@/stores/auth'
+
+const  auth  = useAuth()
+const title='Aorajita Retails'
+const icon='i-heroicons-lock-closed'
+auth.initStore()
 
 const fields = [{
   name: 'email',
@@ -42,13 +48,19 @@ function onSubmit (data: any) {
 <!-- eslint-disable vue/singleline-html-element-content-newline -->
 <template>
   <UCard class="max-w-sm w-full">
+    <template  v-if="auth.user.IsAuthenticated">
+      <div class="h3">
+        <strong>You are alreaded Logged in</strong>
+        <a href="/dashboard/">Go to Dashboard</a>
+      </div>
+    </template>
     <UAuthForm
       :fields="fields"
       :validate="validate"
       :providers="providers"
-      title="Aprajita Retails"
+      :title="title"
       align="top"
-      icon="i-heroicons-lock-closed"
+      :icon="icon"
       :ui="{ base: 'text-center', footer: 'text-center' }"
       @submit="onSubmit"
     >
@@ -63,7 +75,7 @@ function onSubmit (data: any) {
         <UAlert color="red" icon="i-heroicons-information-circle-20-solid" title="Error signing in" />
       </template>
       <template #footer>
-        By signing in, you agree to our <NuxtLink to="/" class="text-primary font-medium">Terms of Service</NuxtLink>.
+        By signing in, you agree to our <NuxtLink to="/terms" class="text-primary font-medium">Terms of Service</NuxtLink>.
       </template>
     </UAuthForm>
   </UCard>

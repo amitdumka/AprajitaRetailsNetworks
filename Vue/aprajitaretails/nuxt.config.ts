@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/ui',
     '@nuxt/fonts',
-    '@productdevbook/chatwoot',
+    //'@productdevbook/chatwoot',
     'nuxt-snackbar',
     '@vueform/nuxt',
     // 'nuxt-primevue',
@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     //'nuxt-calendly',
     //'@samk-dev/nuxt-vcalendar',
     //'@nuxtjs/supabase',
+    '@pinia/nuxt',
     '@vueuse/nuxt'
   ],
   ui: {
