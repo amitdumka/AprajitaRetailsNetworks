@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     //'nuxt-calendly',
     //'@samk-dev/nuxt-vcalendar',
     //'@nuxtjs/supabase',
-    '@pinia/nuxt',
+    //'@pinia/nuxt',
     '@vueuse/nuxt'
   ],
   ui: {
