@@ -80,9 +80,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
+    'django_dyn_api',       
     'rest_framework',
     'django_api_gen',
-    'rest_framework.authtoken',
+    'rest_framework.authtoken', 
     'ui',
     'core',
     'home',
@@ -202,3 +203,81 @@ if CORS_ALLOWED_ORIGINS_ENV:
 
 SESSION_ENGINE='django.contrib.sessions.backends.cache'
 SESSION_COOKIE_SECURE=False # For Production make is true
+
+
+DYNAMIC_API = {
+    # pattern: 
+    # API_SLUG -> Import_PATH 
+    #'books'  : "app1.models.Book",
+    'clients': "dbs.models.clients.Client",
+    'stores' : "dbs.models.clients.Store",
+    'storegroups': "dbs.models.clients.StoreGroup",   
+    
+    #banking
+    'banks': "dbs.models.banking.Bank",
+    'banktransactions': "dbs.models.banking.BankTransaction",
+    'bankaccountlists': "dbs.models.banking.BankAccountList",
+    'chequebooks': "dbs.models.banking.ChequeBook",
+    'chequeissued': "dbs.models.banking.ChequeIssued",
+    'chequelogs': "dbs.models.banking.ChequeLog",
+    'bankstatements': "dbs.models.banking.BankStatement",
+    
+    #accounting
+    'party': "dbs.models.accounting.Party",
+    'ledgergroups': "dbs.models.accounting.LedgerGroup",
+    'ledgermaster': "dbs.models.accounting.LedgerMaster",
+    'cashdetails': "dbs.models.accounting.CashDetail",   
+    'duerecoveries': "dbs.models.accounting.DueRecovery",
+    'transactionmodes': "dbs.models.accounting.TransactionMode",
+    'posMachines': "dbs.models.accounting.EDCTerminal",
+    
+    #Coere
+    'customers': "dbs.models.core.Customer",
+    'contacts': "dbs.models.core.Contact",
+    
+    'employeeDetails':'dbs.models.hrms.EmployeeDetails',
+    'monthlyattendaces': "dbs.models.hrms.Attendance",
+    'salaryledgers': "dbs.models.hrms.SalaryLedger",
+    'timesheets': "dbs.models.hrms.TimeSheet",
+    'salaries': "dbs.models.hrms.Salary",
+    'salaryPayments': "dbs.models.hrms.SalaryPayment",
+    'payslips': "dbs.models.hrms.PaySlip",
+    
+    
+}
+API_GENERATOR = {
+    # pattern: 
+    # API_SLUG -> Import_PATH 
+    #'books'  : "app1.models.Book",
+    'clients': "dbs.models.clients.Client",
+    'stores' : "dbs.models.clients.Store",
+    'storegroups': "dbs.models.clients.StoreGroup",  
+    
+    #banking
+    'bankaccounts': "dbs.models.banking.BankAccount",
+    'vendorbankaccounts': "dbs.models.banking.VendorBankAccount",
+    
+    #Accounting
+    'vouchers': "dbs.models.accounting.Voucher",
+    'cashvouchers': "dbs.models.accounting.CashVoucher",
+    'dailysales': "dbs.models.accounting.DailySale",
+    
+    'customerdues': "dbs.models.accounting.CustomerDue",
+    'salesmen': "dbs.models.accounting.Salesman",
+    
+    #HRMS
+    'employees': "dbs.models.hrms.Employee",
+    'attendances': "dbs.models.hrms.Attendance",
+    
+    
+    
+    
+    
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}

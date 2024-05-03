@@ -35,13 +35,22 @@ urlpatterns = [
     path("home/",include("home.urls")),
     path("", include("ui.urls")),
    
+   # below there line need to be reviews
+    path('api-auth/', include('rest_framework.urls')), # Need to check which one is working
+    path('dyn/', include('django_dyn_api.urls')),     # <-- NEW
+   
 ]
 
 # Lazy-load on routing is needed
 # During the first build, API is not yet generated
 try:
-    urlpatterns.append(path("api/", include("api.urls")))
-    urlpatterns.append(path("login/jwt/", view=obtain_auth_token))
+    urlpatterns.append(path("api/", include("api.urls"))) # Need to check which one is working
+    urlpatterns.append(path("login/jwt/", view=obtain_auth_token)) # Need to check which one is working
+   
 except:
     pass
  
+ # TODO: Note Import either use dynamic api or auto gen api for a particular model not both. 
+ #  Note: use dynanic api for models where there is no auto gen pk and post processing is required
+ # Note Use Auto gen api for model where auto gen pk is required or any post- pre processing is required
+  
