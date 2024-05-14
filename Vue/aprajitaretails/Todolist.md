@@ -240,3 +240,21 @@ I also update my courses regularly over time because I don't want them to get ou
 If you have any coding problems I will offer my support within 12 hours when you post the question. I'm very active when trying to help my students.
 
 So what are you waiting for, give this course a try and you won't get disappointed.
+
+
+# Auth Examples
+ - https://github.com/geekyshow1/djangonuxtsessionauth/
+
+This expamle we are trying to use django and nuxt to create an auth app.
+Added files are:
+  -stores/auth.js
+  -stores/user.js
+  -middleware/checkauth.js
+  -composables/useAuthApi.js
+  -pages/auth/login.vue [ Only auth Code added in setup scrtipt]
+
+# Auth
+  - AuthJS 
+  - Auth0
+  - JWT
+     We will be using AuthJSy

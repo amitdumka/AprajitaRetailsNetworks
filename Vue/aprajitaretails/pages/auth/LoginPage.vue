@@ -1,17 +1,26 @@
 <script setup lang="ts">
 import type { FormError } from '#ui/types'
-import {useAuth} from '@/stores/auth'
+import { ref } from 'vue'
+import { definePageMeta, useAuth } from '#imports'
 
-const  auth  = useAuth()
-const title='Aorajita Retails'
-const icon='i-heroicons-lock-closed'
-auth.initStore()
+const { signIn, token, data, status, lastRefreshedAt } = useAuth()
+
+
+definePageMeta({
+  auth: {
+    unauthenticatedOnly: true,
+    navigateAuthenticatedTo: '/'
+  }
+})
+const title = 'Aadwika Fashion'
+const icon = 'i-heroicons-lock-closed'
+
 
 const fields = [{
-  name: 'email',
+  name: 'username',
   type: 'text',
-  label: 'Email',
-  placeholder: 'Enter your email'
+  label: 'User Name',
+  placeholder: 'Enter your username'
 }, {
   name: 'password',
   label: 'Password',
@@ -25,7 +34,7 @@ const fields = [{
 
 const validate = (state: any) => {
   const errors: FormError[] = []
-  if (!state.email) errors.push({ path: 'email', message: 'Email is required' })
+  if (!state.username) errors.push({ path: 'username', message: 'Username is required' })
   if (!state.password) errors.push({ path: 'password', message: 'Password is required' })
   return errors
 }
@@ -39,31 +48,18 @@ const providers = [{
   }
 }]
 
-function onSubmit (data: any) {
-  console.log('Submitted', data)
+async function onSubmit(dataForm: any) {
+  console.log('Submitted', dataForm)
+  signIn({ username: dataForm.username, password: dataForm.password })
 }
 </script>
 
 <!-- eslint-disable vue/multiline-html-element-content-newline -->
 <!-- eslint-disable vue/singleline-html-element-content-newline -->
 <template>
-  <UCard class="max-w-sm w-full">
-    <template  v-if="auth.user.IsAuthenticated">
-      <div class="h3">
-        <strong>You are alreaded Logged in</strong>
-        <a href="/dashboard/">Go to Dashboard</a>
-      </div>
-    </template>
-    <UAuthForm
-      :fields="fields"
-      :validate="validate"
-      :providers="providers"
-      :title="title"
-      align="top"
-      :icon="icon"
-      :ui="{ base: 'text-center', footer: 'text-center' }"
-      @submit="onSubmit"
-    >
+  <UCard class="max-w-sm w-full mx-auto center">
+    <UAuthForm :fields="fields" :validate="validate" :providers="providers" :title="title" align="top" :icon="icon"
+      :ui="{ base: 'text-center', footer: 'text-center' }" @submit="onSubmit">
       <template #description>
         Don't have an account? <NuxtLink to="/" class="text-primary font-medium">Sign up</NuxtLink>.
       </template>
@@ -71,13 +67,18 @@ function onSubmit (data: any) {
       <template #password-hint>
         <NuxtLink to="/" class="text-primary font-medium">Forgot password?</NuxtLink>
       </template>
-      <template #validation>
+      <!-- <template #validation>
         <UAlert color="red" icon="i-heroicons-information-circle-20-solid" title="Error signing in" />
-      </template>
+      </template> -->
       <template #footer>
-        By signing in, you agree to our <NuxtLink to="/terms" class="text-primary font-medium">Terms of Service</NuxtLink>.
+        By signing in, you agree to our <NuxtLink to="/terms" class="text-primary font-medium">Terms of Service
+        </NuxtLink>.
       </template>
     </UAuthForm>
   </UCard>
 </template>
 
+
+<!-- function useAuthApi(arg0: string, arg1: string, formData: any): { data: any; pending: any; error: any; refresh: any }|PromiseLike<{ data: any; pending: any; error: any; refresh: any }> {
+  throw new Error('Function not implemented.')
+} -->

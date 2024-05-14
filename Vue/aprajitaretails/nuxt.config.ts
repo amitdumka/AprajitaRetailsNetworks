@@ -1,21 +1,18 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
+import { resolve } from 'node:path'
 export default defineNuxtConfig({
   //extends: [process.env.NUXT_UI_PRO_PATH || '@nuxt/ui-pro'],
-  extends:['./modules/ui-nxt'],
-  modules: [
-    '@nuxt/ui',
-    '@nuxt/fonts',
-    //'@productdevbook/chatwoot',
-    'nuxt-snackbar',
-    '@vueform/nuxt',
-    // 'nuxt-primevue',
+  extends: ['./modules/ui-nxt'],
+  modules: ['@nuxt/ui', '@nuxt/fonts',
+    'nuxt-snackbar', '@vueform/nuxt', // 'nuxt-primevue',
     //'@vueform/builder-nuxt',
     //'nuxt-calendly',
-    '@samk-dev/nuxt-vcalendar',
-    //'@nuxtjs/supabase',
+    '@samk-dev/nuxt-vcalendar', //'@nuxtjs/supabase',
+    '@sidebase/nuxt-auth',
     '@pinia/nuxt',
-    '@vueuse/nuxt'
-  ],
+    '@vueuse/nuxt'],
+
   ui: {
     icons: ['heroicons', 'simple-icons'],
     safelistColors: ['primary', 'red', 'orange', 'green']
@@ -23,24 +20,49 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true
   },
-  build: {
-    transpile: ['@syncfusion']
-  },
-  // chatwoot: {
-  //   init: {
-  //     websiteToken: 'b6BejyTTuxF4yPt61ZTZHjdB'
-  //   },
-  //   settings: {
-  //     locale: 'en',
-  //     position: 'left',
-  //     launcherTitle: 'Hello Chat',
-  //     // ... and more settings
-  //   },
-  //   // If this is loaded you can make it true, https://github.com/nuxt-modules/partytown
-  //   partytown: false,
-  // },
-//   primevue: {
-//     /* Options */
-// }
 
+  build: {
+    transpile: ['@syncfusion','jsonwebtoken']
+
+  },
+
+  alias: {
+    cookie: resolve(__dirname, 'node_modules/cookie')
+  },
+  experimental: {
+    renderJsonPayloads: true
+  },
+  auth: {
+    provider: {
+      type: 'local',
+      endpoints: {
+        getSession: { path: '/user' }
+      },
+      pages: {
+        login: '/auth/LoginPage'
+      },
+      token: {
+        signInResponseTokenPointer: '/token/accessToken'
+      },
+      sessionDataType: { id: 'string', email: 'string', name: 'string', role: "'admin' | 'guest' | 'account'", subscriptions: "{ id: number, status: 'ACTIVE' | 'INACTIVE' }[]" }
+    },
+    session: {
+      // Whether to refresh the session every time the browser window is refocused.
+      enableRefreshOnWindowFocus: true,
+
+      // Whether to refresh the session every `X` milliseconds. Set this to `false` to turn it off. The session will only be refreshed if a session already exists.
+      enableRefreshPeriodically: 5000
+    },
+    globalAppMiddleware: {
+      isEnabled: true
+    }
+  },
+  routeRules: {
+    '/with-caching': {
+      swr: 86400000,
+      auth: {
+        disableServerSideAuth: true
+      }
+    }
+  }
 })

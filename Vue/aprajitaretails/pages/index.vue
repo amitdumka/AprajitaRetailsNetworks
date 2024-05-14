@@ -4,7 +4,23 @@ import { sub } from 'date-fns'
 import type { Period, Range } from '~/types'
 
 const { isNotificationsSlideoverOpen } = useDashboard()
+const { signIn, signOut, session, status, cookies } = useAuth()
 
+async function check() {
+  try {
+    await signIn('credentials', {
+      redirect: false,
+      username: 'admin',
+      password: 'admin'
+    })
+    // eslint-disable-next-line no-console
+    console.log('SignIn', session.value?.user)
+  }
+  catch (error) {
+    // eslint-disable-next-line no-console
+    console.log(`Error SignIn: ${error}`)
+  }
+}
 const items = [[{
   label: 'New mail',
   icon: 'i-heroicons-paper-airplane',
@@ -31,6 +47,9 @@ const period = ref<Period>('daily')
               </UChip>
             </UButton>
           </UTooltip>
+          <UButton color="gray" variant="ghost" square @click="signIn(`credentials`)">
+            <UIcon name="i-heroicons-user" class="w-5 h-5" />
+          </UButton>
 
           <UDropdown :items="items">
             <UButton icon="i-heroicons-plus" size="md" class="ml-1.5 rounded-full" />
