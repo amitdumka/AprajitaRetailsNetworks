@@ -2,9 +2,9 @@
 const colorMode = useColorMode()
 const color = computed(() => colorMode.value === 'dark' ? '#111827' : 'white')
 useHead({
-  title: 'Aprajita Retails',
+  title: 'Aadwika Fashion',
   titleTemplate: (titleChunk: any) => {
-    return titleChunk ? `${titleChunk}  - Aprakita Retails` : 'Site Title'
+    return titleChunk ? `${titleChunk}  - Aadwika Fashion` : 'Site Title'
   },
   meta: [
     { charset: 'utf-8' },
@@ -19,8 +19,8 @@ useHead({
   }
 })
 
-const title = 'Aprajita Retails - SRP'
-const description = 'Aprajita Retails is made with Nuxt and using thier UI kit, and tailwind. Backend will be djanfo..'
+const title = 'Aadwika Fashion - SRP'
+const description = 'Aadwika Fashion is made with Nuxt and using thier UI kit, and tailwind. Backend will be django..'
 
 useSeoMeta({
   title,

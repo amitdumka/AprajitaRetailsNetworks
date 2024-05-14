@@ -1,6 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
-import { resolve } from 'node:path'
 export default defineNuxtConfig({
   //extends: [process.env.NUXT_UI_PRO_PATH || '@nuxt/ui-pro'],
   extends: ['./modules/ui-nxt'],
@@ -26,9 +25,6 @@ export default defineNuxtConfig({
 
   },
 
-  alias: {
-    cookie: resolve(__dirname, 'node_modules/cookie')
-  },
   experimental: {
     renderJsonPayloads: true
   },
@@ -44,7 +40,7 @@ export default defineNuxtConfig({
       token: {
         signInResponseTokenPointer: '/token/accessToken'
       },
-      sessionDataType: { id: 'string', email: 'string', name: 'string', role: "'admin' | 'guest' | 'account'", subscriptions: "{ id: number, status: 'ACTIVE' | 'INACTIVE' }[]" }
+      sessionDataType: { id: 'string', email: 'string', name: 'string', role: '\'admin\' | \'guest\' | \'account\'', subscriptions: '{ id: number, status: \'ACTIVE\' | \'INACTIVE\' }[]' }
     },
     session: {
       // Whether to refresh the session every time the browser window is refocused.

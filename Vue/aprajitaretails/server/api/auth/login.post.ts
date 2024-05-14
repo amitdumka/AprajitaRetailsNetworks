@@ -5,6 +5,7 @@ import { sign } from 'jsonwebtoken'
 const refreshTokens: Record<number, Record<string, any>> = {}
 export const SECRET = 'dummy'
 
+//TODO: Handle the login request pass it to Django and check the credentials
 export default eventHandler(async (event) => {
   const result = z.object({ username: z.string().min(1), password: z.literal('admin') }).safeParse(await readBody(event))
   if (!result.success) {
