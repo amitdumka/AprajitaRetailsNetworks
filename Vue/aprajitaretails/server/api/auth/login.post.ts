@@ -1,7 +1,8 @@
 import { createError, eventHandler, readBody } from 'h3'
 import { z } from 'zod'
 import { sign } from 'jsonwebtoken'
- 
+import authDjango from './authDjango'
+
 const refreshTokens: Record<number, Record<string, any>> = {}
 //TODO: this SECRET need to paramaterize
 export const SECRET = 'dummy'
@@ -19,11 +20,11 @@ export default eventHandler(async (event) => {
     throw createError({ statusCode: 403, statusMessage: 'Unauthorized, hint: username & password cirteria doesnt match' })
   }
 
-  // const {data,error,pending , refresh}=await loginTest(result.data.username,result.data.password)
+  //  const {data,error,pending , refresh}=await authDjango(result.data.username,result.data.password)
 
-  // if(error){
-  //   throw createError({ statusCode: 403, statusMessage: 'Unauthorized, '+error })
-  // }
+  //  if(error){
+  //    throw createError({ statusCode: 403, statusMessage: 'Unauthorized, '+error })
+  //  }
 
   //TODO: this need to be paramaterized and should be fetched from Django
   const expiresIn = 1500

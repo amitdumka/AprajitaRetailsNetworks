@@ -32,6 +32,7 @@ export default async (serverURL: string, method: 'POST', credentials: any) => {
 
     }
   })
+  console.log('loginAPI', data, pending, error, refresh)
   return { data, pending, error, refresh }
 
 }

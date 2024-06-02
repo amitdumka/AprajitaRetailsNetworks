@@ -58,11 +58,12 @@ async function onSubmit(data: any) {
   console.log(data.email, data.password)
 
   const { error, url } = await signIn({ username: data.email, password: data.password }, { callbackUrl: '/' })
+  console.log(error, url)
+  
   if (error) {
     alert('Not able to Login, Error: '+error)
     console.log(error)
   } else {
-
     return navigateTo(url, { external: true })
   }
 

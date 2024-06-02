@@ -9,7 +9,6 @@ export default async (username: string, password: string) => {
         ...options.headers,
         'Content-Type': 'application/json',
       },
-
         options.method = 'POST',
         options.body = {username: username, password: password}
     },
