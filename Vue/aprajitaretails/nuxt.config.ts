@@ -19,9 +19,9 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true
   },
-
+  ssr: true,
   build: {
-    transpile: ['@syncfusion','jsonwebtoken']
+    transpile: ['@syncfusion', 'jsonwebtoken']
 
   },
 
@@ -38,7 +38,13 @@ export default defineNuxtConfig({
         login: '/auth/LoginPage'
       },
       token: {
-        signInResponseTokenPointer: '/token/accessToken'
+        signInResponseTokenPointer: '/token/accessToken',
+        headerName: 'Authorization',
+        maxAgeInSeconds: 3600,
+        sameSiteAttribute: 'lax',
+        //cookieDomain: 'localhost'
+
+
       },
       sessionDataType: { id: 'string', email: 'string', name: 'string', role: '\'admin\' | \'guest\' | \'account\'', subscriptions: '{ id: number, status: \'ACTIVE\' | \'INACTIVE\' }[]' }
     },

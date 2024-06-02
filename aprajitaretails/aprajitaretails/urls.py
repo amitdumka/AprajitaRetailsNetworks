@@ -35,6 +35,7 @@ urlpatterns = [
     path("home/",include("home.urls")),
     path("", include("ui.urls")),
    
+    path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
    # below there line need to be reviews
     path('api-auth/', include('rest_framework.urls')), # Need to check which one is working
     path('dyn/', include('django_dyn_api.urls')),     # <-- NEW

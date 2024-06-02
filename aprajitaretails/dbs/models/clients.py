@@ -24,7 +24,8 @@ class ClientBase(models.Model):
     Active=models.BooleanField(default=True)
     Remarks=models.CharField(max_length=200, null=True, blank=True)
     ContactPerson=models.CharField(max_length=100, null=True, blank=True)
-    
+    class Meta:
+        abstract = True
     def __str__(self):
         return self.Name+", "+self.Address
 
@@ -37,11 +38,7 @@ class Client(ClientBase):
     class Meta:
         verbose_name = "Client"
         verbose_name_plural = "Clients"
-    
-    # def __str__(self):
-    #     return self.ClientName+", "+self.ClientAddress
-
-    
+     
 
 #StoreGroup model
 class StoreGroup(ClientBase):
@@ -52,8 +49,7 @@ class StoreGroup(ClientBase):
     Id = models.CharField(max_length=15, primary_key=True, db_index=True, unique=True, null=False, editable=True)   
     Client=models.ForeignKey(Client, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.GroupName
+    def __str__(self):        return self.Name
     def save(self, *args, **kwargs):       
         super(StoreGroup, self).save(*args, **kwargs)
 
@@ -72,9 +68,6 @@ class Store(ClientBase):
         class Meta:
             verbose_name = "Store"
             verbose_name_plural = "Stores"
-
-        # def __str__(self):
-        #     return self.StoreName+", "+self.StoreAddress
 
 
 class Address(models.Model):

@@ -41,7 +41,6 @@ urlpatterns = [
     path('storegroups/', Global_ListView.as_view(),  { 'app_name':'core','model_class': StoreGroup, 'create_url':'core:storegroup_create','model_name':'storegroup'},name='storegroup_list'),
     path('storegroups/update/<str:model_id>/', global_model_update, {'model_class': StoreGroup, 'create_url':'core:storegroup_create' ,'return_url':'core:storegroup_list'}, name='storegroup_create'),
     path('storegroups/create/', global_model_create, {'model_class': StoreGroup, 'create_url':'core:storegroup_create' ,'return_url':'core:storegroup_list'}, name='storegroup_create'),
-   
     path('storegroups/detail/<str:model_id>/', global_model_display, {'model_name': StoreGroup, 'return_url':'core:storegroup_list'}, name='storegroup_detail'),
 
     #Store

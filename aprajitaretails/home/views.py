@@ -134,15 +134,15 @@ def global_model_create(request, model_class, create_url=None, return_url=None):
     else:
         try:
             model_class._meta.get_field('Location')
-            st = Store.objects.get(pk=request.session.get(SiteSetting.StoreId,"MBO"))
-            sg= StoreGroup.objects.get(pk=request.session.get(SiteSetting.GroupId,"MBO"))        
+            st = Store.objects.get(pk=request.session.get(SiteSetting.StoreId,"AFMBO"))
+            sg= StoreGroup.objects.get(pk=request.session.get(SiteSetting.GroupId,"AFMBO"))        
             instance= model_class(Location=st, StoreGroup=sg , Client=Client.objects.all().first())
             form = ModelForm(instance=instance)
         except FieldDoesNotExist:
             try :
             
                 model_class._meta.get_field('StoreGroup')
-                sg= StoreGroup.objects.get(pk=request.session.get(SiteSetting.GroupId,"MBO"))        
+                sg= StoreGroup.objects.get(pk=request.session.get(SiteSetting.GroupId,"AFMBO"))        
                 instance= model_class( StoreGroup=sg , Client=Client.objects.all().first())
                 form = ModelForm(instance=instance)
         

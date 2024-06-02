@@ -52,6 +52,9 @@ CSRF_TRUSTED_ORIGINS = [
     'http://127.0.01:80',
     'http://127.0.01',
     'http://127.0.01:8000',
+    'http://127.0.01:3000',
+    'http://localhost:3000',
+    'http://localhost:8000',
     'http://152.67.78.183',
     'http://152.67.78.183:8000',
     'http://152.67.78.183:80',
@@ -80,6 +83,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
+    'oauth2_provider',
     'django_dyn_api',       
     'rest_framework',
     'django_api_gen',
@@ -193,14 +197,15 @@ EMAIL_FILE_PATH = os.path.join(BASE_DIR, "mails/store/app-emails")
 CORS_ALLOW_ALL_ORIGINS=True
 
 # Load the default ones
-CORS_ALLOWED_ORIGINS = ["http://localhost:3000", "http://127.0.0.1:3000", "http://127.0.0.1","http://152.67.78.183:3000","http://152.67.78.183", " http://www.aprajitaretails.store" ,"http://aprajitaretails.in", "http://aprajitaretails.store:3000"]
+CORS_ALLOWED_ORIGINS = ["http://localhost:3000",
+    "http://127.0.0.1:3000","http://localhost:3000", "http://127.0.0.1:3000", "http://127.0.0.1","http://152.67.78.183:3000","http://152.67.78.183", " http://www.aprajitaretails.store" ,"http://aprajitaretails.in", "http://aprajitaretails.store:3000"]
 
 # Leaded from Environment
 CORS_ALLOWED_ORIGINS_ENV =None # env("CORS_ALLOWED_ORIGINS", default=None)
 
-if CORS_ALLOWED_ORIGINS_ENV:
-    CORS_ALLOWED_ORIGINS += CORS_ALLOWED_ORIGINS_ENV.split(' ')
-
+#if CORS_ALLOWED_ORIGINS_ENV:
+#    CORS_ALLOWED_ORIGINS += CORS_ALLOWED_ORIGINS_ENV.split(' ')
+ 
 SESSION_ENGINE='django.contrib.sessions.backends.cache'
 SESSION_COOKIE_SECURE=False # For Production make is true
 
@@ -273,8 +278,10 @@ API_GENERATOR = {
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
+        'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.BasicAuthentication', 
         
     ],
 }
