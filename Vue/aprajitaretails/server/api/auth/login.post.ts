@@ -20,16 +20,17 @@ export default eventHandler(async (event) => {
     throw createError({ statusCode: 403, statusMessage: 'Unauthorized, hint: username & password cirteria doesnt match' })
   }
 
-  //  const {data,error,pending , refresh}=await authDjango(result.data.username,result.data.password)
-
-  //  if(error){
-  //    throw createError({ statusCode: 403, statusMessage: 'Unauthorized, '+error })
-  //  }
-
+  // TODO : Write the Django login logic here
+  const { data, pending, error, refresh } = await authDjango(result.data.username, result.data.password)
+  if(error) {
+    throw createError({ statusCode: 403, statusMessage: 'Unauthorized, hint: username & password cirteria doesnt match' })
+  }
+ 
   //TODO: this need to be paramaterized and should be fetched from Django
   const expiresIn = 1500
-  const refreshToken = Math.floor(Math.random() * (1000000000000000 - 1 + 1)) + 1
-  //const refreshToken = data?.token
+  //const refreshToken = Math.floor(Math.random() * (1000000000000000 - 1 + 1)) + 1
+
+  const refreshToken = data?.token
   const { username } = result.data
   const user = {
     username,
