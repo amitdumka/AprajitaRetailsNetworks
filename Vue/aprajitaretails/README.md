@@ -177,3 +177,8 @@ https://www.back4app.com/database/back4app/list-of-all-continents-countries-citi
 this is awesome data present over net
 
 
+https://github.com/sot1986/nuxt-precognition
+
+https://nuxt.com/modules/nuxt-auth-sanctum
+
+https://nuxt.com/modules/logto
